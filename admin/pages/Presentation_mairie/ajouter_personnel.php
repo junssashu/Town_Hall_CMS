@@ -4,9 +4,10 @@
 
     // session_start();
 
-    // if($_SESSION['logged_in']){
-    //     // show page ajouter personnel
-    // }else{
+    /*if($_SESSION['logged_in']){
+        // show page ajouter personnel
+    }else{
+*/
 ?>
 
     
@@ -72,5 +73,5 @@
 
 
 <?php
-    // }
+//    }
 ?>
