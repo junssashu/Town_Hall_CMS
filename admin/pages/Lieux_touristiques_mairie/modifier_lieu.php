@@ -22,26 +22,35 @@ if($_POST)
 
 <div class='cadre'>
 
-
 <?php
 
 
 if($_GET['id'])
 {
+    include_once("../../connexion/connexion.php");
 
-    //Récupération des infos
+    $query = $pdo->prepare("SELECT * form lieu_touristique_marie where id = ?")
+    $query->bindParam(1, $_GET['id'])
+    $query->execute();
+
+    $num = $query->numRows();
+
+    if( $num == 1 ){
+            //Récupération des infos
    
-    echo "
-        <form action='modifier_lieu.php' method='post' class='fields'>
-            <label for='nom'>Nom</label>
-            <input type='text' name='nomLieu' id='nom' placeholder='Nom du lieu ou localisation' class='field' required>
-            <label for='parcours'>Description</label>
-            <textarea name='description' id='parcours' placeholder='Décrivez le site' class='field' required>
-            <label for='image'>Une image du lieu</label>
-            <input type='file' id='image' name='image' class='field' required>
-            <input type='submit' name='submit' value='Enregistrer'>
-        </form>
+        echo "
+            <form action='modifier_lieu.php' method='get' class='fields'>
+                <label for='nom'>Nom</label>
+                <input type='text' name='nomLieu' value=" .$query['nomLieu']." id='nom' placeholder='Nom du lieu ou localisation' class='field' required>
+                <label for='parcours'>Description</label>
+                <textarea name='description' id='parcours' placeholder='Décrivez le site' class='field' required>
+                <label for='image'>Une image du lieu</label>
+                <input type='file' id='image' name='image' class='field' required>
+                <input type='submit' name='submit' value='Enregistrer'>
+            </form>
             ";
+    }
+
 }
 ?>
 </div>
