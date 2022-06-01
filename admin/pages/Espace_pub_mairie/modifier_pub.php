@@ -37,7 +37,7 @@ if($_GET['id'])
         <label for='nom'>Titre</label>
         <input type='text' name='titre' id='nom' placeholder='Titre de la publicité' class='field' required>
         <label for='parcours'>Description</label>
-        <input type='text' name='description' id='parcours' placeholder='Décrivez cette publicité' class='field' required>
+        <textarea name='description' id='parcours' placeholder='Décrivez cette publicité' class='field' required>
         <label for='image'>Une image pour la pub</label>
         <input type='file' id='image' name='image' class='field'>
         <input type='submit' name='submit' value='Enregistrer'>

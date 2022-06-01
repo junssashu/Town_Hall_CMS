@@ -36,7 +36,7 @@ if($_GET['id'])
                 <label for='nom'>Nom</label>
                 <input type='text' name='nom' id='nom' placeholder='Nom de la mairie' class='field' required>
                 <label for='parcours'>Parcours</label>
-                <input type='text' name='parcours' id='parcours' placeholder='Décrivez le parcours professionnel du membre' class='field' required>
+                <textarea name='parcours' id='parcours' placeholder='Décrivez le parcours professionnel du membre' class='field' required>
                 <label for='cv'>Curriculum vitae</label>
                 <input type='file' id='cv' name='cv' class='field' required>
                 <input type='submit' name='submit' value='Enregistrer'>

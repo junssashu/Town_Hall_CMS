@@ -17,7 +17,8 @@
     </div>
     <div class="main-content">
         <div class="description">
-            Bienvenu sur le site de la mairie de <?php //Nom de la mairie ?>
+            Bienvenu sur le site de la mairie de <?php //Nom de la mairie ?>.
+            <a href='pages/index/html'>Administrer</a>
             <br><br>
             Ici, vous découvrirez tout ce qui concerne notre communauté
         </div>
@@ -34,23 +35,23 @@
         <div class="publicites">
             <div class='pub'>
             <?php
-                include_once("../connexion/connexion.php");
+                include_once("connexion/connexion.php");
                 //Récuperation des publicités
-                $sql = select * form 
+                $sql = "select * from Espace_pub_mairie";
+                $pubs = mysqli_execute($pdo, $sql);
+
                 $publicites = "";
-                while(1){
+                while($pub=mysqli_fetch_assoc($pubs)){
                 $publicites = $publicites+ "
-                        <div class='titre'>Titre</div>
-                        <div class='description'>Description</div>
+                        <div class='titre'>' .$pub['titre']. "<br></div>
+                        <div class='description'>" .$pub['description']. "<br><br></div>
                         ";
-                 
+
                         echo $publicites;
                 }
             ?>
                 </div>
         </div>
-
-
     </div>
     
     <div class="footer">
