@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mar. 31 mai 2022 à 21:20
+-- Généré le :  mer. 01 juin 2022 à 13:37
 -- Version du serveur :  10.4.6-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -42,8 +42,9 @@ CREATE TABLE `Activites_mairie` (
 
 CREATE TABLE `Annonces_mairie` (
   `id` int(11) NOT NULL,
-  `intitule` varchar(30) NOT NULL,
-  `description` varchar(300) NOT NULL,
+  `mariage` int(11) NOT NULL,
+  `decret` int(11) NOT NULL,
+  `marcherPublic` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -79,8 +80,7 @@ CREATE TABLE `Decrets_mairie` (
 CREATE TABLE `Espace_pub_mairie` (
   `id` int(11) NOT NULL,
   `nombreVisiteur` int(11) NOT NULL,
-  `titre` int(11) NOT NULL,
-  `description` varchar(200),
+  `publicite` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -91,8 +91,19 @@ CREATE TABLE `Espace_pub_mairie` (
 
 CREATE TABLE `Lieux_touristiques_mairie` (
   `id` int(11) NOT NULL,
-  `nomLieu` varchar(255) NOT NULL,
-  `description` varchar(300)
+  `nomLieu` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Login`
+--
+
+CREATE TABLE `Login` (
+  `User_id` int(11) NOT NULL,
+  `User_name` varchar(255) NOT NULL,
+  `User_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -159,7 +170,7 @@ CREATE TABLE `Personnel_mairie` (
   `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `cv` text NOT NULL,
-  `parcoursProfessionnel` text NOT NULL
+  `parcourtProfessionnel` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -242,6 +253,12 @@ ALTER TABLE `Espace_pub_mairie`
 --
 ALTER TABLE `Lieux_touristiques_mairie`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `Login`
+--
+ALTER TABLE `Login`
+  ADD PRIMARY KEY (`User_id`);
 
 --
 -- Index pour la table `Mairie`
@@ -343,6 +360,12 @@ ALTER TABLE `Lieux_touristiques_mairie`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `Login`
+--
+ALTER TABLE `Login`
+  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `Mairie`
 --
 ALTER TABLE `Mairie`
@@ -407,6 +430,12 @@ ALTER TABLE `Annonces_mairie`
 --
 ALTER TABLE `Espace_pub_mairie`
   ADD CONSTRAINT `Espace_pub_mairie_ibfk_1` FOREIGN KEY (`publicite`) REFERENCES `Publicite_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `Login`
+--
+ALTER TABLE `Login`
+  ADD CONSTRAINT `Login_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `Mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `Mairie`
