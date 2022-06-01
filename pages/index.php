@@ -19,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
     <title>Marie - CMS</title>
-    <link rel="stylesheet" href="assets/styles/index.css" ></link>
+    <link rel="stylesheet" href="../assets/styles/index.css" ></link>
 </head>
 <body>
 

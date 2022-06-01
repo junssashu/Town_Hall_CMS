@@ -15,7 +15,6 @@
     </div>
     
     <div class="cadre">
-       <a href="creer_lieu.php" class="">Ajouter un site touristique</a>
         <?php
             /*Affichage des sites (dans un tableau).
             Le dernier champ du tableau porte le nom action et renverra vers la suppression ou la modification d'un site touristique.*/

@@ -15,7 +15,6 @@
     </div>
     
     <div class="cadre">
-       <a href="creer_pub.php" class="">Ajouter une publicité</a>
         <?php
             /*Affichage des publicités (dans un tableau).
             Le dernier champ du tableau porte le nom action et renverra vers la suppression ou la modification d'une publicité.*/
