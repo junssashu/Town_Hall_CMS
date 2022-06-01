@@ -1,17 +1,17 @@
 <?php
 
-    include_once('../../connexion/connexion.php');
+    include_once('../../../connexion/connexion.php');
 
-    session_start();
+    // session_start();
 
-    if($_SESSION['logged_in']){
-        // show page ajouter personnel
-    }else{
+    // if($_SESSION['logged_in']){
+    //     // show page ajouter personnel
+    // }else{
 ?>
 
     
 
-<link rel="stylesheet" href="../../assets/styles/index.css" >
+<link rel="stylesheet" href="../../../assets/styles/index.css" >
 <div class="header">
     <div class="title">
         CMS pour la réalisation du site web d'une mairie<br><br>
@@ -57,7 +57,7 @@
             <label for="nom">Nom</label>
             <input type="text" name="nom" id="nom" placeholder="Nom du personnel" class="field" required>
             <label for="parcours">Parcours</label>
-            <textarea name="parcours" id="parcours" placeholder="Décrivez le parcours professionnel du membre" class="field" required>
+            <textarea name="parcours" id="parcours" placeholder="Décrivez le parcours professionnel du membre" class="field" required></textarea>
             <label for="cv">Curriculum vitae</label>
             <input type="file" id="cv" name="cv" class="field" required>
             <input type="submit" name="submit" value="Enregistrer">
@@ -72,5 +72,5 @@
 
 
 <?php
-    }
+    // }
 ?>
