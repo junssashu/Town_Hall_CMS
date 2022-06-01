@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="../../assets/styles/index.css" >
 
 
@@ -16,6 +17,7 @@
     <div class="instruction">
         Veuillez choisir une rubrique pour effectuer des actions:
     </div>
+ 
     <div class="options">
         <a href="modifier_infos.php" class="option">Renseigner ou modifier les informations de la mairie</a>
         <a href="conseil_municipal.php" class="option">Conseil municipal</a>
