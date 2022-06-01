@@ -101,9 +101,9 @@ CREATE TABLE `Lieux_touristiques_mairie` (
 --
 
 CREATE TABLE `Login` (
-  `User_id` int(11) NOT NULL,
-  `User_name` varchar(255) NOT NULL,
-  `User_password` varchar(255) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
