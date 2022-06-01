@@ -15,7 +15,6 @@
     </div>
     
     <div class="cadre">
-       <a href="creer_activite.php" class="">Ajouter une activité</a>
         <?php
             /*Affichage des activités (dans un tableau).
             Le dernier champ du tableau porte le nom action et renverra vers la suppression ou la modification d'une activité.*/

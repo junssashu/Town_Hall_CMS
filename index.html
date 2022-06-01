@@ -18,18 +18,18 @@
     <div class="main-content">
         <div class="description">
             Bienvenu sur le site de la mairie de <?php //Nom de la mairie ?>.
-            <a href='pages/index/html'>Administrer</a>
+            <a href='pages/index.php'>Administrer</a>
             <br><br>
             Ici, vous découvrirez tout ce qui concerne notre communauté
         </div>
         
         <div class="options">
-            <a href="Presentation_mairie/menu.php" class="option">Présentation de la mairie</a>
-            <a href="Activite_mairie/activites.php" class="option">Activités</a>
-            <a href="Annonces_mairie/annonces.php" class="option">Annonces</a>
-            <a href="Espace_pub_mairie/pubs.php" class="option">Espace publicitaire</a>
-            <a href="Lieux_touristiques_mairie/sites_touristiques.php" class="option">Lieux touristiques</a>
-            <a href="Projet_marie/projets_courants.php" class="option">Projets</a>
+            <a href="pages/Presentation_mairie/menu.php" class="option">Présentation de la mairie</a>
+            <a href="pages/Activite_mairie/activites.php" class="option">Activités</a>
+            <a href="pages/Annonces_mairie/annonces.php" class="option">Annonces</a>
+            <a href="pages/Espace_pub_mairie/pubs.php" class="option">Espace publicitaire</a>
+            <a href="pages/Lieux_touristiques_mairie/sites_touristiques.php" class="option">Lieux touristiques</a>
+            <a href="pages/Projet_marie/projets_courants.php" class="option">Projets</a>
         </div>
 
         <div class="publicites">
@@ -38,16 +38,13 @@
                 include_once("connexion/connexion.php");
                 //Récuperation des publicités
                 $sql = "select * from Espace_pub_mairie";
-                $pubs = mysqli_execute($pdo, $sql);
+                $pubs = mysqli_query($pdo, $sql);
 
                 $publicites = "";
                 while($pub=mysqli_fetch_assoc($pubs)){
-                $publicites = $publicites+ "
-                        <div class='titre'>' .$pub['titre']. "<br></div>
-                        <div class='description'>" .$pub['description']. "<br><br></div>
-                        ";
+                $publicites = $publicites. "<div class='titre'>" .$pub['titre']. "<br></div><div class='description'>" .$pub['description']. "<br><br></div>";
 
-                        echo $publicites;
+                        //echo $publicites;
                 }
             ?>
                 </div>
