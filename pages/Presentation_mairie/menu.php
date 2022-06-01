@@ -8,21 +8,16 @@
 </div>
 <div class="main-content">
     <div class="description">
-        Gestion du contenu du site.
+        
     </div>
     <div class="instruction">
-        Gérer les publicités de la mairie.
+        Veuillez choisir une rubrique pour effectuer des actions:
     </div>
-    
-    <div class="cadre">
-       <a href="creer_pub.php" class="">Ajouter une publicité</a>
-        <?php
-            /*Affichage des publicités (dans un tableau).
-            Le dernier champ du tableau porte le nom action et renverra vers la suppression ou la modification d'une publicité.*/
-        
-        ?>
+    <div class="options">
+        <a href="conseil_municipal.php" class="option">Conseil municipal</a>
+        <a href="personnel.php" class="option">Le personnel</a>
+    </div>
 
-    </div>
     
 </div>
 <div class="footer">
