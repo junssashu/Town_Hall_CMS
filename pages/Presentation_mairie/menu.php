@@ -8,10 +8,11 @@
 </div>
 <div class="main-content">
     <div class="description">
-        
+        <h1>Nom de la mairie</h1>
+        <h2>Ceci est l'histoire de la mairie<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In voluptas tempore perspiciatis aperiam corrupti consectetur facilis tempora possimus! Quod, praesentium. Accusamus laudantium velit explicabo laborum tempora, molestias eum ipsam tempore.</h2>
     </div>
     <div class="instruction">
-        Veuillez choisir une rubrique pour effectuer des actions:
+        Veuillez choisir une rubrique.
     </div>
     <div class="options">
         <a href="conseil_municipal.php" class="option">Conseil municipal</a>

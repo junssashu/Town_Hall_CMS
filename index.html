@@ -34,19 +34,19 @@
 
         <div class="publicites">
             <div class='pub'>
-            <?php
-                include_once("connexion/connexion.php");
+            <!--?php
+                require_once "connexion/connexion.php";
                 //Récuperation des publicités
                 $sql = "select * from Espace_pub_mairie";
                 $pubs = mysqli_query($pdo, $sql);
 
                 $publicites = "";
                 while($pub=mysqli_fetch_assoc($pubs)){
-                $publicites = $publicites. "<div class='titre'>" .$pub['titre']. "<br></div><div class='description'>" .$pub['description']. "<br><br></div>";
-
-                        //echo $publicites;
+                    $publicites = $publicites."";// "<div class='titre'>" .$pub['titre']. "<br></div><div class='description'>" .$pub['description']. "<br><br></div>";
                 }
-            ?>
+                echo $publicites;
+            ?-->
+            <h1>Espace pub</h1>
                 </div>
         </div>
     </div>
