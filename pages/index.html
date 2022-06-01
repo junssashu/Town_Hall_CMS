@@ -32,17 +32,22 @@
         </div>
 
         <div class="publicites">
-            <!--?php
-            //Récuperation des publicités
-            publicites = "";
-            while()
-            publicites = publicites+ "
-                <div class='pub'>
-                    <div class="titre">Titre</div>
-                    <div class="description">Description</div>
+            <div class='pub'>
+            <?php
+                include_once("../connexion/connexion.php");
+                //Récuperation des publicités
+                $sql = select * form 
+                $publicites = "";
+                while(1){
+                $publicites = $publicites+ "
+                        <div class='titre'>Titre</div>
+                        <div class='description'>Description</div>
+                        ";
+                 
+                        echo $publicites;
+                }
+            ?>
                 </div>
-                ";
-            -->
         </div>
 
 

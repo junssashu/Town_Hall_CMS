@@ -80,7 +80,8 @@ CREATE TABLE `Decrets_mairie` (
 CREATE TABLE `Espace_pub_mairie` (
   `id` int(11) NOT NULL,
   `nombreVisiteur` int(11) NOT NULL,
-  `publicite` int(11) NOT NULL
+  `titre` varchar(20) NOT NULL,
+  'description' text,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
