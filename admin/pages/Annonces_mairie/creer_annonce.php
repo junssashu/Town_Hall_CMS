@@ -25,7 +25,7 @@
             <label for="nom">Intitulé</label>
             <input type="text" name="intitule" id="nom" placeholder="Intitulé de l'annonce" class="field" required>
             <label for="parcours">Description</label>
-            <textarea  name="description" id="description" placeholder="Décrivez l'annonce" class="field">
+            <textarea  name="description" id="description" placeholder="Décrivez l'annonce" class="field"></textarea>
             <input type="submit" name="submit" value="Enregistrer">
         </form>
     </div>

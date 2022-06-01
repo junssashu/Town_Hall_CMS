@@ -36,7 +36,7 @@ if($_GET['id'])
             <label for='nom'>Intitulé</label>
             <input type='text' name='intitule' id='nom' placeholder='Intitulé de l'annonce' class='field' required>
             <label for='parcours'>Description</label>
-            <textarea  name='description' id='description' placeholder='Décrivez l'annnonce' class='field' required>
+            <textarea  name='description' id='description' placeholder='Décrivez l'annnonce' class='field' required></textarea>
             <input type='submit' name='submit' value='Enregistrer'>
         </form>
         ";

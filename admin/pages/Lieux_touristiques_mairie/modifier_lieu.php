@@ -43,7 +43,7 @@ if($_GET['id'])
                 <label for='nom'>Nom</label>
                 <input type='text' name='nomLieu' value=" .$query['nomLieu']." id='nom' placeholder='Nom du lieu ou localisation' class='field' required>
                 <label for='parcours'>Description</label>
-                <textarea name='description' id='parcours' placeholder='Décrivez le site' class='field' required>
+                <textarea name='description' id='parcours' placeholder='Décrivez le site' class='field' required></textarea>
                 <label for='image'>Une image du lieu</label>
                 <input type='file' id='image' name='image' class='field' required>
                 <input type='submit' name='submit' value='Enregistrer'>
