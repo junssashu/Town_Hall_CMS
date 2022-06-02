@@ -39,10 +39,7 @@
             global $pdo;
 
             $query = $pdo->prepare("INSERT INTO personnel_mairie (nom, cv, parcourtProfesionnel) VALUES (?, ?, ?)");
-            $query->bindParam(1, $nom);
-            $query->bindParam(2, $cv);
-            $query->bindParam(3, $parcours);
-            $query->execute();
+            $query->execute([$nom, $cv, $parcours]);
 
             $_SESSION['logged_in'] = true;
             header("Location: ajouter_personnel.php");
