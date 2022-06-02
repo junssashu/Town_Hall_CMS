@@ -23,9 +23,11 @@ header{
 }
 
 .logo{
-    width:0%;
+    width:30%;
     float: left;
     border-image-slice:0%;
+    position: fixed;
+    line-height: 100px;
 }
 
 .logo a{
@@ -55,7 +57,9 @@ nav a{
  
 nav a:hover{
     color: blue;
-    
+    border-radius: 20px;
+    border-bottom: 30px ;
+    color: black;
 }
 
 .banner-container{

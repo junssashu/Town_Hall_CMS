@@ -6,12 +6,11 @@
 
         <header>
             <div class="logo">
-                <img src="mairie.png" height="100px" width="100%">
+                <a href="pages/Presentation_mairie/menu.php" class="option"><strong>Personnalisation</strong></a>
             </div>
 
             <div>
                 <nav>
-                    <a href="pages/Presentation_mairie/menu.php" class="option"><strong>Administrateur</strong></a>
                     <a href="pages/Activite_mairie/activites.php" class="option"><strong>Activités</strong></a>
                     <a href="pages/Annonces_mairie/annonces.php" class="option"><strong>Annonces</strong></a>
                     <a href="pages/Espace_pub_mairie/pubs.php" class="option"><strong>Espace publicitaire</strong></a>
