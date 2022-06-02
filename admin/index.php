@@ -38,17 +38,11 @@
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem nemo, enim neque nobis mollitia pariatur sequi ullam, eius iusto incidunt unde eaque. Esse dolorum fugiat libero accusantium molestiae voluptatum quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odio totam ea nulla vitae nemo pariatur explicabo iusto inventore quaerat asperiores expedita rerum blanditiis officia, sunt nisi similique aliquam. Fugit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore adipisci consectetur, fuga porro pariatur commodi incidunt id quis soluta nam tempora odio ipsam voluptatem libero? Odio cum vero nulla mollitia. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quis neque, nesciunt necessitatibus quasi dicta blanditiis dolorem placeat vero, hic laboriosam maiores praesentium possimus sequi debitis provident consequuntur voluptate! Ipsum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa numquam, debitis asperiores quidem, consequatur sunt enim aut magni aliquam nostrum a facilis quae nihil delectus nulla quo error eius nesciunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptate iste corrupti fugit placeat eaque nisi provident, assumenda totam similique possimus eos incidunt quia iusto non sequi et! Fuga, laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque illo quis molestias maxime eligendi unde quas, hic excepturi magni et quaerat odit ab necessitatibus animi quae, reiciendis minima aspernatur nam.<br><br><br>
             </p>
         </div>
-
     </div>
 
-    <div class="instruction">
-        Veuillez choisir une rubrique pour effectuer des actions:
-    </div>
-
-    </div>
-    <div class="footer">
+    <!--  <div class="footer">
         <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>
         Pour le Travail pratique de l'unité d'enseignement INF2064, programmation web.
-    </div>
+    </div> -->
 
 </body>
