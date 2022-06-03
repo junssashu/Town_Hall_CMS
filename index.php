@@ -81,7 +81,7 @@
                     <div class="image_2"><img src="assets/content/site_2.jpg" /></div>
                     <div class="image_3"><img src="assets/content/site_3.jpg" /></div>
                 </div>
-                <p><h2>Elaborez un site. Personnalisez le et bien encore. </h2><br><span class="under_elaborer">Vous pouvez tout faire sur <a href="index.html">Town Hall Generator</a></span></p><br><br>
+                <p><h2>Elaborez un site. Personnalisez le et bien encore. </h2><br><span class="under_elaborer">Vous pouvez tout faire sur <a href="index.php&">Town Hall Generator</a></span></p><br><br>
             </div>
             <div class="other_content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur eligendi libero eaque dolorem expedita. Esse consequuntur deleniti reprehenderit odio, dolorum aperiam vitae accusamus ex voluptate, impedit doloribus dolore est soluta.</p>

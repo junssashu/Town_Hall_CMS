@@ -21,14 +21,21 @@ body {
 
 }
 
-.fields p {
+.fields form {
     display: flex;
-    font-family: 'Poppins';
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fields p {
     color: #fff;
 }
 
 .fields form .field label {
     display: flex;
+    padding-top: 2%;
+    padding-right: 5%;
 }
 
 .fields form .field input {
@@ -38,25 +45,24 @@ body {
     border-radius: 5px;
     padding: 2%;
     background-color: #fff;
-    color: gray;
+    color: rgb(95, 93, 93);
     text-align: center;
 }
 
-.fields form .field input[tupe=submit] {
-    display: flex;
-    height: 2vh;
-    width: 12vw;
-    border-radius: 5px;
-    padding: 2%;
-    background-color: #fff;
-    color: black;
-    text-align: center;
+.fields form .field input[type=submit] {
+    width: 5vw;
+    height: 5vh;
 }
 .field {
     display: flex;
     height: 5vh;
     width: 100%;
-    align-items: center;
+    justify-content: center;
     padding-top: 5%;
     padding-bottom: 5%;
+}
+
+.field p {
+    font-size: 150%;
+    width: 25vw;
 }

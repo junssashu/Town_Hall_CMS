@@ -27,7 +27,7 @@
     <header>
         <div class="wrapper">
             <div class="logo">
-                <a href="#">Town Hall Generator</a>
+                <a href="../index.php">Town Hall Generator</a>
             </div>
 
             <nav>
@@ -72,16 +72,16 @@
                 }
             }
         ?>
-        <div class="fields">
+        <div class="fields" style="height:60vh;">
             <form action="index.php" method="POST">
                 <div class="field">
-                    <p>Veuillez entrer renseigner les informations suivantes:</p>
+                    <p>Veuillez renseigner les informations suivantes:</p>
                 </div>
                 <?php
                     if(isset($error)){
                         ?>   
                     <br>
-                    <span style="color:red"><?php echo $error; ?></span>
+                    <span style="color:rgb(230, 142, 11)"><?php echo $error; ?></span>
                     <br>
                     <?php
                     }
@@ -95,7 +95,14 @@
                     <input id='password' name = 'password' type="password" placeholder="Veuillez insérer un mot de passe">
                 </div>
                 <div class="field">
-                    <input class="validation" name = 'check' type="submit" value="Se connecter">
+                    <label for='name'>Confirmation de mot de passe: </label>
+                    <input id='password_conf' name = 'password_conf' type="password" placeholder="Veuillez confirmer le mot de passe">
+                </div>
+                <div class="field">
+                    <input class="validation" name = 'check' type="submit" value="S'inscrire">
+                </div>
+                <div class="field">
+                    <p style="font-size:100%;">Vous avez déjà un compte? <span><a href="connexion.php" style="text-decoration:none; color:rgb(230, 142, 11);">Connectez vous!</a></span></p>
                 </div>
             </form>
         </div>
