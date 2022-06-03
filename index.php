@@ -59,7 +59,7 @@
 
                 <nav>
                     <a href="pages/index.php" class="s_inscrire">S'inscrire</a>
-                    <a href="#">Se connecter</a>
+                    <a href="pages/connexion.php">Se connecter</a>
                     <!-- <a href="pages/Annonces_mairie/annonces.php">Annonces</a>
                     <a href="pages/Lieux_touristiques_mairie/sites_touristiques.php">Lieux touristiques</a>
                     <a href="pages/Projet_marie/projets_courants.php">Projets</a>

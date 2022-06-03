@@ -23,17 +23,11 @@
 </head>
 <body>
 
-    <header>
-        <div class="wrapper">
-            <div class="logo">
-                <a href="#">Town Hall Generator</a>
-            </div>
-
-            <nav>
-                <a href="connexion.php" class="s_incrire">Se connecter</a>
-            </nav>
+    <div class="header">
+        <div class="title">
+            CMS pour la réalisation du site web d'une mairie<br><br>
         </div>
-    </header>
+    </div>
     <div class="main-content">
         <div class="description">
             Ceci est un cms<br>
