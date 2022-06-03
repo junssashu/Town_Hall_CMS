@@ -14,6 +14,7 @@ body {
 .wrapper {
     width: 90%;
     margin : 0 auto;
+    overflow: hidden;
 }
 
 header {
@@ -46,7 +47,7 @@ nav {
 nav a {
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Poppins';
+    font-family: Poppins;
     letter-spacing: 4px;
     font-size: 15px;
     padding: 15px;
@@ -59,7 +60,7 @@ nav a {
 nav .s_inscrire{
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Poppins';
+    font-family: Poppins;
     letter-spacing: 4px;
     font-size: 15px;
     padding: 15px;
@@ -133,7 +134,6 @@ nav .s_inscrire:hover {
 
 .content-area{
     width: 100%;
-    height: 800px;
     position: relative;
     background: #fff;
     top: 550px;
@@ -146,16 +146,202 @@ nav .s_inscrire:hover {
     letter-spacing: 4px;
 }
 
-.content-area p{
+.other_content{
+    background: #130f40;
+    width: 100%;
+    height: 400px;
+    padding-top: 100px;
+}
+
+.other_content p:is(:first-child){
     line-height: 30px;
     width: 50%;
-    margin: 90% auto;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 20px;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px;
+    padding-top: 2%;
+    letter-spacing: 4px;
+    font-family: 'Poppins';
     text-align: center;
     font-weight: 200;
 }
 
-.footer {
+.other_content p{
+    line-height: 30px;
+    width: 50%;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2%;
+    letter-spacing:4px;
+    font-family: 'Poppins';
+    text-align: center;
+    font-weight: 200;    
+}
 
+.other_content span {
+    padding: 10px;
+    color :#fff;
+    border: .5px solid #fff;
+    border-radius: 6px;
+    transition: all .5s ease-in;
+}
+
+.other_content span:hover {
+    background: #fff;
+    color: #130f40;
+    transition: all .5s ease-out;
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul{
+    list-style:none;
+}
+
+.footer {
+    background-color: rgb(31, 31, 31);
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Poppins';
+    padding: 70px 0;
+    bottom: 0;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.footer-col h4::before{
+    content: "";
+    position: absolute;
+    left: 10;
+    bottom: -10px;
+    height:4px;
+    background-color:#c0393b;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight:bolder;
+    color: #bbbbbb;
+    display: block;   
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.wrapper p{
+    margin: auto;
+}
+
+/*  gestion du carousel */
+.carousel_Presentation{
+    /* overflow: hidden; */
+    width: 100%;
+    height: 600px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.image_1{
+    padding: 40px;
+    width: 100%;
+    transition: all 0.4s ease;
+}
+
+.image_1 img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.image_2{
+    padding: 40px;
+    width: 200%;
+    transition: all 0.4s ease;
+}
+
+.image_2 img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.image_3{ 
+    padding: 40px;
+    width: 100%;
+    transition: all 0.4s ease;
+}
+
+.image_3 img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.image_1:hover{
+    width: 200%;
+}
+
+.image_2:hover{
+    width: 100%;
+}
+
+
+
+.image_3:hover{
+    width: 200%;
+}
+
+.wrapper p{
+    background: #130f40;
+    width: 100%;
+    margin: 0;
+    font-family: 'Poppins';
+    padding: 0;
+    left: 0;
+    float: left;
+    right: 0;
+}
+
+.under_elaborer {
+    width: 100%;
+    font-weight: bolder;
+}
+
+.under_elaborer a{
+    text-decoration: none;
+    font-family: 'Pacifico';
 }
