@@ -20,6 +20,7 @@
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
     <title>Marie - CMS</title>
     <link rel="stylesheet" href="../assets/styles/index.css" ></link>
+    <link rel="stylesheet" href="../assets/styles/account.css" ></link>
 </head>
 <body>
 
@@ -71,29 +72,54 @@
                 }
             }
         ?>
-        <div class="instruction">
-            Veuillez vous connecter pour commencer
-        </div>
         <div class="fields">
             <form action="index.php" method="POST">
+                <div class="field">
+                    <p>Veuillez entrer renseigner les informations suivantes:</p>
+                </div>
                 <?php
                     if(isset($error)){
-                ?>   
+                        ?>   
                     <br>
                     <span style="color:red"><?php echo $error; ?></span>
                     <br>
-                <?php
+                    <?php
                     }
-                ?>
-                <input class="field" name = 'login' type="text">
-                <input class="field" name = 'password' type="password">
-                <input class="validation" name = 'check' type="submit" value="Se connecter">
+                    ?>
+                <div class="field">
+                    <label for='name'>Nom: </label>
+                    <input id='name' name = 'login' type="text" placeholder='Veuillez entrer votre nom'>
+                </div>
+                <div class="field">
+                    <label for='name'>Mot de passe: </label>
+                    <input id='password' name = 'password' type="password" placeholder="Veuillez insérer un mot de passe">
+                </div>
+                <div class="field">
+                    <input class="validation" name = 'check' type="submit" value="Se connecter">
+                </div>
             </form>
         </div>
-        <div class="footer">
-            <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>
-            Pour le Travail pratique de l'unité d'enseignement INF2064, programmation web.
-        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Creer son site web</h4>
+                        <ul class="list-footer">
+                            <li><a href="#">S'inscrire</a></li>
+                            <li><a href="#">Se connecter</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>About Us</h4>
+                        <ul class="list-footer">
+                            <li><a href="http://facsciences.cm">Facsciences</a></li>
+                            <li><a href="#">Conditions d'utilisateurs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <span class="hidden-phone"><br><br>copyright @uy1</span>
+        </footer>
     </div>
 
 </body>
