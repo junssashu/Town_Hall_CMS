@@ -171,7 +171,7 @@ CREATE TABLE `Personnel_mairie` (
   `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `cv` text NOT NULL,
-  `parcourtProfessionnel` text NOT NULL
+  `parcoursProfessionnel` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

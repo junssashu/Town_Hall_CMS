@@ -34,23 +34,26 @@
         $cv = $_POST['cv'];
 
         if(empty($nom) or empty($parcours) or empty($cv)){
-            $erreur = "all fielda most be filled";
+            $erreur = "all fields most be filled";
         }else{
             global $pdo;
 
-            $query = $pdo->prepare("INSERT INTO personnel_mairie (nom, cv, parcourtProfesionnel) VALUES (?, ?, ?)");
+            $query = $pdo->prepare("INSERT INTO personnel_mairie (nom, parcoursProfessionnel) VALUES (?, ?)");
             $query->bindParam(1, $nom);
-            $query->bindParam(2, $cv);
-            $query->bindParam(3, $parcours);
+           // $query->bindParam(2, $cv);
+            $query->bindParam(2, $parcours);
             $query->execute();
 
             $_SESSION['logged_in'] = true;
+            echo "Enregistrement effectué avec succès!";
             header("Location: ajouter_personnel.php");
         }
 
     }else{
-        $erreur = " les donnes n'ont pa ete recus de la requertte ";
+        $erreur = " les donnes n'ont pa ete recus la requertte ";
     }
+    if(isset($erreur))
+        echo "<p style='color:red;'>".$erreur."</p>";
     ?>
     
     <div class="cadre">
