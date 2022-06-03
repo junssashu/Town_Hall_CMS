@@ -38,11 +38,8 @@
         }else{
             global $pdo;
 
-            $query = $pdo->prepare("INSERT INTO personnel_mairie (nom, parcoursProfessionnel) VALUES (?, ?)");
-            $query->bindParam(1, $nom);
-           // $query->bindParam(2, $cv);
-            $query->bindParam(2, $parcours);
-            $query->execute();
+            $query = $pdo->prepare("INSERT INTO personnel_mairie (nom, cv, parcourtProfesionnel) VALUES (?, ?, ?)");
+            $query->execute([$nom, $cv, $parcours]);
 
             $_SESSION['logged_in'] = true;
             echo "Enregistrement effectué avec succès!";
