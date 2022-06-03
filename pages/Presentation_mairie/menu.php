@@ -18,7 +18,6 @@
         <a href="conseil_municipal.php" class="option">Conseil municipal</a>
         <a href="personnel.php" class="option">Le personnel</a>
     </div>
-
     
 </div>
 <div class="footer">

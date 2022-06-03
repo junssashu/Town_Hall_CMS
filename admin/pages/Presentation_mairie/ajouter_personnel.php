@@ -34,7 +34,7 @@
         $cv = $_POST['cv'];
 
         if(empty($nom) or empty($parcours) or empty($cv)){
-            $erreur = "all fielda most be filled";
+            $erreur = "all fields most be filled";
         }else{
             global $pdo;
 
@@ -42,12 +42,15 @@
             $query->execute([$nom, $cv, $parcours]);
 
             $_SESSION['logged_in'] = true;
+            echo "Enregistrement effectué avec succès!";
             header("Location: ajouter_personnel.php");
         }
 
     }else{
-        $erreur = " les donnes n'ont pa ete recus de la requertte ";
+        $erreur = " les donnes n'ont pa ete recus la requertte ";
     }
+    if(isset($erreur))
+        echo "<p style='color:red;'>".$erreur."</p>";
     ?>
     
     <div class="cadre">

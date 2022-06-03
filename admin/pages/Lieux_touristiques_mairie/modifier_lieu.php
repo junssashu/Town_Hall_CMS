@@ -29,8 +29,8 @@ if($_GET['id'])
 {
     include_once("../../connexion/connexion.php");
 
-    $query = $pdo->prepare("SELECT * form lieu_touristique_marie where id = ?")
-    $query->bindParam(1, $_GET['id'])
+    $query = $pdo->prepare("SELECT * form lieu_touristique_marie where id = ?");
+    $query->bindParam(1, $_GET['id']);
     $query->execute();
 
     $num = $query->numRows();
