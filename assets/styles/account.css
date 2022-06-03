@@ -1,156 +1,62 @@
 @import url("http://fonts.googleapis.com/css?family=Poppins");
 @import url("http://fonts.googleapis.com/css?family=Pacifico&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: 'Poppins';
-    text-align: center;
+    background-image: url('../content/urban1.jpeg');
+    background-repeat: no-repeat;
 }
 
-header {
-    width: 100%;
-    height: 100px;
-    background: #c0393b;
-    position: fixed;
-}
 
-.logo {
-    width: 30%;
-    float: left;
-    text-align: left;
-    line-height:100px;
-}
-
-.logo a{
-    text-decoration: none;
-    font-size:30px;
-    font-family: 'Pacifico';
-    color: #fff;
-    letter-spacing: 4px;
-}
-
-nav {
-    float: right;
-    line-height:100px;
-}
-
-nav a {
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Poppins';
-    letter-spacing: 4px;
-    font-size: 15px;
-    padding: 15px;
-    color: #fff;
-    border-radius: 10px;
-    margin: 0 1px;
-    border: 2px solid #fff;
-}
-
-nav .s_inscrire{
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Poppins';
-    letter-spacing: 4px;
-    font-size: 15px;
-    padding: 15px;
-    color: #c0393b;
-    border-radius: 10px;
-    margin: 0 1px;
-    background:#fff;
-}
-
-nav a:hover {
-    background: rgb(255, 240, 240);
-    color: #c0393b;
-    /* border-bottom: 3px black solid; */
-    border-radius: 10px;
-}
-
-nav .s_inscrire:hover {
-    background:none;
-    color: #fff;
-    border: 2px solid #fff;
-}
-
-.banner {
-    background-image: url("../content/banner_BG.jpg");
-    background-position: center center;
-    background-size: cover;
-    top: 100px;
-    width: 100vw;
-    height: 60vh;
-    position: fixed;
-}
-
-.banner:after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: #130f40;
-    opacity: .7;
-    z-index: -1;
-}
-
-.banner h2{
-    padding-top: 6%;
-    align-content: center;
-    width: 60%;
-    margin: auto;
-    font-size : 40px;
+.fields {
+    display: flex;
+    margin: 20vh 30vw 15vh 25vw;
     justify-content: center;
-    color: #fff
+    align-items: center;
+    flex-direction:  column;
+    border-radius: 10px;
+    width: 50vw;
+    height: 50vh;
+    font-family: 'Poppins';
+    background: #c0393b;
+
 }
 
-.banner span{
+.fields p {
+    display: flex;
+    font-family: 'Poppins';
     color: #fff;
 }
 
-.se_connecter{
-    border: 2px solid #fff;
-    padding: 10px;
-    border-radius: 10px;
+.fields form .field label {
+    display: flex;
 }
 
-.se_connecter:hover{
-    background: #fff;
-    color: #130f40;
-    font-weight: bolder;
-}
-
-.content-area{
-    width: 100%;
-    height: 800px;
-    position: relative;
-    background: #fff;
-    top: 550px;
-}
-
-.content-area h2{
-    font-size: 40px;
-    margin: 0;
-    padding-top: 30px;
-    letter-spacing: 4px;
-}
-
-.content-area p{
-    line-height: 30px;
-    width: 50%;
-    margin: 90% auto;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 20px;
+.fields form .field input {
+    display: flex;
+    height: 2vh;
+    width: 12vw;
+    border-radius: 5px;
+    padding: 2%;
+    background-color: #fff;
+    color: gray;
     text-align: center;
-    font-weight: 200;
 }
 
-.footer {
-
+.fields form .field input[tupe=submit] {
+    display: flex;
+    height: 2vh;
+    width: 12vw;
+    border-radius: 5px;
+    padding: 2%;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+}
+.field {
+    display: flex;
+    height: 5vh;
+    width: 100%;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
