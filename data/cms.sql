@@ -182,6 +182,7 @@ CREATE TABLE `Personnel_mairie` (
 
 CREATE TABLE `Presentation_mairie` (
   `id` int(11) NOT NULL,
+  `nom` varchar(30) NOT NULL,
   `histoire` text NOT NULL,
   `conseil_municipal` int(11) NOT NULL,
   `personnel_mairie` int(11) NOT NULL,
