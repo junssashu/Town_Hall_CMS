@@ -1,15 +1,15 @@
 <?php
-
+/*
     session_start();
 
-    include_once("../connexion/connexion.php");
-
+    */include_once("../connexion/connexion.php");
+/*
     if ( isset($_SESSION['logged_in'])){
         // display admin page
         echo "connected";
     }else{
 
-?>
+*/?>
 
     
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
-    <title>Marie - CMS</title>
+    <title>Connexion</title>
     <link rel="stylesheet" href="../assets/styles/index.css" ></link>
     <link rel="stylesheet" href="../assets/styles/account.css" ></link>
 </head>
@@ -31,7 +31,7 @@
             </div>
 
             <nav>
-                <a href="connexion.php" class="s_incrire">Se connecter</a>
+                <a href="inscription.php" class="s_incrire">S'inscrire</a>
             </nav>
         </div>
     </header>
@@ -48,10 +48,10 @@
                 $password = $_POST['password'];
     
                 if( empty($login) or empty($password)){
-                    $error = " veillez remplir tout les champs ";
+                    $error = " Veillez remplir tous les champs ";
                 }else{
     
-                    $querry = $pdo->prepare("SELECT * FROM login WHERE user_password = ? AND user_name = ?");
+                    $querry = $pdo->prepare("SELECT * FROM Login WHERE user_password = PASSWORD(?) AND user_name = ?");
                     $querry->bindValue(1, $password);
                     $querry->bindValue(2, $login);
                     $querry->execute();
@@ -61,21 +61,21 @@
                     if( $num == 1){
     
                         $_SESSION['logged_in'] = true;
-                        header("location : index.php");
+                        header("Location: ../admin/index.php");
                         exit();
     
                     }else{
     
-                        $error = "informations incorrectes !";
+                        $error = "Informations incorrectes !";
     
                     }
                 }
             }
         ?>
-        <div class="fields" style="height:60vh;">
+        <div class="fields">
             <form action="index.php" method="POST">
                 <div class="field">
-                    <p>Veuillez renseigner les informations suivantes:</p>
+                    <p>Veuillez vous identifier:</p>
                 </div>
                 <?php
                     if(isset($error)){
@@ -95,14 +95,10 @@
                     <input id='password' name = 'password' type="password" placeholder="Veuillez insérer un mot de passe">
                 </div>
                 <div class="field">
-                    <label for='name'>Confirmation de mot de passe: </label>
-                    <input id='password_conf' name = 'password_conf' type="password" placeholder="Veuillez confirmer le mot de passe">
+                    <input class="validation" name = 'check' type="submit" value="Se connecter">
                 </div>
                 <div class="field">
-                    <input class="validation" name = 'check' type="submit" value="S'inscrire">
-                </div>
-                <div class="field">
-                    <p style="font-size:100%;">Vous avez déjà un compte? <span><a href="connexion.php" style="text-decoration:none; color:rgb(230, 142, 11);">Connectez vous!</a></span></p>
+                    <p style="font-size:100%;">Vous n'avez pas de compte? <span><a href="inscription.php" style="text-decoration:none; color:rgb(230, 142, 11);">Créez-en un!</a></span></p>
                 </div>
             </form>
         </div>
@@ -134,6 +130,6 @@
 
 <?php
 
-    }
+  //  }
 
 ?>

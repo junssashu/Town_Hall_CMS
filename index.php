@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
-    <title>Marie - CMS</title>
+    <title>Town Hall</title>
     <link rel="stylesheet" href="assets/styles/index.css" ></link>
 </head>
 <body>
@@ -58,8 +58,8 @@
                 </div>
 
                 <nav>
-                    <a href="pages/index.php" class="s_inscrire">S'inscrire</a>
-                    <a href="pages/connexion.php">Se connecter</a>
+                    <a href="pages/inscription.php" class="s_inscrire">S'inscrire</a>
+                    <a href="pages/index.php">Se connecter</a>
                     <!-- <a href="pages/Annonces_mairie/annonces.php">Annonces</a>
                     <a href="pages/Lieux_touristiques_mairie/sites_touristiques.php">Lieux touristiques</a>
                     <a href="pages/Projet_marie/projets_courants.php">Projets</a>

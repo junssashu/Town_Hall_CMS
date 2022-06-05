@@ -81,7 +81,7 @@ CREATE TABLE `Espace_pub_mairie` (
   `id` int(11) NOT NULL,
   `nombreVisiteur` int(11) NOT NULL,
   `titre` varchar(20) NOT NULL,
-  'description' text,
+  'description' varchar(300),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -103,8 +103,8 @@ CREATE TABLE `Lieux_touristiques_mairie` (
 
 CREATE TABLE `Login` (
   `user_id` int(11) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_password` varchar(255) NOT NULL
+  `user_name` varchar(24) NOT NULL,
+  `user_password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
