@@ -1,74 +1,194 @@
-                                    /*########## Style de index.php(admin) ##########*/
+                                    /* ########## Style de index.php(admin) ########## */
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Tangerine');
 
-
-*{margin:0; padding: 0;}
-
-h1{ text-align : center; color: blue; margin-top: 10%; }
-h2{ text-align : center; color: blue; margin-left:2%; }
-
-/* couleur et police d'ecriture du de la page en arriere plan */
 body{
-    background-color : white;
-    font-family : 'Poppins';
-    text-align : center;
-}
-
-/* entete avec barre de navigation*/
-header{
-    width: 100%;
-    height: 100px;
-    background: orangered;
-    position: fixed;
-    margin-right: 100%;
-}
-
-/* definition de la position du texte sur la page */
-.wrapper{
-    width: 90%;
-    margin: 0 auto;
-}
-
-/* position du logo ou slogan qui est <<positionnement>> a l'extreme gauche de la page */
-.logo{
-    width:30%;
-    float: left;
-    position: fixed;
-    line-height: 100px;
-}
-
-.logo a{
-    text-decoration: none;
-    font-size: 50px;
-    font-family:'Tangerine';
-    color: white;
-    letter-spacing: 4px;
+    font-family:'Poppins';
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
 }
 
 nav{
-    float: right;
-    line-height: 100px;
+    width: 100%;
+    background-color: rgb(165, 22, 22);
+    line-height: 50px; 
+}
+nav ul{
+    margin: 0px;
+    padding: 0px; 
+}
+
+nav > ul::after{
+  content: "";
+  display: block;
+  clear: both;  
+}
+
+nav li{
+    list-style-type: none;
+}
+
+nav > ul > li{
+    float: left;
+    position: relative;
+}
+
+nav > ul > li > a{
+    padding: 20px 60px;
+    color: white;
+}
+nav > ul > li >:hover a{
+    padding: 18px 30px 20px 60px;
+}
+
+.submenu{
+    display: none;
+    position: fixed;
+}
+
+nav li:hover .submenu{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;  
+}
+
+.submenu li{
+    border-bottom: 1px solid orange;
+}
+
+.submenu li a{
+    padding: 15px 30px;
+    font-size: 13px;
+    color: white;
+    width: 270px;
 }
 
 nav a{
+    display: inline-block;
     text-decoration: none;
-    font-family:'Pacifico';
-    letter-spacing: 4px;
-    font-size: 20px;
-    color: white;
-    padding: 10px 10px;
-    margin: 0 1px;
-    font-weight: 500;
-}
- 
-nav a:hover{
-    border-bottom: 3px solid white;
-    border-radius: 20%;
 }
 
+
+.menu:hover{
+    /* border-radius:800px; */
+    border-top: 0px solid orange;
+    background-color: orange;
+}
+
+.activite:hover{
+    /* border-radius:800px; */
+    border-top: 0px solid orange;
+    background-color: orange;
+}
+
+.annonce:hover{
+    /* border-radius:800px; */
+    border-top: 0px solid orange;
+    background-color: orange;
+}
+
+.pub:hover{
+     /* border-radius:800px; */
+    border-top: 0px solid orange;
+    background-color: orange;
+}
+
+.site:hover{
+    /* border-radius:800px; */
+    border-top: 0px solid orange;
+    background-color: orange;
+}
+
+.projet:hover{
+    /* border-radius:800px; */
+    border-top: 0px solid orange;
+    background-color: orange;
+}
+
+.menu .submenu{
+   background-color: aquamarine; 
+}
+
+.activite .submenu{
+    background-color: aquamarine;
+}
+
+.annonce .submenu{
+    background-color: aquamarine;
+}
+
+.pub .submenu{
+    background-color: aquamarine;
+}
+
+.site .submenu{
+    background-color: aquamarine;
+}
+
+.projet .submenu{
+    background-color: aquamarine;
+}
+
+.submenu li:hover a{
+    color: #EEE;
+    font-weight: bold;
+}
+
+.menu .submenu li:hover{
+    background-color: blueviolet;
+}
+
+.activite .submenu li:hover{
+    background-color: tomato;
+}
+
+.annonce .submenu li:hover{
+    background-color: cornflowerblue ;
+}
+
+.pub .submenu li:hover{
+    background-color: darkgoldenrod;
+}
+
+.site .submenu li:hover{
+    background-color: khaki;
+}
+
+.projet .submenu li:hover{
+    background-color: lightslategray;
+}  
+
+
+
+                                /* #### STYLE DU BANNER #### */
+
+
+
+header{
+    width: 100%;
+    height: 100px;
+    background: rgb(165, 22, 22);
+    position: fixed;
+    margin-right: 100%;
+    border-bottom: 2px solid white;
+}
+
+h1{ text-align : center; font-family: 'Pacifico'; color: white; margin-top: 10%; }
+h2{ text-align : center; color: blue; margin-left:2%; }
+
+/* couleur et police d'ecriture du de la page en arriere plan */
+a{
+    text-decoration: none;
+    color: white;
+    padding: 20px
+}
+                                
 .banner-container{
     background-image: url(../content/road1.jpg);
     top: 100px;
@@ -90,7 +210,6 @@ nav a:hover{
     background: #130f40;
     opacity: .7;
     z-index: -1;
-    
 }
 
 .content{
@@ -102,16 +221,13 @@ nav a:hover{
 
 .banner-container h1{
     font-size: 60px;
-    word-spacing: 50px;
+    word-spacing: 60px;
 }
- 
+    
+.couleur{
+    color: white;
+}
 
-.green { color : green ;}
-.red { color: red;}
-.yellow { color: yellow;}
-
-
-
-
-
-
+section.wrapper{
+    margin-top: 0px;
+}
