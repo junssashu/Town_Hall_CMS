@@ -35,11 +35,8 @@
                 ini_set('display_errors', 1);
                 error_reporting(E_ALL|E_STRICT);            
 
-                if (isset($_POST['login']) and isset($_POST['password']) and isset($_POST['password_conf'])){
-                $login = $_POST['login'];
-                $password = $_POST['password'];
-                $password_conf = $_POST['password_conf'];
-
+                if ($_POST){
+                extract($_POST);
     
                 if( empty($login) or empty($password) or empty($password_conf)){
                     $error = " Veuillez remplir tous les champs ";
@@ -47,7 +44,7 @@
 
                     if($password == $password_conf){
                         
-                        $querry = $pdo->prepare("INSERT INTO Login (User_name, User_password) VALUES(?, PASSWORD(?))");
+                        $querry = $pdo->prepare("INSERT INTO Login (user_name, user_password) VALUES(?, PASSWORD(?))");
                         $querry->bindValue(1, $login);
                         $querry->bindValue(2, $password);
                         if($querry->execute())

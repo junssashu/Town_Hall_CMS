@@ -1,3 +1,15 @@
+<?php
+
+    session_start();
+
+//    include_once("../connexion/connexion.php");
+/*
+    if ( isset($_SESSION['logged_in'])){
+        // display admin page
+        echo "connected";
+    }else{
+
+*/?>
 
     
 <!DOCTYPE html>
@@ -19,7 +31,7 @@
             </div>
 
             <nav>
-                <a href="inscription.php" class="s_inscrire">S'inscrire</a>
+                <a href="inscription.php" class="s_incrire">S'inscrire</a>
             </nav>
         </div>
     </header>
@@ -31,28 +43,27 @@
             <br><br>
         </div>
         <?php
-                require_once '../connexion/connexion.php';
-                if(isset($pdo))
-                $error = 'yesss';
-                if (isset($_POST['login']) and isset($_POST['password'])){
-                $login = $_POST['login'];
-                $password = $_POST['password'];
+            require_once "../connexion/connexion.php";
+            if($_POST){
+                extract($_POST);
     
                 if( empty($login) or empty($password)){
                     $error = " Veillez remplir tous les champs ";
                 }else{
     
-                    $querry = $pdo->prepare("SELECT * FROM Login WHERE User_password = PASSWORD(?) AND User_name = ?");
+                    $querry = $pdo->prepare("SELECT * FROM Login WHERE user_password = PASSWORD(?) AND user_name = ?");
                     $querry->bindValue(1, $password);
                     $querry->bindValue(2, $login);
                     $querry->execute();
     
                     $num = $querry->rowCount();
     
+                    $error = 'yesss';
                     if( $num == 1){
     
                         $_SESSION['logged_in'] = true;
                         header("Location: ../admin/index.php");
+                        exit();
                         exit();
     
                     }else{
@@ -61,7 +72,7 @@
     
                     }
                 }
-            }
+            }else
         ?>
         <div class="fields">
             <form action="index.php" method="POST">
@@ -70,10 +81,11 @@
                 </div>
                 <?php
                     if(isset($error)){
-                ?>
+                        ?>   
+                    <br>
                     <span style="color:rgb(230, 142, 11)"><?php echo $error; ?></span>
-                
-                <?php
+                    <br>
+                    <?php
                     }
                     ?>
                 <div class="field">
@@ -118,3 +130,8 @@
 </body>
 </html>
 
+<?php
+
+  //  }
+
+?>
