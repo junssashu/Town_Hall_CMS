@@ -6,7 +6,7 @@
 
     if ( isset($_SESSION['logged_in'])){
         // display admin page
-        echo "connected";
+        header("Location: ../admin/index.php");
     }else{
 
 ?>
@@ -18,19 +18,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
-    <title>Marie - CMS</title>
+    <title>Connexion</title>
     <link rel="stylesheet" href="../assets/styles/index.css" ></link>
+    <link rel="stylesheet" href="../assets/styles/account.css" ></link>
 </head>
 <body>
 
     <header>
         <div class="wrapper">
             <div class="logo">
-                <a href="#">Town Hall Generator</a>
+                <a href="../index.php">Town Hall Generator</a>
             </div>
 
             <nav>
-                <a href="connexion.php" class="s_incrire">Se connecter</a>
+                <a href="inscription.php" class="s_incrire">S'inscrire</a>
             </nav>
         </div>
     </header>
@@ -47,10 +48,10 @@
                 $password = $_POST['password'];
     
                 if( empty($login) or empty($password)){
-                    $error = " veillez remplir tout les champs ";
+                    $error = " Veillez remplir tous les champs ";
                 }else{
     
-                    $querry = $pdo->prepare("SELECT * FROM login WHERE user_password = ? AND user_name = ?");
+                    $querry = $pdo->prepare("SELECT * FROM Login WHERE user_password = PASSWORD(?) AND user_name = ?");
                     $querry->bindValue(1, $password);
                     $querry->bindValue(2, $login);
                     $querry->execute();
@@ -60,40 +61,68 @@
                     if( $num == 1){
     
                         $_SESSION['logged_in'] = true;
-                        header("location : index.php");
+                        header("Location: ../admin/index.php");
                         exit();
     
                     }else{
     
-                        $error = "informations incorrectes !";
+                        $error = "Informations incorrectes !";
     
                     }
                 }
             }
         ?>
-        <div class="instruction">
-            Veuillez vous connecter pour commencer
-        </div>
         <div class="fields">
             <form action="index.php" method="POST">
+                <div class="field">
+                    <p>Veuillez vous identifier:</p>
+                </div>
                 <?php
                     if(isset($error)){
-                ?>   
+                        ?>   
                     <br>
-                    <span style="color:red"><?php echo $error; ?></span>
+                    <span style="color:rgb(230, 142, 11)"><?php echo $error; ?></span>
                     <br>
-                <?php
+                    <?php
                     }
-                ?>
-                <input class="field" name = 'login' type="text">
-                <input class="field" name = 'password' type="password">
-                <input class="validation" name = 'check' type="submit" value="Se connecter">
+                    ?>
+                <div class="field">
+                    <label for='name'>Nom: </label>
+                    <input id='name' name = 'login' type="text" placeholder='Veuillez entrer votre nom'>
+                </div>
+                <div class="field">
+                    <label for='name'>Mot de passe: </label>
+                    <input id='password' name = 'password' type="password" placeholder="Veuillez insérer un mot de passe">
+                </div>
+                <div class="field">
+                    <input class="validation" name = 'check' type="submit" value="Se connecter">
+                </div>
+                <div class="field">
+                    <p style="font-size:100%;">Vous n'avez pas de compte? <span><a href="inscription.php" style="text-decoration:none; color:rgb(230, 142, 11);">Créez-en un!</a></span></p>
+                </div>
             </form>
         </div>
-        <div class="footer">
-            <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>
-            Pour le Travail pratique de l'unité d'enseignement INF2064, programmation web.
-        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Creer son site web</h4>
+                        <ul class="list-footer">
+                            <li><a href="#">S'inscrire</a></li>
+                            <li><a href="#">Se connecter</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>About Us</h4>
+                        <ul class="list-footer">
+                            <li><a href="http://facsciences.cm">Facsciences</a></li>
+                            <li><a href="#">Conditions d'utilisateurs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <span class="hidden-phone"><br><br>copyright @uy1</span>
+        </footer>
     </div>
 
 </body>

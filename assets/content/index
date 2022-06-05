@@ -10,7 +10,6 @@
     }else{
 
 ?>
-
     
 <!DOCTYPE html>
 <html lang="en">
@@ -19,21 +18,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
     <title>Marie - CMS</title>
-    <link rel="stylesheet" href="../assets/styles/index.css" ></link>
+    <link rel="stylesheet" href="../assets/index.css" ></link>
 </head>
 <body>
-
     <div class="header">
-        <div class="title">
-            CMS pour la réalisation du site web d'une mairie<br><br>
-        </div>
+        <div class="logo"><h2><a href="index.php">Town Hall Generator</a></h2></div>
     </div>
     <div class="main-content">
         <div class="description">
-            Ceci est un cms<br>
-            Plus précisément, cette application web (cms) vous permettre ade réaliser aisément votre site web présentant votre mairie.<br>
-            Aucune connaissance en programmation web n'est requise, vous n'avez qu'à utiliser ce qui vous est présenté.
-            <br><br>
+            <h3>Commencez par creer un compte Town Hall ! vous avez deja un compte ? <a href="../connexion/connexion.php">Identification</a></h3>
         </div>
         <?php
             if (isset($_POST['login']) and isset($_POST['password'])){
@@ -65,10 +58,9 @@
                 }
             }
         ?>
-        <div class="instruction">
-            Veuillez vous connecter pour commencer
-        </div>
-        <div class="fields">
+
+        <div class="container">
+            <div class="title">Inscription</div>
             <form action="index.php" method="POST">
                 <?php
                     if(isset($error)){
@@ -79,9 +71,25 @@
                 <?php
                     }
                 ?>
-                <input class="field" name = 'login' type="text">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="detail">Nom</span>
+                        <input class="field" name = 'login' type="text" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="detail">Mot de passe</span>
+                        <input class="field" name = 'password' type="password" required>
+                    </div><div class="input-box">
+                        <span class="detail">confirmer Mot de passe</span>
+                        <input class="field" name = 'password_C' type="password" required>
+                    </div>
+                    <div class="button">
+                        <input type="submit" name="submit" value="s'inscire">
+                    </div>
+                </div>
+                <!-- <input class="field" name = 'login' type="text">
                 <input class="field" name = 'password' type="password">
-                <input class="validation" name = 'check' type="submit" value="Se connecter">
+                <input class="validation" name = 'check' type="submit" value="Se connecter"> -->
             </form>
         </div>
         <div class="footer">
