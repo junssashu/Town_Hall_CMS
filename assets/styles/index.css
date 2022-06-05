@@ -4,6 +4,7 @@
 *{
     margin: 0;
     padding: 0;
+    transition: all 0.5s ease;
 }
 
 body {
@@ -87,7 +88,7 @@ nav .s_inscrire:hover {
     background-image: url("../content/banner_BG.jpg");
     background-position: center center;
     background-size: cover;
-    top: 100px;
+    top: 10%;
     width: 100vw;
     height: 60vh;
     position: fixed;
@@ -120,13 +121,15 @@ nav .s_inscrire:hover {
     color: #fff;
 }
 
-.se_connecter{
+.se_connecter a:link, .se_connecter a:visited{
     border: 2px solid #fff;
+    color: #ffffff;
     padding: 10px;
+    text-decoration: none;
     border-radius: 10px;
 }
 
-.se_connecter:hover{
+.se_connecter a:hover{
     background: #fff;
     color: #130f40;
     font-weight: bolder;
@@ -180,15 +183,16 @@ nav .s_inscrire:hover {
     font-weight: 200;    
 }
 
-.other_content span {
+.butoon:link, .butoon:visited{
     padding: 10px;
     color :#fff;
     border: .5px solid #fff;
     border-radius: 6px;
+    text-decoration: none;
     transition: all .5s ease-in;
 }
 
-.other_content span:hover {
+.butoon:hover {
     background: #fff;
     color: #130f40;
     transition: all .5s ease-out;
@@ -319,11 +323,10 @@ ul{
     width: 100%;
 }
 
-
-
 .image_3:hover{
     width: 200%;
 }
+
 
 .wrapper p{
     background: #130f40;
@@ -341,7 +344,13 @@ ul{
     font-weight: bolder;
 }
 
-.under_elaborer a{
+.under_elaborer a:link, .under_elaborer a:visited {
     text-decoration: none;
     font-family: 'Pacifico';
+}
+
+.under_elaborer a:hover{
+    text-decoration: underline dotted ;
+    line-height:5px;
+    color: #4f279b
 }
