@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Activites_mairie` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nomActivite` varchar(255) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -41,10 +41,10 @@ CREATE TABLE `Activites_mairie` (
 --
 
 CREATE TABLE `Annonces_mairie` (
-  `id` int NOT NULL,
-  `mariage` int NOT NULL,
-  `decret` int NOT NULL,
-  `marcherPublic` int NOT NULL
+  `id` int(11) NOT NULL,
+  `mariage` int(11) NOT NULL,
+  `decret` int(11) NOT NULL,
+  `marcherPublic` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -54,7 +54,7 @@ CREATE TABLE `Annonces_mairie` (
 --
 
 CREATE TABLE `Conseil_municipal` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nomDuConseiller` varchar(255) NOT NULL,
   `posteProfil` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -66,7 +66,7 @@ CREATE TABLE `Conseil_municipal` (
 --
 
 CREATE TABLE `Decrets_mairie` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `libeller` text NOT NULL,
   `dateDecret` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -78,10 +78,9 @@ CREATE TABLE `Decrets_mairie` (
 --
 
 CREATE TABLE `Espace_pub_mairie` (
-  `id` int NOT NULL,
-  `nombreVisiteur` int NOT NULL,
-  `titre` int NOT NULL,
-  `description` varchar(200),
+  `id` int(11) NOT NULL,
+  `nombreVisiteur` int(11) NOT NULL,
+  `publicite` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -91,7 +90,7 @@ CREATE TABLE `Espace_pub_mairie` (
 --
 
 CREATE TABLE `Lieux_touristiques_mairie` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nomLieu` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -102,9 +101,9 @@ CREATE TABLE `Lieux_touristiques_mairie` (
 --
 
 CREATE TABLE `Login` (
-  `user_id` int NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(24) NOT NULL,
-  `user_password` varchar(100) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -114,15 +113,15 @@ CREATE TABLE `Login` (
 --
 
 CREATE TABLE `Mairie` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nom_mairie` varchar(255) NOT NULL,
   `region` varchar(20) NOT NULL,
-  `presentation` int NOT NULL,
-  `projet` int NOT NULL,
-  `activite` int NOT NULL,
-  `annonce` int NOT NULL,
-  `espacePub` int NOT NULL,
-  `lieuTouristique` int NOT NULL
+  `presentation` int(11) NOT NULL,
+  `projet` int(11) NOT NULL,
+  `activite` int(11) NOT NULL,
+  `annonce` int(11) NOT NULL,
+  `espacePub` int(11) NOT NULL,
+  `lieuTouristique` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -132,7 +131,7 @@ CREATE TABLE `Mairie` (
 --
 
 CREATE TABLE `Marchers_publics` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nomMarcher` varchar(255) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -144,7 +143,7 @@ CREATE TABLE `Marchers_publics` (
 --
 
 CREATE TABLE `Mariage_Mairie` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `libeller` text NOT NULL,
   `dateMariage` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -156,9 +155,9 @@ CREATE TABLE `Mariage_Mairie` (
 --
 
 CREATE TABLE `Missions_mairie` (
-  `id` int NOT NULL,
-  `nomMission` int NOT NULL,
-  `description` int NOT NULL
+  `id` int(11) NOT NULL,
+  `nomMission` int(11) NOT NULL,
+  `description` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -168,9 +167,9 @@ CREATE TABLE `Missions_mairie` (
 --
 
 CREATE TABLE `Personnel_mairie` (
-  ``id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `cv` varchar(100) NOT NULL,
+  `cv` text NOT NULL,
   `parcoursProfessionnel` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -181,11 +180,10 @@ CREATE TABLE `Personnel_mairie` (
 --
 
 CREATE TABLE `Presentation_mairie` (
-  `id` int NOT NULL,
-  `nom` varchar(30) NOT NULL,
+  `id` int(11) NOT NULL,
   `histoire` text NOT NULL,
-  `conseil_municipal` int NOT NULL,
-  `personnel_mairie` int NOT NULL,
+  `conseil_municipal` int(11) NOT NULL,
+  `personnel_mairie` int(11) NOT NULL,
   `mission_mairie` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -196,7 +194,7 @@ CREATE TABLE `Presentation_mairie` (
 --
 
 CREATE TABLE `Projets_mairie` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nomProjet` varchar(255) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -208,8 +206,8 @@ CREATE TABLE `Projets_mairie` (
 --
 
 CREATE TABLE `Publicite_mairie` (
-  `id` int NOT NULL,
-  `nomPub` int NOT NULL
+  `id` int(11) NOT NULL,
+  `nomPub` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -220,13 +218,13 @@ CREATE TABLE `Publicite_mairie` (
 -- Index pour la table `Activites_mairie`
 --
 ALTER TABLE `Activites_mairie`
-  ADD PRIMARY KEY (``id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Annonces_mairie`
 --
 ALTER TABLE `Annonces_mairie`
-  ADD PRIMARY KEY (``id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `mariage` (`mariage`,`decret`,`marcherPublic`),
   ADD KEY `marcherPublic` (`marcherPublic`),
   ADD KEY `decret` (`decret`);
@@ -235,41 +233,41 @@ ALTER TABLE `Annonces_mairie`
 -- Index pour la table `Conseil_municipal`
 --
 ALTER TABLE `Conseil_municipal`
-  ADD PRIMARY KEY (``id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Decrets_mairie`
 --
 ALTER TABLE `Decrets_mairie`
-  ADD PRIMARY KEY (``id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Espace_pub_mairie`
 --
 ALTER TABLE `Espace_pub_mairie`
-  ADD PRIMARY KEY (``id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `publicite` (`publicite`);
 
 --
 -- Index pour la table `Lieux_touristiques_mairie`
 --
 ALTER TABLE `Lieux_touristiques_mairie`
-  ADD PRIMARY KEY (``id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Login`
 --
 ALTER TABLE `Login`
-  ADD PRIMARY KEY (`User_`id`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Index pour la table `Mairie`
 --
 ALTER TABLE `Mairie`
-  ADD PRIMARY KEY (``id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `presentation` (`presentation`,`nom_mairie`),
   ADD KEY `nom_mairie` (`nom_mairie`,`presentation`),
-  ADD KEY ``id` (``id`,`nom_mairie`,`presentation`),
+  ADD KEY `id` (`id`,`nom_mairie`,`presentation`),
   ADD KEY `projet` (`projet`,`activite`,`annonce`,`espacePub`,`lieuTouristique`),
   ADD KEY `activite` (`activite`),
   ADD KEY `annonce` (`annonce`),
@@ -280,31 +278,31 @@ ALTER TABLE `Mairie`
 -- Index pour la table `Marchers_publics`
 --
 ALTER TABLE `Marchers_publics`
-  ADD PRIMARY KEY (``id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Mariage_Mairie`
 --
 ALTER TABLE `Mariage_Mairie`
-  ADD PRIMARY KEY (``id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Missions_mairie`
 --
 ALTER TABLE `Missions_mairie`
-  ADD PRIMARY KEY (``id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Personnel_mairie`
 --
 ALTER TABLE `Personnel_mairie`
-  ADD PRIMARY KEY (``id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Presentation_mairie`
 --
 ALTER TABLE `Presentation_mairie`
-  ADD PRIMARY KEY (``id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `conseil_municipal` (`conseil_municipal`,`personnel_mairie`,`mission_mairie`),
   ADD KEY `personnel_mairie` (`personnel_mairie`),
   ADD KEY `mission_mairie` (`mission_mairie`);
@@ -313,13 +311,13 @@ ALTER TABLE `Presentation_mairie`
 -- Index pour la table `Projets_mairie`
 --
 ALTER TABLE `Projets_mairie`
-  ADD PRIMARY KEY (``id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Publicite_mairie`
 --
 ALTER TABLE `Publicite_mairie`
-  ADD PRIMARY KEY (``id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -329,91 +327,91 @@ ALTER TABLE `Publicite_mairie`
 -- AUTO_INCREMENT pour la table `Activites_mairie`
 --
 ALTER TABLE `Activites_mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Annonces_mairie`
 --
 ALTER TABLE `Annonces_mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Conseil_municipal`
 --
 ALTER TABLE `Conseil_municipal`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Decrets_mairie`
 --
 ALTER TABLE `Decrets_mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Espace_pub_mairie`
 --
 ALTER TABLE `Espace_pub_mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Lieux_touristiques_mairie`
 --
 ALTER TABLE `Lieux_touristiques_mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Login`
 --
 ALTER TABLE `Login`
-  MODIFY `User_`id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Mairie`
 --
 ALTER TABLE `Mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Marchers_publics`
 --
 ALTER TABLE `Marchers_publics`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Mariage_Mairie`
 --
 ALTER TABLE `Mariage_Mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Missions_mairie`
 --
 ALTER TABLE `Missions_mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Personnel_mairie`
 --
 ALTER TABLE `Personnel_mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Presentation_mairie`
 --
 ALTER TABLE `Presentation_mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Projets_mairie`
 --
 ALTER TABLE `Projets_mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Publicite_mairie`
 --
 ALTER TABLE `Publicite_mairie`
-  MODIFY ``id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Contraintes pour les tables déchargées
@@ -422,43 +420,43 @@ ALTER TABLE `Publicite_mairie`
 --
 -- Contraintes pour la table `Annonces_mairie`
 --
-ALTER TABLE `Annonces_mairie`
-  ADD CONSTRAINT `Annonces_mairie_ibfk_1` FOREIGN KEY (`marcherPublic`) REFERENCES `Marchers_publics` (``id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Annonces_mairie_ibfk_2` FOREIGN KEY (`mariage`) REFERENCES `Mariage_Mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Annonces_mairie_ibfk_3` FOREIGN KEY (`decret`) REFERENCES `Decrets_mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE;
+/*ALTER TABLE `Annonces_mairie`
+  ADD CONSTRAINT `Annonces_mairie_ibfk_1` FOREIGN KEY (`marcherPublic`) REFERENCES `Marchers_publics` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Annonces_mairie_ibfk_2` FOREIGN KEY (`mariage`) REFERENCES `Mariage_Mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Annonces_mairie_ibfk_3` FOREIGN KEY (`decret`) REFERENCES `Decrets_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `Espace_pub_mairie`
 --
 ALTER TABLE `Espace_pub_mairie`
-  ADD CONSTRAINT `Espace_pub_mairie_ibfk_1` FOREIGN KEY (`publicite`) REFERENCES `Publicite_mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `Espace_pub_mairie_ibfk_1` FOREIGN KEY (`publicite`) REFERENCES `Publicite_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `Login`
 --
 ALTER TABLE `Login`
-  ADD CONSTRAINT `Login_ibfk_1` FOREIGN KEY (`User_`id`) REFERENCES `Mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `Login_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `Mairie`
 --
 ALTER TABLE `Mairie`
-  ADD CONSTRAINT `Mairie_ibfk_1` FOREIGN KEY (`projet`) REFERENCES `Projets_mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Mairie_ibfk_2` FOREIGN KEY (`activite`) REFERENCES `Activites_mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Mairie_ibfk_3` FOREIGN KEY (`annonce`) REFERENCES `Annonces_mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Mairie_ibfk_4` FOREIGN KEY (`espacePub`) REFERENCES `Espace_pub_mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Mairie_ibfk_5` FOREIGN KEY (`lieuTouristique`) REFERENCES `Lieux_touristiques_mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `Mairie_ibfk_1` FOREIGN KEY (`projet`) REFERENCES `Projets_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Mairie_ibfk_2` FOREIGN KEY (`activite`) REFERENCES `Activites_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Mairie_ibfk_3` FOREIGN KEY (`annonce`) REFERENCES `Annonces_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Mairie_ibfk_4` FOREIGN KEY (`espacePub`) REFERENCES `Espace_pub_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Mairie_ibfk_5` FOREIGN KEY (`lieuTouristique`) REFERENCES `Lieux_touristiques_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `Presentation_mairie`
 --
 ALTER TABLE `Presentation_mairie`
-  ADD CONSTRAINT `Presentation_mairie_ibfk_1` FOREIGN KEY (``id`) REFERENCES `Mairie` (`presentation`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Presentation_mairie_ibfk_2` FOREIGN KEY (`personnel_mairie`) REFERENCES `Personnel_mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Presentation_mairie_ibfk_3` FOREIGN KEY (`mission_mairie`) REFERENCES `Missions_mairie` (``id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Presentation_mairie_ibfk_4` FOREIGN KEY (`conseil_municipal`) REFERENCES `Conseil_municipal` (``id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `Presentation_mairie_ibfk_1` FOREIGN KEY (`id`) REFERENCES `Mairie` (`presentation`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Presentation_mairie_ibfk_2` FOREIGN KEY (`personnel_mairie`) REFERENCES `Personnel_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Presentation_mairie_ibfk_3` FOREIGN KEY (`mission_mairie`) REFERENCES `Missions_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Presentation_mairie_ibfk_4` FOREIGN KEY (`conseil_municipal`) REFERENCES `Conseil_municipal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
-
+*/
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

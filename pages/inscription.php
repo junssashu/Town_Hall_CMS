@@ -30,6 +30,8 @@
             <br><br>
         </div>
         <?php
+                require_once '../connexion/connexion.php';
+                
                 ini_set('display_errors', 1);
                 error_reporting(E_ALL|E_STRICT);            
 
@@ -45,17 +47,13 @@
 
                     if($password == $password_conf){
                         
-                        $querry = $pdo->prepare("INSERT INTO Login (user_name, user_password) VALUES(?, PASSWORD(?))");
+                        $querry = $pdo->prepare("INSERT INTO Login (User_name, User_password) VALUES(?, PASSWORD(?))");
                         $querry->bindValue(1, $login);
                         $querry->bindValue(2, $password);
-                        try{
-                            $querry->execute();
+                        if($querry->execute())
                             header("Location: index.php");
-                        }
-                        catch (PDOException $e)
-                        {
-                            echo $e->getMessage();
-                        }
+                        else
+                            $error = "Problème d'enrgistrement";
                     }
                     else
                         $error = "Les mots de passent entrés ne semblent pas correspondre!";

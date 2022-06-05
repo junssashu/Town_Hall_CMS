@@ -31,7 +31,10 @@
             <br><br>
         </div>
         <?php
-            if (isset($_POST['login']) and isset($_POST['password'])){
+                require_once '../connexion/connexion.php';
+                if(isset($pdo))
+                $error = 'yesss';
+                if (isset($_POST['login']) and isset($_POST['password'])){
                 $login = $_POST['login'];
                 $password = $_POST['password'];
     
@@ -39,7 +42,7 @@
                     $error = " Veillez remplir tous les champs ";
                 }else{
     
-                    $querry = $pdo->prepare("SELECT * FROM Login WHERE user_password = PASSWORD(?) AND user_name = ?");
+                    $querry = $pdo->prepare("SELECT * FROM Login WHERE User_password = PASSWORD(?) AND User_name = ?");
                     $querry->bindValue(1, $password);
                     $querry->bindValue(2, $login);
                     $querry->execute();

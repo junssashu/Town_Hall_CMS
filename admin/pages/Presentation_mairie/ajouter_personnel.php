@@ -58,7 +58,7 @@
 
                 if($fileType=='pdf'){ //if the file is a pdf file
                     if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
-                        $query = "INSERT INTO Personnel_mairie (nom, cv, parcoursProfessionnel) VALUES ('$nom', '$cv', '$parcours')";
+                        $query = "INSERT INTO Personnel_mairie (nom, cv, parcourProfessionnel) VALUES ('$nom', '$cv', '$parcours')";
                         $success = $query;
                         $result = mysqli_query($db, $query);
                         if($result)

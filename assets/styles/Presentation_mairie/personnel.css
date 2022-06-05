@@ -59,6 +59,13 @@ body{
     z-index: 800;
 }
 
+.menu_deroulant li a:hover .sous_menu_deroulant {
+    background: #ffffff;
+    display:block;
+    color: #293245;
+    z-index: 2000;
+}
+
 .menu_deroulant .sous_menu_deroulant{
     list-style-type: none;
     display: none;
@@ -67,6 +74,16 @@ body{
     position: absolute;
     z-index: 900;
 }
+
+.menu_deroulant .sous_menu_deroulant:hover{
+    list-style-type: none;
+    display: block;
+    padding:0;
+    margin:0;
+    position: relative;
+    z-index: 2000;
+}
+
 
 .menu_deroulant .sous_menu_deroulant li{
     float: none;
@@ -147,13 +164,25 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 70px 0;
-    bottom: 0;
+    padding: 10% 12%;
+}
+
+.footer .container1{
+    width: 100%;
+}
+
+.footer .container1 .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: stretch;
+    flex-wrap: wrap;
 }
 
 .footer .container1 .row .footer-col{
     width: 25%;
     padding: 0 15px;
+    margin: 4%;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -197,17 +226,6 @@ body{
 .footer .container1 .row .footer-col ul li a:hover{
     color: #ffffff;
     padding-left: 8px;
-}
-
-.footer .container1{
-    max-width: 1170px;
-    margin: auto;
-}
-
-.row{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 ul{
@@ -254,7 +272,7 @@ ul{
     z-index: 2000;
     height: 100%;
     width: 100%;
-    top: 23%;
+    top: 33.5%;
     justify-content: center;
     align-items: center;
     text-align: center;
