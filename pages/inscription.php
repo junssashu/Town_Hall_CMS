@@ -1,18 +1,18 @@
 
 
 <?php
-/*    ini_set('display_errors', 1);
+    ini_set('display_errors', 1);
     error_reporting(E_ALL|E_STRICT);
 
     session_start();
 
-    */include_once("../connexion/connexion.php");
-/*
+    include_once("../connexion/connexion.php");
+
     if ( isset($_SESSION['logged_in'])){
         // display admin page
-        echo "connected";
+        header("Location: ../admin/index.php");
     }else{
-*/
+
 ?>
 
     
@@ -156,6 +156,6 @@
 
 <?php
 
-//    }
+    }
 
 ?>

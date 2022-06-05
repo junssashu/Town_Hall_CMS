@@ -1,15 +1,15 @@
 <?php
-/*
+
     session_start();
 
-    */include_once("../connexion/connexion.php");
-/*
+    include_once("../connexion/connexion.php");
+
     if ( isset($_SESSION['logged_in'])){
         // display admin page
-        echo "connected";
+        header("Location: ../admin/index.php");
     }else{
 
-*/?>
+?>
 
     
 <!DOCTYPE html>
@@ -130,6 +130,6 @@
 
 <?php
 
-  //  }
+    }
 
 ?>
