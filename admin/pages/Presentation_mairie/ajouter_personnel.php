@@ -1,77 +1,150 @@
 <?php
+    session_start();
 
-    include_once('../../../connexion/connexion.php');
-
-    // session_start();
-
-    /*if($_SESSION['logged_in']){
+    if($_SESSION['logged_in']){
         // show page ajouter personnel
-    }else{
-*/
 ?>
 
     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="../../assets/styles/Presentation_mairie/personnel.css" ></link>
+    <link rel="stylesheet" href="../../assets/styles/form.css" ></link>
+</head>
+<body>
 
-<link rel="stylesheet" href="../../../assets/styles/index.css" >
-<div class="header">
-    <div class="title">
-        CMS pour la réalisation du site web d'une mairie<br><br>
-    </div>
-</div>
-<div class="main-content">
-    <div class="description">
-        Gestion des informations de la mairie
-    </div>
-    <div class="instruction">
-        Veuillez renseigner ou modifier les informations de la mairie.
-    </div>
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <a href="../../index.php">Town Hall Generator</a>
+            </div>
 
-    <?php
+            <nav>
+                <a href="../../../" class="s_inscrire">Se déconnecter</a>
+                <a href="personnel.php" class="s_inscrire">Liste du personnel</a>
+            </nav>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="description">
+            Ceci est un cms<br>
+            Plus précisément, cette application web (cms) vous permettre ade réaliser aisément votre site web présentant votre mairie.<br>
+            Aucune connaissance en programmation web n'est requise, vous n'avez qu'à utiliser ce qui vous est présenté.
+            <br><br>
+        </div>
+
+        <?php
+        define('UPLOAD_DIR', '/opt/lampp/htdocs/cms/data');
         
-    if (isset($_POST['nom']) and isset($_POST['parcours']) and isset($_POST['cv'])){
-        $nom = $_POST['nom'];
-        $parcours = $_POST['parcours'];
-        $cv = $_POST['cv'];
+        if ($_POST){
+            
+            require_once '../../connexion/connexion.php';
+            extract($_POST);
+            if(empty($nom) or empty($parcours) or empty($_FILES["cv"]["name"])){
+                $erreur = "Vous devez remplir tous les champs!";
+            }
+            else{
 
-        if(empty($nom) or empty($parcours) or empty($cv)){
-            $erreur = "all fields most be filled";
-        }else{
-            global $pdo;
+                //Requirements for file storing
+                $targetDir = "../../../data/cvs/";
+                $fileName = basename($_FILES['cv']["name"]);
+                $storingPath = $targetDir . $fileName;
+                $fileType = pathinfo($storingPath, PATHINFO_EXTENSION);
 
-            $query = $pdo->prepare("INSERT INTO personnel_mairie (nom, cv, parcourtProfesionnel) VALUES (?, ?, ?)");
-            $query->execute([$nom, $cv, $parcours]);
-
-            $_SESSION['logged_in'] = true;
-            echo "Enregistrement effectué avec succès!";
-            header("Location: ajouter_personnel.php");
+                if($fileType=='pdf'){ //if the file is a pdf file
+                    if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
+                        $query = "INSERT INTO Personnel_mairie (nom, cv, parcoursProfessionnel) VALUES ('$nom', '$cv', '$parcours')";
+                        $success = $query;
+                        $result = mysqli_query($db, $query);
+                        if($result)
+                            $success = "Enregistrement effectué avec succès!";
+                        else
+                            $error = "L'enregistrement n'a pas été effectué. Veuillez réessayer.<br>Si le problème persiste, veuillez contacter le service technique.";
+                    }
+                    else $error = "Le CV n'a pas pu etre téléchargé vers le serveur.";
+                }
+                else
+                    $error = "Veuillez choisir un fichier pdf.";
+            }
         }
+        ?>
+        
+        <div class="fields">
+            <div class='field' style="padding-bottom:0%;">
+                <p>Pour enregistrer un nouveau membre, renseigner les informations suivantes:</p>
+            </div>
+            <?php
+                if(isset($error)){   
+                echo "
+                    <br>
+                    <span style='color:rgb(230, 142, 11)'>" .$error. "</span>
+                    <br>";
+                }
 
-    }else{
-        $erreur = " les donnes n'ont pa ete recus la requertte ";
-    }
-    if(isset($erreur))
-        echo "<p style='color:red;'>".$erreur."</p>";
-    ?>
-    
-    <div class="cadre">
-        <form action="ajouter_personnel.php" method="post" class="fields">
-            <label for="nom">Nom</label>
-            <input type="text" name="nom" id="nom" placeholder="Nom du personnel" class="field" required>
-            <label for="parcours">Parcours</label>
-            <textarea name="parcours" id="parcours" placeholder="Décrivez le parcours professionnel du membre" class="field" required></textarea>
-            <label for="cv">Curriculum vitae</label>
-            <input type="file" id="cv" name="cv" class="field" required>
-            <input type="submit" name="submit" value="Enregistrer">
-        </form>
+                if(isset($success)){   
+                echo "
+                        <br>
+                        <span style='color:greenyellow'>" .$success. "</span>
+                        <br>";
+                }
+            ?>
+            <form action="ajouter_personnel.php" method="post" enctype="multipart/form-data">
+                <div class="field">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom" placeholder="Nom du personnel" class="field" required>
+                </div>    
+                
+                <div class="field">
+                <label for="parcours">Parcours</label>
+                <textarea name="parcours" id="parcours" placeholder="Décrivez le parcours professionnel du membre" class="field" required></textarea>
+                </div>    
+                
+                <div class="field">
+                <label for="cv">Curriculum vitae</label>
+                <input type="file" id="cv" name="cv" required>
+                </div>    
+                
+                <div class="field">
+                <input type="submit" name="submit" class="field" value="Enregistrer">
+                </div>    
+            </form>
+        </div>
+        
     </div>
-    
-</div>
-<div class="footer">
-    <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>
-    Pour le Travail pratique de l'unité d'enseignement INF2064, programmation web.
-</div>
 
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Creer son site web</h4>
+                        <ul class="list-footer">
+                            <li><a href="#">S'inscrire</a></li>
+                            <li><a href="#">Se connecter</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>About Us</h4>
+                        <ul class="list-footer">
+                            <li><a href="http://facsciences.cm">Facsciences</a></li>
+                            <li><a href="#">Conditions d'utilisateurs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <span class="hidden-phone"><br><br>copyright @uy1</span>
+        </footer>
+    </div>
+
+</body>
+</html>
 
 <?php
-//    }
+}else{
+    header("Location: ../../../pages/index.php");
+}
 ?>

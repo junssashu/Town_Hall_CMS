@@ -1,15 +1,3 @@
-<?php
-
-    session_start();
-
-    include_once("../connexion/connexion.php");
-
-    if ( isset($_SESSION['logged_in'])){
-        // display admin page
-        header("Location: ../admin/index.php");
-    }else{
-
-?>
 
     
 <!DOCTYPE html>
@@ -31,7 +19,7 @@
             </div>
 
             <nav>
-                <a href="inscription.php" class="s_incrire">S'inscrire</a>
+                <a href="inscription.php" class="s_inscrire">S'inscrire</a>
             </nav>
         </div>
     </header>
@@ -79,11 +67,10 @@
                 </div>
                 <?php
                     if(isset($error)){
-                        ?>   
-                    <br>
+                ?>
                     <span style="color:rgb(230, 142, 11)"><?php echo $error; ?></span>
-                    <br>
-                    <?php
+                
+                <?php
                     }
                     ?>
                 <div class="field">
@@ -128,8 +115,3 @@
 </body>
 </html>
 
-<?php
-
-    }
-
-?>

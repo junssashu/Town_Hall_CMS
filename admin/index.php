@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if($_SESSION['logged_in']){
+        // show page ajouter personnel
+?>
+
+
 <link rel="stylesheet" href="assets/styles/index.css">
 
 <body>
@@ -46,3 +54,9 @@
     </div> -->
 
 </body>
+
+<?php
+}else{
+    header("Location: ../pages/index.php");
+}
+?>

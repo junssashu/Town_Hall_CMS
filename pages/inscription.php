@@ -1,21 +1,4 @@
-
-
-<?php
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL|E_STRICT);
-
-    session_start();
-
-    include_once("../connexion/connexion.php");
-
-    if ( isset($_SESSION['logged_in'])){
-        // display admin page
-        header("Location: ../admin/index.php");
-    }else{
-
-?>
-
-    
+   
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +18,7 @@
             </div>
 
             <nav>
-                <a href="index.php" class="s_incrire">Se connecter</a>
+                <a href="index.php" class="s_inscrire">Se connecter</a>
             </nav>
         </div>
     </header>
@@ -57,7 +40,7 @@
 
     
                 if( empty($login) or empty($password) or empty($password_conf)){
-                    $error = " Veillez remplir tous les champs ";
+                    $error = " Veuillez remplir tous les champs ";
                 }else{
 
                     if($password == $password_conf){
@@ -154,8 +137,3 @@
 </body>
 </html>
 
-<?php
-
-    }
-
-?>

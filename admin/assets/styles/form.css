@@ -1,0 +1,80 @@
+@import url("http://fonts.googleapis.com/css?family=Poppins");
+@import url("http://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+body {
+    background-image: url('../content/urban1.jpeg');
+    background-repeat: no-repeat;
+}
+
+
+.fields {
+    display: flex;
+    margin: 10vh 5vw 15vh 5vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction:  column;
+    border-radius: 10px;
+    width: 90vw;
+    height: 70vh;
+    font-family: 'Poppins';
+    background: #c0393b;
+
+}
+
+.fields form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fields p {
+    color: #fff;
+}
+
+.fields form .field label {
+    display: flex;
+    padding-top: 2%;
+    padding-right: 5%;
+}
+
+.fields form .field input {
+    display: flex;
+    height: 5vh;
+    width: 20vw;
+    border-radius: 5px;
+    padding: 2%;
+    color: rgb(95, 93, 93);
+    text-align: center;
+}
+
+.fields form .field input[type=submit] {
+    width: 5vw;
+    height: 5vh;
+}
+
+.fields form .field input[type=file] {
+    display: flex;
+    height: 5vh;
+    width: 20vw;
+    border-radius: 5px;
+    padding: 2%;
+    color: rgb(95, 93, 93);
+    text-align: center;
+    padding-top: 10%;
+}
+
+
+.field {
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.field p {
+    font-size: 150%;
+    width: 40%;
+}
