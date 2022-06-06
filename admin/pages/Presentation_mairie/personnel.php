@@ -35,8 +35,41 @@
             Ceci est un cms<br>
             Plus précisément, cette application web (cms) vous permettre ade réaliser aisément votre site web présentant votre mairie.<br>
             Aucune connaissance en programmation web n'est requise, vous n'avez qu'à utiliser ce qui vous est présenté.
-            <br><br>
+            <br><br><br>
         </div>
+        <table rules='all' style="align-self: center; width: 80%; border-color: rgb(216, 14, 14); border-width: 0.3em; border-style:dashed; text-align: center; column-rule-style: solid; column-rule-width: 0.3em; column-rule-color: rgb(216, 14, 14);">
+            <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Parcours Professionnel</th>
+                </tr>
+            </thead>
+
+        <?php
+            require_once '../../connexion/connexion.php';
+            
+            $query = 'SELECT * FROM Personnel_mairie ORDER BY nom ASC';
+            $p = mysqli_query($db, $query);
+
+            $chaine="";
+                while($row=mysqli_fetch_assoc($p)) {
+                    //ecriture des tags de retour
+                    $chaine=$chaine."<tr>\n";
+                    $chaine=$chaine."<td>".$row['nom']."</td>";
+                    $chaine=$chaine."<td>".$row['parcoursProfessionnel']."</td>";
+                    $chaine=$chaine."\n<td>\n";
+                    $chaine = $chaine."<a href='modifier_personnel.php?matricule=".$row['id']."'>Modifier</a> / <a href='supprimer_personnel.php?matricule=".$row['id']."'>Supprimer</a>\n</td>";
+                    $chaine=$chaine."\n</td>\n";
+                    $chaine=$chaine."\n</tr>\n";
+                    
+
+            }
+            if($chaine=='')
+                $chaine="<tr><td>Aucun personnel enregistrée.</td></tr>";
+            
+
+        ?>
+        </table>
 
         <footer class="footer">
             <div class="container">

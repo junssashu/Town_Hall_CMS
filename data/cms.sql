@@ -297,6 +297,7 @@ ALTER TABLE `Missions_mairie`
 --
 ALTER TABLE `Personnel_mairie`
   ADD PRIMARY KEY (`id`);
+  ALTER cv SET DEFAULT NULL;
 
 --
 -- Index pour la table `Presentation_mairie`

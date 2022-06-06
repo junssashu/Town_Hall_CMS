@@ -39,37 +39,42 @@
         </div>
 
         <?php
-        define('UPLOAD_DIR', '/opt/lampp/htdocs/cms/data');
-        
+        //define('UPLOAD_DIR', '/home/Documents/cvs/');
+        ini_set('display_errors', 1);
+        error_reporting(E_ALL|E_STRICT);            
+
         if ($_POST){
             
-            require_once '../../connexion/connexion.php';
+            require_once '../../../connexion/connexion.php';
             extract($_POST);
-            if(empty($nom) or empty($parcours) or empty($_FILES["cv"]["name"])){
+            if(empty($nom) or empty($parcours)/* or empty($_FILES["cv"]["name"])*/){
                 $erreur = "Vous devez remplir tous les champs!";
             }
             else{
 
                 //Requirements for file storing
-                $targetDir = "../../../data/cvs/";
+                /*$targetDir = "../../../data/cvs/";
                 $fileName = basename($_FILES['cv']["name"]);
                 $storingPath = $targetDir . $fileName;
                 $fileType = pathinfo($storingPath, PATHINFO_EXTENSION);
+                */
 
-                if($fileType=='pdf'){ //if the file is a pdf file
-                    if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
-                        $query = "INSERT INTO Personnel_mairie (nom, cv, parcourProfessionnel) VALUES ('$nom', '$cv', '$parcours')";
-                        $success = $query;
-                        $result = mysqli_query($db, $query);
+                //if($fileType=='pdf'){ //if the file is a pdf file
+                    //if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
+                        $query = $pdo->prepare("INSERT INTO Personnel_mairie (nom, cv, parcoursProfessionnel) VALUES (?, NULL, ?)");
+                        $query->bindValue(1, $nom);
+                        $query->bindValue(2, $parcours);
+
+                        $result = $query->execute();
                         if($result)
                             $success = "Enregistrement effectué avec succès!";
                         else
                             $error = "L'enregistrement n'a pas été effectué. Veuillez réessayer.<br>Si le problème persiste, veuillez contacter le service technique.";
-                    }
-                    else $error = "Le CV n'a pas pu etre téléchargé vers le serveur.";
-                }
-                else
-                    $error = "Veuillez choisir un fichier pdf.";
+                    //}
+                  //  else $error = "Le CV n'a pas pu etre téléchargé vers le serveur.";
+                //}
+                //else
+                  //  $error = "Veuillez choisir un fichier pdf.";
             }
         }
         ?>
@@ -96,12 +101,12 @@
             <form action="ajouter_personnel.php" method="post" enctype="multipart/form-data">
                 <div class="field">
                     <label for="nom">Nom</label>
-                    <input type="text" name="nom" id="nom" placeholder="Nom du personnel" class="field" required>
+                    <input type="text" name="nom" id="nom" placeholder="Nom du personnel" class="field" value="<?php if(isset($nom)) echo $nom; ?>" required>
                 </div>    
                 
                 <div class="field">
                 <label for="parcours">Parcours</label>
-                <textarea name="parcours" id="parcours" placeholder="Décrivez le parcours professionnel du membre" class="field" required></textarea>
+                <textarea name="parcours" id="parcours" placeholder="Décrivez le parcours professionnel du membre" class="field" value="<?php if(isset($parcours)) echo $parcours; ?>" required></textarea>
                 </div>    
                 
                 <div class="field">
