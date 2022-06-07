@@ -1,6 +1,6 @@
-<?php
-    session_start();
+<link rel="stylesheet" href="../../assets/styles/Presentation_mairie/modifier_personnel.css">
 
+<<<<<<< HEAD
     if($_SESSION['logged_in']){
         // show page modifier_personnel
 ?>
@@ -23,25 +23,36 @@
             <div class="logo">
                 <a href="../../index.php">Town Hall Generator</a>
             </div>
+=======
+if($_SESSION['logged_in']){
+// show page ajouter personnel
+?>
 
-            <nav>
-                <a href="../../../" class="s_inscrire">Se déconnecter</a>
-                <a href="personnel.php" class="s_inscrire">Liste du personnel</a>
-            </nav>
-        </div>
-    </header>
-    <div class="main-content">
-        <div class="description">
-            Ceci est un cms<br>
-            Plus précisément, cette application web (cms) vous permettre ade réaliser aisément votre site web présentant votre mairie.<br>
-            Aucune connaissance en programmation web n'est requise, vous n'avez qu'à utiliser ce qui vous est présenté.
-            <br><br>
+if($_POST)
+{
+//Si l'utilisateur a validé une modification
+}
+>>>>>>> 89d8449d46d5b0e0ff171067ea323bd42a51c5e1
+
+<header>
+    <div class="wrapper">
+        <div class="logo">
+            <a href="../../index.php">Town Hall Generator</a>
         </div>
 
-        <?php
-        //define('UPLOAD_DIR', '/home/Documents/cvs/');
-        ini_set('display_errors', 1);
-        error_reporting(E_ALL|E_STRICT);            
+        <nav>
+            <a href="../../../" class="s_inscrire">Se déconnecter</a>
+            <a href="personnel.php" class="s_inscrire">Liste du personnel</a>
+        </nav>
+    </div>
+</header>
+<div class="main-content">
+    <div class="description">
+        Ceci est un cms<br>
+        Plus précisément, cette application web (cms) vous permettre ade réaliser aisément votre site web présentant votre mairie.<br>
+        Aucune connaissance en programmation web n'est requise, vous n'avez qu'à utiliser ce qui vous est présenté.
+        <br><br>
+    </div>
 
         require_once '../../../connexion/connexion.php';
         if ($_POST){
@@ -104,15 +115,16 @@
                 if(isset($error)){   
                 echo "
                     <br>
-                    <span style='color:rgb(230, 142, 11)'>" .$error. "</span>
+                    <span style='color:rgb(230, 142, 11)'>" . $error . "</span>
                     <br>";
-                }
+        }
 
-                if(isset($success)){   
-                echo "
+        if (isset($success)) {
+            echo "
                         <br>
-                        <span style='color:greenyellow'>" .$success. "</span>
+                        <span style='color:greenyellow'>" . $success . "</span>
                         <br>";
+<<<<<<< HEAD
                 }
             ?>
             <form action="modifier_personnel.php" method="post" enctype="multipart/form-data">
@@ -133,41 +145,87 @@
                 </div>    
                 
                 <div class="field">
+=======
+        }
+        ?>
+        <form action="ajouter_personnel.php" method="post" enctype="multipart/form-data">
+            <div class="field">
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" placeholder="Nom du personnel" class="field" value="<?php if (isset($nom)) echo $nom; ?>" required>
+            </div>
+
+            <div class="field">
+                <label for="parcours">Parcours</label>
+                <textarea name="parcours" id="parcours" placeholder="Décrivez le parcours professionnel du membre" class="field" value="<?php if (isset($parcours)) echo $parcours; ?>" required></textarea>
+            </div>
+
+            <div class="field">
+                <label for="cv">Curriculum vitae</label>
+                <input type="file" id="cv" name="cv" required>
+                <input type='text' value='<?php if (isset($id)) echo $id; ?>' hidden>
+            </div>
+
+            <div class="field">
+>>>>>>> 89d8449d46d5b0e0ff171067ea323bd42a51c5e1
                 <input type="submit" name="submit" class="field" value="Enregistrer">
-                </div>    
-            </form>
-        </div>
-        
+            </div>
+        </form>
     </div>
 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col">
-                        <h4>Creer son site web</h4>
-                        <ul class="list-footer">
-                            <li><a href="#">S'inscrire</a></li>
-                            <li><a href="#">Se connecter</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>About Us</h4>
-                        <ul class="list-footer">
-                            <li><a href="http://facsciences.cm">Facsciences</a></li>
-                            <li><a href="#">Conditions d'utilisateurs</a></li>
-                        </ul>
-                    </div>
-                </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Creer son site web</h4>
+                <ul class="list-footer">
+                    <li><a href="#">S'inscrire</a></li>
+                    <li><a href="#">Se connecter</a></li>
+                </ul>
             </div>
-            <span class="hidden-phone"><br><br>copyright @uy1</span>
-        </footer>
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <ul class="list-footer">
+                    <li><a href="http://facsciences.cm">Facsciences</a></li>
+                    <li><a href="#">Conditions d'utilisateurs</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+    <span class="hidden-phone"><br><br>copyright @uy1</span>
+</footer>
+</div>
 
 </body>
+
 </html>
 
 <?php
-}else{
-    header("Location: ../../../pages/index.php");
+
+
+if ($_GET['id']) {
+
+    //Récupération des infos
+
+    echo "
+            <form action='modifier_personnel.php' method='post' class='fields'>
+                <label for='nom'>Nom</label>
+                <input type='text' name='nom' id='nom' placeholder='Nom de la mairie' class='field' required>
+                <label for='parcours'>Parcours</label>
+                <textarea name='parcours' id='parcours' placeholder='Décrivez le parcours professionnel du membre' class='field' required></textarea>
+                <label for='cv'>Curriculum vitae</label>
+                <input type='file' id='cv' name='cv' class='field' required>
+                <input type='submit' name='submit' value='Enregistrer'>
+            </form>
+            
+            
+            ";
 }
 ?>
+</div>
+</div>
+<div class='footer'>
+    <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>
+    Pour le Travail pratique de l''unité d''enseignement INF2064, programmation web.
+</div>

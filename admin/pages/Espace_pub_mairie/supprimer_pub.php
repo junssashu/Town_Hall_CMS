@@ -1,1 +1,1 @@
-
+<link rel="stylesheet" href="../../assets/styles/Espace_pub_mairie/supprimer_pub.css">

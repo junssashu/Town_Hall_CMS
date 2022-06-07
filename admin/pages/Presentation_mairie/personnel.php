@@ -1,12 +1,13 @@
 <?php
-    session_start();
+session_start();
 
-    if($_SESSION['logged_in']){
-        // show page ajouter personnel
+if ($_SESSION['logged_in']) {
+    // show page ajouter personnel
 ?>
 
 
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +18,19 @@
     <link rel="stylesheet" href="../../assets/styles/Presentation_mairie/personnel.css" ></link>
 </head>
 <body>
+=======
+    <!DOCTYPE html>
+    <html lang="en">
+>>>>>>> 89d8449d46d5b0e0ff171067ea323bd42a51c5e1
 
-    <header>
-        <div class="wrapper">
-            <div class="logo">
-                <a href="../../index.php">Town Hall Generator</a>
-            </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
+        <title>Connexion</title>
+        <link rel="stylesheet" href="../../assets/styles/Presentation_mairie/personnel.css">
+        </link>
+    </head>
 
             <nav>
                 <a href="../../../" class="s_inscrire">Se déconnecter</a>
@@ -105,17 +113,24 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <span class="hidden-phone"><br><br>copyright @uy1</span>
-        </footer>
-    </div>
+                <span class="hidden-phone"><br><br>copyright @uy1</span>
+            </footer>
+        </div>
 
-</body>
-</html>
+        <<<<<<< HEAD </div>
+            <div class="footer">
+                <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>
+                Pour le Travail pratique de l'unité d'enseignement INF2064, programmation web.
+            </div>
+            =======
+    </body>
+
+    </html>
 
 
 <?php
-}else{
+} else {
     header("Location: ../pages/index.php");
 }
 ?>
+>>>>>>> d48cbf08e9f9eca72a53526c85afefde35042754

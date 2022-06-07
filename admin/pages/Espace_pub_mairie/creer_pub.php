@@ -1,10 +1,8 @@
-
-<link rel="stylesheet" href="../../assets/styles/index.css" >
+<link rel="stylesheet" href="../../assets/styles/Espace_pub_mairie/creer_pub.css">
 
 <?php
-    if ($_POST){
-
-    }
+if ($_POST) {
+}
 ?>
 
 
@@ -20,7 +18,7 @@
     <div class="instruction">
         Veuillez renseigner ou modifier informations d'une publicité.
     </div>
-    
+
     <div class="cadre">
         <form action="creer_pub.php" method="post" class="fields">
             <label for="nom">Titre</label>
@@ -32,7 +30,7 @@
             <input type="submit" name="submit" value="Enregistrer">
         </form>
     </div>
-    
+
 </div>
 <div class="footer">
     <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>

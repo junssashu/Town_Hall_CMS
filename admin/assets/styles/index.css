@@ -4,17 +4,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Tangerine');
 
+*{ margin: 0%; padding: 0%;}
+
 body{
+    background-image: url(../content/road1.jpg);
+    top: 0px;
+    position:static;
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center center;
+
+
     font-family:'Poppins';
     margin: 0px;
-    padding: 0px;
-    text-align: center;
+    padding-top: 0px;
+    text-align:center;
 }
 
 nav{
     width: 100%;
-    background-color: rgb(165, 22, 22);
-    line-height: 50px; 
+    background-color: rgb(165, 22,22);
+    line-height:normal; 
+    position: fixed;
+    
 }
 nav ul{
     margin: 0px;
@@ -60,13 +73,14 @@ nav li:hover .submenu{
 
 .submenu li{
     border-bottom: 1px solid orange;
+    width: auto;
 }
 
 .submenu li a{
     padding: 15px 30px;
     font-size: 13px;
     color: white;
-    width: 270px;
+    width: auto;
 }
 
 nav a{
@@ -76,63 +90,57 @@ nav a{
 
 
 .menu:hover{
-    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
 }
 
 .activite:hover{
-    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
 }
 
 .annonce:hover{
-    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
-}
+ } 
 
 .pub:hover{
-     /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
 }
 
 .site:hover{
-    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
 }
 
 .projet:hover{
-    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
 }
 
-.menu .submenu{
-   background-color: aquamarine; 
+.menu .submenu {
+    background-color:#130f40; 
 }
 
 .activite .submenu{
-    background-color: aquamarine;
+    background-color:#130f40;
 }
 
 .annonce .submenu{
-    background-color: aquamarine;
+    background-color:#130f40;
 }
 
 .pub .submenu{
-    background-color: aquamarine;
+    background-color:#130f40;
 }
 
 .site .submenu{
-    background-color: aquamarine;
+    background-color:#130f40;
 }
 
 .projet .submenu{
-    background-color: aquamarine;
+    background-color:#130f40;
 }
 
 .submenu li:hover a{
@@ -145,23 +153,23 @@ nav a{
 }
 
 .activite .submenu li:hover{
-    background-color: tomato;
+    background-color: blueviolet;
 }
 
 .annonce .submenu li:hover{
-    background-color: cornflowerblue ;
+    background-color: blueviolet;
 }
 
 .pub .submenu li:hover{
-    background-color: darkgoldenrod;
+    background-color: blueviolet;
 }
 
 .site .submenu li:hover{
-    background-color: khaki;
+    background-color: blueviolet;
 }
 
 .projet .submenu li:hover{
-    background-color: lightslategray;
+    background-color: blueviolet;
 }  
 
 
@@ -172,24 +180,25 @@ nav a{
 
 header{
     width: 100%;
-    height: 100px;
+    height: 50px;
     background: rgb(165, 22, 22);
     position: fixed;
     margin-right: 100%;
-    border-bottom: 2px solid white;
+    border-bottom: 0px solid white;
 }
 
-h1{ text-align : center; font-family: 'Pacifico'; color: white; margin-top: 10%; }
-h2{ text-align : center; color: blue; margin-left:2%; }
+h1{ text-align : center; font-family: 'Pacifico'; color: white; padding-top:200; word-spacing: 40px; font-size: 50px;}
+/*h2{ text-align : center; color: blue; margin-left:2%; } */
 
 /* couleur et police d'ecriture du de la page en arriere plan */
 a{
     text-decoration: none;
     color: white;
-    padding: 20px
+    padding: 20px;
+    position: fixed;
 }
                                 
-.banner-container{
+/* .banner-container{
     background-image: url(../content/road1.jpg);
     top: 100px;
     position: fixed;
@@ -198,36 +207,51 @@ a{
     background-size: cover;
     background-position: center center;
 }
-
+*/
 .banner-container:after{
     content:'';
     position: absolute;
     top:0;
     left:0;
     display:block;
-    height:100%;
+    height:150%;
     width: 100%;
     background: #130f40;
-    opacity: .7;
+    /* opacity: .7; */
     z-index: -1;
 }
 
 .content{
-    position: relative;
+    position: absolute;
     width: 100%;        
     top: 500px;
     background: white;
 }
-
+/* 
 .banner-container h1{
     font-size: 60px;
     word-spacing: 60px;
 }
-    
+     */
 .couleur{
     color: white;
 }
 
-section.wrapper{
-    margin-top: 0px;
+
+.footer {
+    background-color: rgb(31, 31, 31);
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Poppins';
+    padding: 70px 0;
+    bottom: 0;
+}
+
+.wrapper{
+    position: relative;
+}
+
+.thg{
+    float: left;
+    font-family: "Pacifico";
 }
