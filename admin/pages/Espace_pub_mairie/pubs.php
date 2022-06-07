@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../assets/styles/index.css" >
+<link rel="stylesheet" href="../../assets/styles/Espace_pub_mairie/pubs.css">
 
 
 <div class="header">
@@ -13,17 +13,17 @@
     <div class="instruction">
         Gérer les publicités de la mairie.
     </div>
-    
+
     <div class="cadre">
-       <a href="creer_pub.php" class="">Ajouter une publicité</a>
+        <a href="creer_pub.php" class="">Ajouter une publicité</a>
         <?php
-            /*Affichage des publicités (dans un tableau).
+        /*Affichage des publicités (dans un tableau).
             Le dernier champ du tableau porte le nom action et renverra vers la suppression ou la modification d'une publicité.*/
-        
+
         ?>
 
     </div>
-    
+
 </div>
 <div class="footer">
     <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>

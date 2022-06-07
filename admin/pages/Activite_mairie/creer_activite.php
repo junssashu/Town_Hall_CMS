@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../assets/styles/index.css" >
+<link rel="stylesheet" href="../../assets/styles/Activite_marie/creer_activite.css">
 
 
 <div class="header">
@@ -13,7 +13,7 @@
     <div class="instruction">
         Gérer les activités de la mairie.
     </div>
-    
+
     <div class="cadre">
         <form action="creer_activite.php" method="post" class="fields">
             <label for="nom">Nom</label>
@@ -24,7 +24,7 @@
         </form>
 
     </div>
-    
+
 </div>
 <div class="footer">
     <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>

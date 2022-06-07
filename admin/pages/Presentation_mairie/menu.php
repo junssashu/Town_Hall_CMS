@@ -1,5 +1,4 @@
-
-<link rel="stylesheet" href="../../assets/styles/index.css" >
+<link rel="stylesheet" href="../../assets/styles/Presentation_mairie/menu.css">
 
 
 <div class="header">
@@ -17,14 +16,14 @@
     <div class="instruction">
         Veuillez choisir une rubrique pour effectuer des actions:
     </div>
- 
+
     <div class="options">
         <a href="modifier_infos.php" class="option">Renseigner ou modifier les informations de la mairie</a>
         <a href="conseil_municipal.php" class="option">Conseil municipal</a>
         <a href="personnel.php" class="option">Gérer le personnel</a>
     </div>
 
-    
+
 </div>
 <div class="footer">
     <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>

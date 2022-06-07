@@ -24,7 +24,7 @@ body{
 
 nav{
     width: 100%;
-    background-color: rgb(165, 22, 22);
+    background-color: rgb(165, 22,22);
     line-height:normal; 
     position: fixed;
     
@@ -90,75 +90,57 @@ nav a{
 
 
 .menu:hover{
-    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
-    opacity: .7; 
 }
 
 .activite:hover{
-    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
-    opacity: .7;
 }
 
 .annonce:hover{
-    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
-    opacity: .7;
  } 
 
 .pub:hover{
-     /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
-    opacity: .7;
 }
 
 .site:hover{
-    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
-    opacity:.7;
 }
 
 .projet:hover{
-    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
-    opacity: .7;
 }
 
 .menu .submenu {
     background-color:#130f40; 
-    opacity: .7;
 }
 
 .activite .submenu{
     background-color:#130f40;
-    opacity: .7;
 }
 
 .annonce .submenu{
     background-color:#130f40;
-    opacity: .7;
 }
 
 .pub .submenu{
     background-color:#130f40;
-    opacity: .7;
 }
 
 .site .submenu{
     background-color:#130f40;
-    opacity: .7;
 }
 
 .projet .submenu{
     background-color:#130f40;
-    opacity: .7;
 }
 
 .submenu li:hover a{
@@ -212,7 +194,7 @@ h1{ text-align : center; font-family: 'Pacifico'; color: white; padding-top:200;
 a{
     text-decoration: none;
     color: white;
-    padding: 20px
+    padding: 20px;
     position: fixed;
 }
                                 
@@ -235,7 +217,7 @@ a{
     height:150%;
     width: 100%;
     background: #130f40;
-    opacity: .7;
+    /* opacity: .7; */
     z-index: -1;
 }
 
@@ -267,4 +249,9 @@ a{
 
 .wrapper{
     position: relative;
+}
+
+.thg{
+    float: left;
+    font-family: "Pacifico";
 }

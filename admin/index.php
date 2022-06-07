@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/styles/index.css">
+<link rel="stylesheet" href="../admin/assets/styles/index.css">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +25,7 @@
                         <li><a href="../admin/pages/Presentation_mairie/conseil_municipal.php">Conseil municipale</a></li>
                         <li><a href="../admin/pages/Presentation_mairie/histoire.php">Histoire</a></li>
                         <li><a href="../admin/pages/Presentation_mairie/missions.php">Missions</a></li>
+                        <li><a href="../admin/pages/Presentation_mairie/modifier_infos.php">Modifier les informations</a></li>
                         <li><a href="../admin/pages/Presentation_mairie/modifier_personnel.php">Modifier du personnel</a></li>
                         <li><a href="../admin/pages/Presentation_mairie/personnel.php">Personnel</a></li>
                     </ul>
@@ -33,8 +34,8 @@
                 <li class="activite">
                     <a href="pages/Activite_mairie/activites.php">activites</a>
                     <ul class="submenu">
-                        <li><a href="../admin/pages/Activite_mairie/creer_activite.php">creer une activite</a></li>
-                        <li><a href="../admin/pages/Activite_mairie/modifier_activite.php">modifier une activite</a></li>
+                        <li><a href="../admin/pages/Activite_mairie/creer_activite.php">Creer une activite</a></li>
+                        <li><a href="../admin/pages/Activite_mairie/modifier_activite.php">Modifier une activite</a></li>
                         <li><a href="../admin/pages/Activite_mairie/supprimer_activite.php">Supprimer une activite</a></li>
                     </ul>
                 </li>
@@ -42,10 +43,10 @@
                 <li class="annonce">
                     <a href="pages/Annonces_mairie/annonces.php">Annonces</a>
                     <ul class="submenu">
-                        <li><a href="../admin/pages/Annonces_mairie/creer_annonce.php">creer une annonce</a></li>
-                        <li><a href="../admin/pages/Annonces_mairie/decrets.php">decrets</a></li>
+                        <li><a href="../admin/pages/Annonces_mairie/creer_annonce.php">Creer une annonce</a></li>
+                        <li><a href="../admin/pages/Annonces_mairie/decrets.php">Decrets</a></li>
                         <li><a href="../admin/pages/Annonces_mairie/marches_publiques.php">Marches publiques</a></li>
-                        <li><a href="../admin/pages/Annonces_mairie/marriages.php">mariages</a></li>
+                        <li><a href="../admin/pages/Annonces_mairie/marriages.php">Mariages</a></li>
                         <li><a href="../admin/pages/Annonces_mairie/modifier_annonce.php">Modifier une annonce</a></li>
                         <li><a href="../admin/pages/Annonces_mairie/supprimer_annonce.php">Supprimer une anonce</a></li>
                     </ul>
@@ -54,17 +55,17 @@
                 <li class="pub">
                     <a href="pages/Espace_pub_mairie/pubs.php">Espace publicitaire</a>
                     <ul class="submenu">
-                        <li><a href="../admin/pages/Espace_pub_mairie/creer_pub.php">creer pub</a></li>
-                        <li><a href="../admin/pages/Espace_pub_mairie/modifier_pub.php">modifier une publicite</a></li>
-                        <li><a href="../admin/pages/Espace_pub_mairie/supprimer_pub.php">supprimer une publicite</a></li>
+                        <li><a href="../admin/pages/Espace_pub_mairie/creer_pub.php">Creer pub</a></li>
+                        <li><a href="../admin/pages/Espace_pub_mairie/modifier_pub.php">Modifier une publicite</a></li>
+                        <li><a href="../admin/pages/Espace_pub_mairie/supprimer_pub.php">Supprimer une publicite</a></li>
                     </ul>
                 </li>
 
                 <li class="site">
                     <a href="pages/Lieux_touristiques_mairie/sites_touristiques.php">Lieux touristiques</a>
                     <ul class="submenu">
-                        <li><a href="../admin/pages/Lieux_touristiques_mairie/creer_lieu.php">creer un lieu</a></li>
-                        <li><a href="../admin/pages/Lieux_touristiques_mairie/modifier_lieu.php">modifier un lieu</a></li>
+                        <li><a href="../admin/pages/Lieux_touristiques_mairie/creer_lieu.php">Creer un lieu</a></li>
+                        <li><a href="../admin/pages/Lieux_touristiques_mairie/modifier_lieu.php">Modifier un lieu</a></li>
                         <li><a href="../admin/pages/Lieux_touristiques_mairie/supprimer_lieu.php">Supprimer un lieu</a></li>
                     </ul>
                 </li>
@@ -72,7 +73,7 @@
                 <li class="projet">
                     <a href="pages/Projet_marie/projets_courants.php">Projets</a>
                     <ul class="submenu">
-                        <li><a href="../admin/pages/Projet_marie/projets_courants.php">projets courants</a></li>
+                        <li><a href="../admin/pages/Projet_marie/projets_courants.php">Projets courants</a></li>
                     </ul>
                 </li>
             </ul>
@@ -101,8 +102,9 @@
             <div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laudantium nulla aperiam officiis maiores tempora voluptate, facere id velit expedita blanditiis ducimus adipisci tempore nisi, aliquam est cupiditate? Sit, necessitatibus?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias autem beatae placeat, praesentium culpa nostrum eveniet ipsum nesciunt. Reiciendis esse voluptas libero accusantium quos dolore, nostrum blanditiis sequi ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat ab, aspernatur alias exercitationem molestias, impedit saepe ducimus quaerat qui dicta facilis a itaque. Sed velit labore, dolorem numquam natus architecto!</p>
             </div>
-            <span class="hidden-phone"><br><br>copyright @uy1</span>
-            <span><strong><a href="/admin/index.php">Town Hall Generator</a></strong></span>
+            <span class="hidden-phone"><br><br>copyright @uy1</span><br><br>
+            <span class="thg"><strong><a href="../../Town_Hall_CMS/admin/index.php">Town Hall Generator</a>
+                </strong></span>
         </footer>
     </div>
 
