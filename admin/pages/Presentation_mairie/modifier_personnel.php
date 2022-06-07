@@ -2,7 +2,7 @@
     session_start();
 
     if($_SESSION['logged_in']){
-        // show page ajouter personnel
+        // show page modifier_personnel
 ?>
 
     
@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>Modification personnel</title>
     <link rel="stylesheet" href="../../assets/styles/Presentation_mairie/personnel.css" ></link>
     <link rel="stylesheet" href="../../assets/styles/form.css" ></link>
 </head>
@@ -43,48 +43,54 @@
         ini_set('display_errors', 1);
         error_reporting(E_ALL|E_STRICT);            
 
+        require_once '../../../connexion/connexion.php';
         if ($_POST){
             
-            require_once '../../../connexion/connexion.php';
-            extract($_POST);
-            if(empty($nom) or empty($parcours)/* or empty($_FILES["cv"]["name"])*/){
-                $erreur = "Vous devez remplir tous les champs!";
+            extract($_POST);    
+
+            //Requirements for file storing
+            /*$targetDir = "../../../data/cvs/";
+            $fileName = basename($_FILES['cv']["name"]);
+            $storingPath = $targetDir . $fileName;
+            $fileType = pathinfo($storingPath, PATHINFO_EXTENSION);
+            */
+
+            //if($fileType=='pdf'){ //if the file is a pdf file
+            //if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
+            $result1 = $result2 = true;        
+            if(!empty($nom)){
+            $query = $pdo->prepare("UPDATE Personnel_mairie set nom=? WHERE id=?");
+                $query->bindValue(1, $nom);
+                $query->bindValue(2, $id);
+                $result1 = $query->execute();
             }
-            else{
+            if(!empty($parcours)){
+                $query = $pdo->prepare("UPDATE Personnel_mairie set parcoursProfessionnel=? WHERE id=?");
+                    $query->bindValue(1, $parcours);
+                    $query->bindValue(2, $id);
+                    $result2 = $query->execute();
+            }
 
-                //Requirements for file storing
-                /*$targetDir = "../../../data/cvs/";
-                $fileName = basename($_FILES['cv']["name"]);
-                $storingPath = $targetDir . $fileName;
-                $fileType = pathinfo($storingPath, PATHINFO_EXTENSION);
-                */
-
-                //if($fileType=='pdf'){ //if the file is a pdf file
-                    //if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
-                        $query = $pdo->prepare("UPDATE Personnel_mairie set nom=?, cv=NULL, parcoursProfessionnel=? WHERE id=?");
-                        $query->bindValue(1, $nom);
-                        $query->bindValue(2, $parcours);
-                        $query->bindValue(3, $id);
-
-                        $result = $query->execute();
-                        if($result)
-                            $success = "Enregistrement effectué avec succès!";
-                        else
-                            $error = "L'enregistrement n'a pas été effectué. Veuillez réessayer.<br>Si le problème persiste, veuillez contacter le service technique.";
-                    //}
-                  //  else $error = "Le CV n'a pas pu etre téléchargé vers le serveur.";
+            if($result1 and $result2){
+                $success = "Enregistrement effectué avec succès!";
+                header("Location: personnel.php");
+            }
+            else
+                $error = "L'enregistrement n'a pas été effectué. Veuillez réessayer.<br>Si le problème persiste, veuillez contacter le service technique.";
                 //}
-                //else
-                  //  $error = "Veuillez choisir un fichier pdf.";
-            }
+                //  else $error = "Le CV n'a pas pu etre téléchargé vers le serveur.";
+            //}
+            //else
+                //  $error = "Veuillez choisir un fichier pdf.";
+        
         }
         else{
             $id = $_GET['id'];
             $query = $pdo->prepare("SELECT * FROM Personnel_mairie WHERE id=?");
             $query->bindVaLue(1, $id);
-            $result = $query->execute();
+            $query->execute();
 
-            $row = $result->fetch(PDO::FETCH_ASSOC);
+            $row = $query->fetch(PDO::FETCH_ASSOC);
             $nom = $row['nom'];
             $parcours = $row['parcoursProfessionnel'];
         }
@@ -92,7 +98,7 @@
         
         <div class="fields">
             <div class='field' style="padding-bottom:0%;">
-                <p>Pour modifier les informations d'un membre, renseigner les informations suivantes:</p>
+                <p>Pour modifier les informations d'un membre, renseigner les informations à modifier:</p>
             </div>
             <?php
                 if(isset($error)){   
@@ -109,7 +115,8 @@
                         <br>";
                 }
             ?>
-            <form action="ajouter_personnel.php" method="post" enctype="multipart/form-data">
+            <form action="modifier_personnel.php" method="post" enctype="multipart/form-data">
+                <input type='text' name='id' value="<?php if(isset($id)) echo $id; ?>" style="width:0%;">
                 <div class="field">
                     <label for="nom">Nom</label>
                     <input type="text" name="nom" id="nom" placeholder="Nom du personnel" class="field" value="<?php if(isset($nom)) echo $nom; ?>" required>
@@ -117,13 +124,12 @@
                 
                 <div class="field">
                 <label for="parcours">Parcours</label>
-                <textarea name="parcours" id="parcours" placeholder="Décrivez le parcours professionnel du membre" class="field" value="<?php if(isset($parcours)) echo $parcours; ?>" required></textarea>
+                <textarea name="parcours" id="parcours" class="field" placeholder="<?php if(isset($parcours)) echo $parcours; ?>"></textarea>
                 </div>    
                 
                 <div class="field">
                 <label for="cv">Curriculum vitae</label>
-                <input type="file" id="cv" name="cv" required>
-                <input type='text' value='<?php if(isset($id)) echo $id; ?>' hidden>
+                <input type="file" id="cv" name="cv">
                 </div>    
                 
                 <div class="field">

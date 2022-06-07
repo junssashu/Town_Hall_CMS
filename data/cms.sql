@@ -32,7 +32,7 @@ CREATE TABLE `Activites_mairie` (
   `id` int(11) NOT NULL,
   `nomActivite` varchar(255) NOT NULL,
   `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -45,7 +45,7 @@ CREATE TABLE `Annonces_mairie` (
   `mariage` int(11) NOT NULL,
   `decret` int(11) NOT NULL,
   `marcherPublic` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -57,7 +57,7 @@ CREATE TABLE `Conseil_municipal` (
   `id` int(11) NOT NULL,
   `nomDuConseiller` varchar(255) NOT NULL,
   `posteProfil` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,7 @@ CREATE TABLE `Decrets_mairie` (
   `id` int(11) NOT NULL,
   `libeller` text NOT NULL,
   `dateDecret` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,7 @@ CREATE TABLE `Espace_pub_mairie` (
   `id` int(11) NOT NULL,
   `nombreVisiteur` int(11) NOT NULL,
   `publicite` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -92,7 +92,7 @@ CREATE TABLE `Espace_pub_mairie` (
 CREATE TABLE `Lieux_touristiques_mairie` (
   `id` int(11) NOT NULL,
   `nomLieu` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -104,25 +104,7 @@ CREATE TABLE `Login` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(255) NOT NULL,
   `user_password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `Mairie`
---
-
-CREATE TABLE `Mairie` (
-  `id` int(11) NOT NULL,
-  `nom_mairie` varchar(255) NOT NULL,
-  `region` varchar(20) NOT NULL,
-  `presentation` int(11) NOT NULL,
-  `projet` int(11) NOT NULL,
-  `activite` int(11) NOT NULL,
-  `annonce` int(11) NOT NULL,
-  `espacePub` int(11) NOT NULL,
-  `lieuTouristique` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -134,7 +116,7 @@ CREATE TABLE `Marchers_publics` (
   `id` int(11) NOT NULL,
   `nomMarcher` varchar(255) NOT NULL,
   `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -146,7 +128,7 @@ CREATE TABLE `Mariage_Mairie` (
   `id` int(11) NOT NULL,
   `libeller` text NOT NULL,
   `dateMariage` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -158,7 +140,7 @@ CREATE TABLE `Missions_mairie` (
   `id` int(11) NOT NULL,
   `nomMission` int(11) NOT NULL,
   `description` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -169,9 +151,9 @@ CREATE TABLE `Missions_mairie` (
 CREATE TABLE `Personnel_mairie` (
   `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `cv` text NOT NULL,
+  `cv` varchar(50) NOT NULL DEFAULT 'NULL',
   `parcoursProfessionnel` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -181,11 +163,10 @@ CREATE TABLE `Personnel_mairie` (
 
 CREATE TABLE `Presentation_mairie` (
   `id` int(11) NOT NULL,
+  `nom` varchar(20) NOT NULL,
   `histoire` text NOT NULL,
-  `conseil_municipal` int(11) NOT NULL,
-  `personnel_mairie` int(11) NOT NULL,
-  `mission_mairie` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `missions` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -197,7 +178,7 @@ CREATE TABLE `Projets_mairie` (
   `id` int(11) NOT NULL,
   `nomProjet` varchar(255) NOT NULL,
   `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -208,7 +189,7 @@ CREATE TABLE `Projets_mairie` (
 CREATE TABLE `Publicite_mairie` (
   `id` int(11) NOT NULL,
   `nomPub` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Index pour les tables déchargées
@@ -261,20 +242,6 @@ ALTER TABLE `Login`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Index pour la table `Mairie`
---
-ALTER TABLE `Mairie`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `presentation` (`presentation`,`nom_mairie`),
-  ADD KEY `nom_mairie` (`nom_mairie`,`presentation`),
-  ADD KEY `id` (`id`,`nom_mairie`,`presentation`),
-  ADD KEY `projet` (`projet`,`activite`,`annonce`,`espacePub`,`lieuTouristique`),
-  ADD KEY `activite` (`activite`),
-  ADD KEY `annonce` (`annonce`),
-  ADD KEY `espacePub` (`espacePub`),
-  ADD KEY `lieuTouristique` (`lieuTouristique`);
-
---
 -- Index pour la table `Marchers_publics`
 --
 ALTER TABLE `Marchers_publics`
@@ -297,16 +264,12 @@ ALTER TABLE `Missions_mairie`
 --
 ALTER TABLE `Personnel_mairie`
   ADD PRIMARY KEY (`id`);
-  ALTER cv SET DEFAULT NULL;
 
 --
 -- Index pour la table `Presentation_mairie`
 --
 ALTER TABLE `Presentation_mairie`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `conseil_municipal` (`conseil_municipal`,`personnel_mairie`,`mission_mairie`),
-  ADD KEY `personnel_mairie` (`personnel_mairie`),
-  ADD KEY `mission_mairie` (`mission_mairie`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Projets_mairie`
@@ -365,12 +328,6 @@ ALTER TABLE `Lieux_touristiques_mairie`
 --
 ALTER TABLE `Login`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `Mairie`
---
-ALTER TABLE `Mairie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Marchers_publics`

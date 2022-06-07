@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>Personnel</title>
     <link rel="stylesheet" href="../../assets/styles/Presentation_mairie/personnel.css" ></link>
 </head>
 <body>
@@ -35,43 +35,59 @@
             Ceci est un cms<br>
             Plus précisément, cette application web (cms) vous permettre ade réaliser aisément votre site web présentant votre mairie.<br>
             Aucune connaissance en programmation web n'est requise, vous n'avez qu'à utiliser ce qui vous est présenté.
-            <br><br><br>
+            <br><br><br><br><br><br>
         </div>
-        <table rules='all' style="align-self: center; width: 80%; border-color: rgb(216, 14, 14); border-width: 0.3em; border-style:dashed; text-align: center; column-rule-style: solid; column-rule-width: 0.3em; column-rule-color: rgb(216, 14, 14);">
+
+        <?php
+            if(isset($error)){   
+            echo "
+                <br>
+                <span style='color:rgb(230, 142, 11)'>" .$error. "</span>
+                <br>";
+            }
+
+            if(isset($success)){   
+            echo "
+                    <br>
+                    <span style='color:greenyellow'>" .$success. "</span>
+                    <br>";
+            }
+        ?>
+        <table rules='all'>
             <thead>
                     <tr>
-                        <th>Nom</th>
-                        <th>Parcours Professionnel</th>
-                </tr>
+                        <th><b style="color:greenyellow;">Nom</b></th>
+                        <th><b style="color:greenyellow;">Parcours Professionnel</b></th>
+                        <th><b style="color:greenyellow;">Actions</b></th>
+                    </tr>
             </thead>
 
         <?php
             require_once '../../connexion/connexion.php';
             
             $query = 'SELECT * FROM Personnel_mairie ORDER BY nom ASC';
-            $p = mysqli_query($db, $query);
+            $result = mysqli_query($db, $query);
 
-            $chaine="";
-                while($row=mysqli_fetch_assoc($p)) {
+            $string="";
+                while($row=mysqli_fetch_assoc($result)) {
                     //ecriture des tags de retour
-                    $chaine=$chaine."<tr>\n";
-                    $chaine=$chaine."<td>".$row['nom']."</td>";
-                    $chaine=$chaine."<td>".$row['parcoursProfessionnel']."</td>";
-                    $chaine=$chaine."\n<td>\n";
-                    $chaine = $chaine."<a href='modifier_personnel.php?matricule=".$row['id']."'>Modifier</a> / <a href='supprimer_personnel.php?matricule=".$row['id']."'>Supprimer</a>\n</td>";
-                    $chaine=$chaine."\n</td>\n";
-                    $chaine=$chaine."\n</tr>\n";
+                    $string=$string."<tr>\n";
+                    $string=$string."<td>".$row['nom']."</td>\n";
+                    $string=$string."<td>".$row['parcoursProfessionnel']."</td>\n";
+                    $string=$string."\n<td>\n";
+                    $string = $string."<a href='modifier_personnel.php?id=".$row['id']."' class='upd'>Modifier</a> / <a href='supprimer_personnel.php?id=".$row['id']."' class='del'>Supprimer</a>\n</td>";
+                    $string=$string."\n</td>\n";
+                    $string=$string."\n</tr>\n";
                     
-
             }
-            if($chaine=='')
-                $chaine="<tr><td>Aucun personnel enregistrée.</td></tr>";
-            
+            if($string=='')
+                $string="<tr><td>Aucun personnel enregistrée.</td></tr>";
+            echo $string;
 
         ?>
         </table>
 
-        <footer class="footer">
+        <footer class="footer" style='margin-top:22%;'>
             <div class="container">
                 <div class="row">
                     <div class="footer-col">

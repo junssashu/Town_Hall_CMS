@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>Présentation</title>
     <link rel="stylesheet" href="../../assets/styles/Presentation_mairie/personnel.css" ></link>
 </head>
 <body>
@@ -18,7 +18,7 @@
 
             <nav>
                 <a href="../../../" class="s_inscrire">Se déconnecter</a>
-                <a href="modifier_infos.php" class="s_inscrire">Renseigner ou modifier les informations de la mairie</a>
+                <a href="modifier_infos.php" class="s_inscrire">Modifier la présentation</a>
                 <a href="conseil_municipal.php" class="s_inscrire">Conseil municipal</a>
                 <a href="personnel.php" class="s_inscrire">Gérer le personnel</a>
             </nav>
