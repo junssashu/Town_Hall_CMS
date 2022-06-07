@@ -115,6 +115,21 @@
         Pour le Travail pratique de l'unité d'enseignement INF2064, programmation web.
     </div> -->
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+</body>
+
+<?php
+}else{
+    header("Location: ../pages/index.php");
+}
+?>
+=======
+    </section>
+
+>>>>>>> d48cbf08e9f9eca72a53526c85afefde35042754
 </body>
 
 </html>
+>>>>>>> eba2f9a77212ddd7cc4a850fce8e00370cc061fd

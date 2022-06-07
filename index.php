@@ -17,17 +17,12 @@
                 </div>
 
                 <nav>
-<<<<<<< HEAD
                     <a href="pages/inscription.php" class="s_inscrire">S'inscrire</a>
-                    <a href="pages/index.php">Se connecter</a>
+                    <a href="pages/index.php" class="s_inscrire">Se connecter</a>
                     <!-- <a href="pages/Annonces_mairie/annonces.php">Annonces</a>
                     <a href="pages/Lieux_touristiques_mairie/sites_touristiques.php">Lieux touristiques</a>
                     <a href="pages/Projet_marie/projets_courants.php">Projets</a>
                     <a href="pages/Espace_pub_mairie/pubs.php">Pubs</a> -->
-=======
-                    <a href="pages/index.php" class="s_inscrire">S'inscrire</a>
-                    <a href="pages/connexion.php">Se connecter</a>
->>>>>>> 5f934686a8716f96733c82fb73eab393e5b2f57e
                 </nav>
             </div>
         </header>
@@ -49,7 +44,7 @@
             </div>
             <div class="other_content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur eligendi libero eaque dolorem expedita. Esse consequuntur deleniti reprehenderit odio, dolorum aperiam vitae accusamus ex voluptate, impedit doloribus dolore est soluta.</p>
-                <br><br><br><a href="pages/connexion.php" class="butoon">Creer son site</a>
+                <br><br><br><a href="pages/connexion.php" class="button">Creer son site</a>
             </div>
             <footer class="footer">
                 <div class="container">

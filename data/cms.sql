@@ -80,8 +80,7 @@ CREATE TABLE `Decrets_mairie` (
 CREATE TABLE `Espace_pub_mairie` (
   `id` int(11) NOT NULL,
   `nombreVisiteur` int(11) NOT NULL,
-  `titre` varchar(20) NOT NULL,
-  'description' varchar(300),
+  `publicite` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -103,8 +102,8 @@ CREATE TABLE `Lieux_touristiques_mairie` (
 
 CREATE TABLE `Login` (
   `user_id` int(11) NOT NULL,
-  `user_name` varchar(24) NOT NULL,
-  `user_password` varchar(100) NOT NULL
+  `user_name` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -182,7 +181,6 @@ CREATE TABLE `Personnel_mairie` (
 
 CREATE TABLE `Presentation_mairie` (
   `id` int(11) NOT NULL,
-  `nom` varchar(30) NOT NULL,
   `histoire` text NOT NULL,
   `conseil_municipal` int(11) NOT NULL,
   `personnel_mairie` int(11) NOT NULL,
@@ -260,7 +258,7 @@ ALTER TABLE `Lieux_touristiques_mairie`
 -- Index pour la table `Login`
 --
 ALTER TABLE `Login`
-  ADD PRIMARY KEY (`User_id`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Index pour la table `Mairie`
@@ -299,6 +297,7 @@ ALTER TABLE `Missions_mairie`
 --
 ALTER TABLE `Personnel_mairie`
   ADD PRIMARY KEY (`id`);
+  ALTER cv SET DEFAULT NULL;
 
 --
 -- Index pour la table `Presentation_mairie`
@@ -365,7 +364,7 @@ ALTER TABLE `Lieux_touristiques_mairie`
 -- AUTO_INCREMENT pour la table `Login`
 --
 ALTER TABLE `Login`
-  MODIFY `User_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Mairie`
@@ -422,7 +421,7 @@ ALTER TABLE `Publicite_mairie`
 --
 -- Contraintes pour la table `Annonces_mairie`
 --
-ALTER TABLE `Annonces_mairie`
+/*ALTER TABLE `Annonces_mairie`
   ADD CONSTRAINT `Annonces_mairie_ibfk_1` FOREIGN KEY (`marcherPublic`) REFERENCES `Marchers_publics` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Annonces_mairie_ibfk_2` FOREIGN KEY (`mariage`) REFERENCES `Mariage_Mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Annonces_mairie_ibfk_3` FOREIGN KEY (`decret`) REFERENCES `Decrets_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
@@ -437,7 +436,7 @@ ALTER TABLE `Espace_pub_mairie`
 -- Contraintes pour la table `Login`
 --
 ALTER TABLE `Login`
-  ADD CONSTRAINT `Login_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `Mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `Login_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `Mairie`
@@ -458,7 +457,7 @@ ALTER TABLE `Presentation_mairie`
   ADD CONSTRAINT `Presentation_mairie_ibfk_3` FOREIGN KEY (`mission_mairie`) REFERENCES `Missions_mairie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Presentation_mairie_ibfk_4` FOREIGN KEY (`conseil_municipal`) REFERENCES `Conseil_municipal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
-
+*/
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

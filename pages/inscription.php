@@ -1,21 +1,4 @@
-
-
-<?php
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL|E_STRICT);
-
-    session_start();
-
-    include_once("../connexion/connexion.php");
-
-    if ( isset($_SESSION['logged_in'])){
-        // display admin page
-        header("Location: ../admin/index.php");
-    }else{
-
-?>
-
-    
+   
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +18,7 @@
             </div>
 
             <nav>
-                <a href="index.php" class="s_incrire">Se connecter</a>
+                <a href="index.php" class="s_inscrire">Se connecter</a>
             </nav>
         </div>
     </header>
@@ -47,17 +30,16 @@
             <br><br>
         </div>
         <?php
+                require_once '../connexion/connexion.php';
+                
                 ini_set('display_errors', 1);
                 error_reporting(E_ALL|E_STRICT);            
 
-                if (isset($_POST['login']) and isset($_POST['password']) and isset($_POST['password_conf'])){
-                $login = $_POST['login'];
-                $password = $_POST['password'];
-                $password_conf = $_POST['password_conf'];
-
+                if ($_POST){
+                extract($_POST);
     
                 if( empty($login) or empty($password) or empty($password_conf)){
-                    $error = " Veillez remplir tous les champs ";
+                    $error = " Veuillez remplir tous les champs ";
                 }else{
 
                     if($password == $password_conf){
@@ -65,14 +47,10 @@
                         $querry = $pdo->prepare("INSERT INTO Login (user_name, user_password) VALUES(?, PASSWORD(?))");
                         $querry->bindValue(1, $login);
                         $querry->bindValue(2, $password);
-                        try{
-                            $querry->execute();
+                        if($querry->execute())
                             header("Location: index.php");
-                        }
-                        catch (PDOException $e)
-                        {
-                            echo $e->getMessage();
-                        }
+                        else
+                            $error = "Problème d'enrgistrement";
                     }
                     else
                         $error = "Les mots de passent entrés ne semblent pas correspondre!";
@@ -154,8 +132,3 @@
 </body>
 </html>
 
-<?php
-
-    }
-
-?>

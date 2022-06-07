@@ -2,14 +2,14 @@
 
     session_start();
 
-    include_once("../connexion/connexion.php");
-
+//    include_once("../connexion/connexion.php");
+/*
     if ( isset($_SESSION['logged_in'])){
         // display admin page
-        header("Location: ../admin/index.php");
+        echo "connected";
     }else{
 
-?>
+*/?>
 
     
 <!DOCTYPE html>
@@ -43,9 +43,9 @@
             <br><br>
         </div>
         <?php
-            if (isset($_POST['login']) and isset($_POST['password'])){
-                $login = $_POST['login'];
-                $password = $_POST['password'];
+            require_once "../connexion/connexion.php";
+            if($_POST){
+                extract($_POST);
     
                 if( empty($login) or empty($password)){
                     $error = " Veillez remplir tous les champs ";
@@ -58,10 +58,12 @@
     
                     $num = $querry->rowCount();
     
+                    $error = 'yesss';
                     if( $num == 1){
     
                         $_SESSION['logged_in'] = true;
                         header("Location: ../admin/index.php");
+                        exit();
                         exit();
     
                     }else{
@@ -70,7 +72,7 @@
     
                     }
                 }
-            }
+            }else
         ?>
         <div class="fields">
             <form action="index.php" method="POST">
@@ -130,6 +132,6 @@
 
 <?php
 
-    }
+  //  }
 
 ?>
