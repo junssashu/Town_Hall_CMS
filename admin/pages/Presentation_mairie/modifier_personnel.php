@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="../../assets/styles/Presentation_mairie/modifier_personnel.css">
+<?php 
 
-<<<<<<< HEAD
     if($_SESSION['logged_in']){
         // show page modifier_personnel
 ?>
@@ -23,16 +22,6 @@
             <div class="logo">
                 <a href="../../index.php">Town Hall Generator</a>
             </div>
-=======
-if($_SESSION['logged_in']){
-// show page ajouter personnel
-?>
-
-if($_POST)
-{
-//Si l'utilisateur a validé une modification
-}
->>>>>>> 89d8449d46d5b0e0ff171067ea323bd42a51c5e1
 
 <header>
     <div class="wrapper">
@@ -124,7 +113,6 @@ if($_POST)
                         <br>
                         <span style='color:greenyellow'>" . $success . "</span>
                         <br>";
-<<<<<<< HEAD
                 }
             ?>
             <form action="modifier_personnel.php" method="post" enctype="multipart/form-data">
@@ -145,28 +133,6 @@ if($_POST)
                 </div>    
                 
                 <div class="field">
-=======
-        }
-        ?>
-        <form action="ajouter_personnel.php" method="post" enctype="multipart/form-data">
-            <div class="field">
-                <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom" placeholder="Nom du personnel" class="field" value="<?php if (isset($nom)) echo $nom; ?>" required>
-            </div>
-
-            <div class="field">
-                <label for="parcours">Parcours</label>
-                <textarea name="parcours" id="parcours" placeholder="Décrivez le parcours professionnel du membre" class="field" value="<?php if (isset($parcours)) echo $parcours; ?>" required></textarea>
-            </div>
-
-            <div class="field">
-                <label for="cv">Curriculum vitae</label>
-                <input type="file" id="cv" name="cv" required>
-                <input type='text' value='<?php if (isset($id)) echo $id; ?>' hidden>
-            </div>
-
-            <div class="field">
->>>>>>> 89d8449d46d5b0e0ff171067ea323bd42a51c5e1
                 <input type="submit" name="submit" class="field" value="Enregistrer">
             </div>
         </form>
