@@ -220,7 +220,8 @@ ul{
     color: white;
     font-family: 'Poppins';
     padding: 70px 0;
-    bottom: 0;
+    margin-top: 30%;
+    
 }
 
 .footer-col{
@@ -353,4 +354,38 @@ ul{
     text-decoration: underline dotted ;
     line-height:5px;
     color: #4f279b
+}
+
+
+table {
+    align-self: center;
+    width: 80%;
+    border-color: rgb(216, 14, 14);
+    border-width: 0.3em;
+    border-style:solid;
+    text-align: center;
+    column-rule-style: solid;
+    column-rule-width: 0.3em;
+    column-rule-color: rgb(216, 14, 14);
+    color:white;
+    background-color:#c0393b;
+    margin: auto;
+}
+
+td .upd {
+    text-decoration: none;
+    color: rgb(110, 177, 10);
+}
+
+td .del {
+    text-decoration: none;
+    color: rgb(253, 164, 0);
+}
+
+a[class="upd"]:visited {
+    color: rgb(110, 177, 10);
+} 
+
+a[class="del"]:visited {
+    color: rgb(253, 164, 0);
 }

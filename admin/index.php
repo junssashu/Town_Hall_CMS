@@ -1,12 +1,20 @@
-<link rel="stylesheet" href="../admin/assets/styles/index.css">
+<?php
+    session_start();
+
+    if($_SESSION['logged_in']){
+        // show page ajouter personnel
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+    
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/index.css">
     <title>index_admin</title>
 </head>
 
@@ -106,5 +114,19 @@
         </footer>
     </div>
 
+
+
+    <!--  <div class="footer">
+        <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>
+        Pour le Travail pratique de l'unité d'enseignement INF2064, programmation web.
+    </div> -->
+
 </body>
+
 </html>
+<?php
+    }
+    else{
+        header('Location: ../pages/index.php');
+    }
+?>

@@ -36,37 +36,38 @@
                 error_reporting(E_ALL|E_STRICT);            
 
                 if ($_POST){
-                extract($_POST);
-    
-                if( empty($login) or empty($password) or empty($password_conf)){
-                    $error = " Veuillez remplir tous les champs ";
-                }else{
-
-                    if($password == $password_conf){
-                        
-                        $querry = $pdo->prepare("INSERT INTO Login (user_name, user_password) VALUES(?, PASSWORD(?))");
-                        $querry->bindValue(1, $login);
-                        $querry->bindValue(2, $password);
-                        if($querry->execute())
-                            header("Location: index.php");
-                        else
-                            $error = "Problème d'enrgistrement";
+                    extract($_POST);
+        
+                    if( empty($login) or empty($password) or empty($password_conf)){
+                        $error = " Veuillez remplir tous les champs ";
                     }
-                    else
-                        $error = "Les mots de passent entrés ne semblent pas correspondre!";
-                }
-            }
-            //We check if there is already a registered user. If so, registration isn't available anymore.
-            $user = $pdo->prepare("SELECT * FROM Login");
-            $user->execute();
+                    else{
 
-            if($user->rowCount() > 0)
-                echo "
-                    <div class='fields'>
-                    <p style='font-size:100%;''>Le compte administrateur a déjà été créé, veuillez <span><a href='index.php' style='text-decoration:none; color:rgb(230, 142, 11);'> vous connecter!</a></span></p>
-                    </div>
-                ";
-            else {
+                        if($password == $password_conf){
+                            
+                            $querry = $pdo->prepare("INSERT INTO Login (user_name, user_password) VALUES(?, PASSWORD(?))");
+                            $querry->bindValue(1, $login);
+                            $querry->bindValue(2, $password);
+                            if($querry->execute())
+                                header("Location: index.php");
+                            else
+                                $error = "Problème d'enrgistrement";
+                        }
+                        else
+                            $error = "Les mots de passent entrés ne semblent pas correspondre!";
+                    }
+                }
+                //We check if there is already a registered user. If so, registration isn't available anymore.
+                $user = $pdo->prepare("SELECT * FROM Login");
+                $user->execute();
+
+                if($user->rowCount() > 0)
+                    echo "
+                        <div class='fields'>
+                        <p style='font-size:100%;''>Le compte administrateur a déjà été créé, veuillez <span><a href='index.php' style='text-decoration:none; color:rgb(230, 142, 11);'> vous connecter!</a></span></p>
+                        </div>
+                    ";
+                else {
                 ?>
                     <div class='fields' style='height:60vh;'>
                         <form action='inscription.php' method='POST'>

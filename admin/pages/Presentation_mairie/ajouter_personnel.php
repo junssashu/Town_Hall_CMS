@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="../../assets/styles/Presentation_mairie/ajouter_personnel.css">
-
 <?php
     session_start();
 
@@ -7,33 +5,43 @@
         // show page ajouter personnel
 ?>
 
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="../../assets/styles/Presentation_mairie/personnel.css" ></link>
+    <link rel="stylesheet" href="../../assets/styles/form.css" ></link>
+</head>
+<body>
 
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <a href="../../index.php">Town Hall Generator</a>
+            </div>
 
-<link rel="stylesheet" href="../../../assets/styles/index.css">
-<div class="header">
-    <div class="title">
-        CMS pour la réalisation du site web d'une mairie<br><br>
-    </div>
-</div>
-<div class="main-content">
-    <div class="description">
-        Gestion des informations de la mairie
-    </div>
-    <div class="instruction">
-        Veuillez renseigner ou modifier les informations de la mairie.
-    </div>
+            <nav>
+                <a href="../../../" class="s_inscrire">Se déconnecter</a>
+                <a href="personnel.php" class="s_inscrire">Liste du personnel</a>
+            </nav>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="description">
+            Ceci est un cms<br>
+            Plus précisément, cette application web (cms) vous permettre ade réaliser aisément votre site web présentant votre mairie.<br>
+            Aucune connaissance en programmation web n'est requise, vous n'avez qu'à utiliser ce qui vous est présenté.
+            <br><br>
+        </div>
 
-    <?php
-
-    if (isset($_POST['nom']) and isset($_POST['parcours']) and isset($_POST['cv'])) {
-        $nom = $_POST['nom'];
-        $parcours = $_POST['parcours'];
-        $cv = $_POST['cv'];
-
-        if (empty($nom) or empty($parcours) or empty($cv)) {
-            $erreur = "all fields most be filled";
-        } else {
-            global $pdo;
+        <?php
+        //define('UPLOAD_DIR', '/home/Documents/cvs/');
+        ini_set('display_errors', 1);
+        error_reporting(E_ALL|E_STRICT);            
 
         if ($_POST){
             
@@ -53,7 +61,7 @@
 
                 //if($fileType=='pdf'){ //if the file is a pdf file
                     //if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
-                        $query = $pdo->prepare("INSERT INTO Personnel_mairie (nom, cv, parcoursProfessionnel) VALUES (?, NULL, ?)");
+                        $query = $pdo->prepare("INSERT INTO Personnel_mairie (nom, parcoursProfessionnel) VALUES (?, ?)");
                         $query->bindValue(1, $nom);
                         $query->bindValue(2, $parcours);
 
