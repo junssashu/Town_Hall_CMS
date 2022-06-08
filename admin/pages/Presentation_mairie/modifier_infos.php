@@ -59,14 +59,7 @@
             //if($fileType=='pdf'){ //if the file is a pdf file
                 //if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
                     //We verify if there's already a row in the table, if not we create it
-                    $query = $pdo->prepare("SELECT * FROM Presentation_mairie");
-                    $query->execute();
-                    if($query->rowCount()==0){
-                        $query = $pdo->prepare("INSERT INTO Presentation_mairie (nom, histoire, missions) VALUES('Pas de nom défini', 'Pas d'histoire définie', 'Pas de missions définies'");
-                        if($query->execute());
-                        $error='yessss';
-                    }
-                    
+                                    
                     $result1 = $result2 = $result3 = true;
                     if(!empty($nom)){
                         $query = $pdo->prepare("UPDATE Presentation_mairie SET nom=?");
@@ -86,7 +79,7 @@
 
                     if($result1 and $result2 and $result3){
                         $success = "Modification effectuée avec succès!";
-                        //header("Location: menu.php");
+                        header("Location: menu.php");
                     }else
                         $error = "L'enregistrement n'a pas été effectué. Veuillez réessayer.<br>Si le problème persiste, veuillez contacter le service technique.";
                 //}
@@ -97,6 +90,15 @@
             
         }
         else{
+
+            $query = $pdo->prepare("SELECT * FROM Presentation_mairie");
+            $query->execute();
+            if($query->rowCount()==0){
+                $query = $pdo->prepare("INSERT INTO `Presentation_mairie` (`nom`) VALUES ('Pas de nom défini')");
+                $query->execute();
+                $success = 'yeahhh';
+            }
+
             $query = $pdo->prepare("SELECT * FROM Presentation_mairie");
             $query->execute();
 
