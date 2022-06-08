@@ -1,9 +1,8 @@
-<link rel="stylesheet" href="../../assets/styles/index.css" >
+<link rel="stylesheet" href="../../assets/styles/Presentation_mairie/conseil_municipal.css">
 
 <?php
-    if ($_POST){
-
-    }
+if ($_POST) {
+}
 ?>
 
 
@@ -19,11 +18,11 @@
     <div class="instruction">
         Veuillez renseigner renseigner des informationssur le conseil municipal.
     </div>
-    
+
     <div class="cadre">
-        
+
     </div>
-    
+
 </div>
 <div class="footer">
     <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>

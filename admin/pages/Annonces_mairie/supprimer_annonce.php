@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="../../assets/styles/Annonces_mairie/supprimer_annonce.css">

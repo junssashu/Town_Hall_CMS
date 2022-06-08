@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="../../assets/styles/Activite_marie/supprimer_activite.css">
