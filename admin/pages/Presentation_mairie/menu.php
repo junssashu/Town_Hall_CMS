@@ -10,6 +10,11 @@
 </head>
 <body>
 
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <a href="../../index.php">Town Hall Generator</a>
+            </div>
 
             <nav>
                 <a href="../../../" class="s_inscrire">Se déconnecter</a>
@@ -27,15 +32,28 @@
             <br><br>
         </div>
 
-    <div class="options">
-        <a href="modifier_infos.php" class="option">Renseigner ou modifier les informations de la mairie</a>
-        <a href="conseil_municipal.php" class="option">Conseil municipal</a>
-        <a href="personnel.php" class="option">Gérer le personnel</a>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Creer son site web</h4>
+                        <ul class="list-footer">
+                            <li><a href="#">S'inscrire</a></li>
+                            <li><a href="#">Se connecter</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>About Us</h4>
+                        <ul class="list-footer">
+                            <li><a href="http://facsciences.cm">Facsciences</a></li>
+                            <li><a href="#">Conditions d'utilisateurs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <span class="hidden-phone"><br><br>copyright @uy1</span>
+        </footer>
     </div>
 
-
-</div>
-<div class="footer">
-    <br><br><br> Par les étudiants de la faculté des sciences de l'université de Yaoundé I.<br>
-    Pour le Travail pratique de l'unité d'enseignement INF2064, programmation web.
-</div>
+</body>
+</html>
