@@ -24,7 +24,7 @@ body{
 
 nav{
     width: 100%;
-    background-color: rgb(165, 22,22);
+    background-color: rgb(165, 22, 22);
     line-height:normal; 
     position: fixed;
     
@@ -90,57 +90,75 @@ nav a{
 
 
 .menu:hover{
+    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
+    opacity: .7; 
 }
 
 .activite:hover{
+    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
+    opacity: .7;
 }
 
 .annonce:hover{
+    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
+    opacity: .7;
  } 
 
 .pub:hover{
+     /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
+    opacity: .7;
 }
 
 .site:hover{
+    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
+    opacity:.7;
 }
 
 .projet:hover{
+    /* border-radius:800px; */
     border-top: 0px solid orange;
     background-color: orange;
+    opacity: .7;
 }
 
 .menu .submenu {
     background-color:#130f40; 
+    opacity: .7;
 }
 
 .activite .submenu{
     background-color:#130f40;
+    opacity: .7;
 }
 
 .annonce .submenu{
     background-color:#130f40;
+    opacity: .7;
 }
 
 .pub .submenu{
     background-color:#130f40;
+    opacity: .7;
 }
 
 .site .submenu{
     background-color:#130f40;
+    opacity: .7;
 }
 
 .projet .submenu{
     background-color:#130f40;
+    opacity: .7;
 }
 
 .submenu li:hover a{
@@ -198,7 +216,7 @@ a{
     position: fixed;
 }
                                 
-/* .banner-container{
+.banner-container{
     background-image: url(../content/road1.jpg);
     top: 100px;
     position: fixed;
@@ -207,7 +225,7 @@ a{
     background-size: cover;
     background-position: center center;
 }
-*/
+
 .banner-container:after{
     content:'';
     position: absolute;
@@ -217,7 +235,7 @@ a{
     height:150%;
     width: 100%;
     background: #130f40;
-    /* opacity: .7; */
+    opacity: .7;
     z-index: -1;
 }
 
@@ -227,12 +245,12 @@ a{
     top: 500px;
     background: white;
 }
-/* 
+
 .banner-container h1{
     font-size: 60px;
     word-spacing: 60px;
 }
-     */
+    
 .couleur{
     color: white;
 }
@@ -249,9 +267,4 @@ a{
 
 .wrapper{
     position: relative;
-}
-
-.thg{
-    float: left;
-    font-family: "Pacifico";
 }

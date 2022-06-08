@@ -29,7 +29,7 @@
         
         <div class="banner">
             <h2>Bienvenu sur le createur de site web de mairie le plus populaire de l'université de Yaoundé I</h2><br><span> creer votre site web pour votre mairie en toute simpicite  en moins de 5min et profitez d'une experience unique</span>
-            <br><br><div class="se_connecter"><a href="pages/connexion.php">Creer votre site web</a></div>
+            <br><br><div class="se_connecter"><a href="pages/index.php">Creer votre site web</a></div>
         </div>
 
         <div class="content-area">
@@ -44,7 +44,7 @@
             </div>
             <div class="other_content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur eligendi libero eaque dolorem expedita. Esse consequuntur deleniti reprehenderit odio, dolorum aperiam vitae accusamus ex voluptate, impedit doloribus dolore est soluta.</p>
-                <br><br><br><a href="pages/connexion.php" class="button">Creer son site</a>
+                <br><br><br><div class="button"><a href="pages/index.php">Creer son site</a></div>
             </div>
             <footer class="footer">
                 <div class="container">
