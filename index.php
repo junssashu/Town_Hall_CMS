@@ -52,8 +52,8 @@
                         <div class="footer-col">
                             <h4>Creer son site web</h4>
                             <ul class="list-footer">
-                                <li><a href="pages/index.php">S'inscrire</a></li>
-                                <li><a href="pages/connexion.php">Se connecter</a></li>
+                                <li><a href="pages/inscription.php">S'inscrire</a></li>
+                                <li><a href="pages/index.php">Se connecter</a></li>
                             </ul>
                         </div>
                         <div class="footer-col">
