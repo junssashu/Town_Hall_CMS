@@ -3,7 +3,6 @@
     // code php permettanrt de se recupperer les donnees 
 ?>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4">
 <!DOCTYPE html>
 <html lang="en">
 <head>
