@@ -53,7 +53,7 @@
 
                 //if($fileType=='pdf'){ //if the file is a pdf file
                     //if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
-                        $query = $pdo->prepare("INSERT INTO Personnel_mairie (nom, cv, parcoursProfessionnel) VALUES (?, NULL, ?)");
+                        $query = $pdo->prepare("INSERT INTO Personnel_mairie (nom, parcoursProfessionnel) VALUES (?, ?)");
                         $query->bindValue(1, $nom);
                         $query->bindValue(2, $parcours);
 

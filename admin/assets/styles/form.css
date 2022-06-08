@@ -67,6 +67,7 @@ body {
 
 .field {
     display: flex;
+    flex-direction: column;
     height: 10vh;
     width: 100%;
     justify-content: center;
@@ -74,7 +75,23 @@ body {
     padding-bottom: 3%;
 }
 
+.field label {
+    display: flex;
+    justify-content: center;
+}
+
+.field textarea {
+    display: flex;
+}
+
+.field input {
+    display: flex;
+    justify-content: center;
+}
+
 .field p {
+    display: flex;
     font-size: 150%;
-    width: 40%;
+    width: 60%;
+    margin: auto;
 }
