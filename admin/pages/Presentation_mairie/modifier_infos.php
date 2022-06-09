@@ -93,19 +93,6 @@
 
             $query = $pdo->prepare("SELECT * FROM Presentation_mairie");
             $query->execute();
-            if($query->rowCount()==0){
-                $nom = 'Pas de nom défini';
-                $histoire = "Pas d'histoire définie";
-                $missions = "Pas de missions définies";
-                $query = $pdo->prepare("INSERT INTO Presentation_mairie (nom, histoire, missions) VALUES (?, ?, ?)");
-                $query->bindValue(1, $nom);
-                $query->bindValue(2, $histoire);
-                $query->bindValue(3, $missions);
-                $query->execute();
-            }
-
-            $query = $pdo->prepare("SELECT * FROM Presentation_mairie");
-            $query->execute();
 
             $row = $query->fetch(PDO::FETCH_ASSOC);
             $nom = $row['nom'];
