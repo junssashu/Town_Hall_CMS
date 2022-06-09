@@ -44,55 +44,74 @@
         error_reporting(E_ALL|E_STRICT);            
 
         require_once '../../../connexion/connexion.php';
-        if ($_POST){
+        if ($_POST){ //Si un formulaire a ete envoye
             
-            extract($_POST);    
+            extract($_POST); // On extrait les valeurs des champs (ces valeurs seront stockées dans des valeurs de nom identiques aux nom des champs, par exemple $nom pouur le champ input d'attribut name='nom')
 
             //Requirements for file storing
-            /*$targetDir = "../../../data/cvs/";
+            $targetDir = "../../../data/cvs/";
             $fileName = basename($_FILES['cv']["name"]);
             $storingPath = $targetDir . $fileName;
             $fileType = pathinfo($storingPath, PATHINFO_EXTENSION);
-            */
+            
 
-            //if($fileType=='pdf'){ //if the file is a pdf file
-            //if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
-            $result1 = $result2 = true;        
-            if(!empty($nom)){
-            $query = $pdo->prepare("UPDATE Personnel_mairie set nom=? WHERE id=?");
-                $query->bindValue(1, $nom);
-                $query->bindValue(2, $id);
-                $result1 = $query->execute();
-            }
-            if(!empty($parcours)){
-                $query = $pdo->prepare("UPDATE Personnel_mairie set parcoursProfessionnel=? WHERE id=?");
-                    $query->bindValue(1, $parcours);
-                    $query->bindValue(2, $id);
-                    $result2 = $query->execute();
-            }
+            if($fileType=='pdf'){ //if the file's type is pdf
+                if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
+                    $result1 = $result2 = $result3 = true;
+                    if(!empty($nom)){ //Si l'utilisateur a changé le nom
+                    $query = $pdo->prepare("UPDATE Personnel_mairie set nom=? WHERE id=?"); // Preparation de la requete
+                        $query->bindValue(1, $nom); // AAsignation des parametres à la requete en fonction de leurs positions
+                        $query->bindValue(2, $id);
+                        $result1 = $query->execute(); // Execution de la requete
+                    }
+                    if(!empty($parcours)){ //Si l'utilisateur a changé le parcours
+                        $query = $pdo->prepare("UPDATE Personnel_mairie set parcoursProfessionnel=? WHERE id=?");
+                            $query->bindValue(1, $parcours);
+                            $query->bindValue(2, $id);
+                            $result2 = $query->execute();
+                    }
+                    if(!empty($fileName)){ //Si le fichier de cv a été modifié
+                        //Retrieve the old cv's name for its deletion
+                        $query = $pdo->prepare("SELECT cv FROM Personnel_mairie WHERE id=?");
+                        $query->bindValue(1, $id);
+                        $query->execute();
+                        $old_cv = $query->fetch(PDO::FETCH_ASSOC);//Récupération du premier enregistrement de la requete
+                        $old_cv = $old_cv['cv']; //Accession au champ cv de cet enregistrement
+                        
+                        //delete the file
+                        unlink("../../../data/cvs/".$old_cv); //suppression de l'ancien fichier de cv
+                        
+                        
+                        //Change the cv file
+                        $query = $pdo->prepare("UPDATE Personnel_mairie set cv=? WHERE id=?"); //Mise à jour du cv
+                        $query->bindValue(1, $fileName);
+                        $query->bindValue(2, $id);
+                        $result3 = $query->execute();
+                    }
 
-            if($result1 and $result2){
-                $success = "Enregistrement effectué avec succès!";
-                header("Location: personnel.php");
+                    if($result1 and $result3 and $result2){ // Si tout s'est bien passé
+                        $success = "Enregistrement effectué avec succès!";
+                        header("Location: personnel.php"); //On redirige l'utilisateur à la page personnel.php
+                    }
+                    else
+                        $error = "L'enregistrement n'a pas été effectué. Veuillez réessayer.<br>Si le problème persiste, veuillez contacter le service technique.";
+                }
+                else $error = "Le CV n'a pas pu etre téléchargé vers le serveur.";
             }
             else
-                $error = "L'enregistrement n'a pas été effectué. Veuillez réessayer.<br>Si le problème persiste, veuillez contacter le service technique.";
-                //}
-                //  else $error = "Le CV n'a pas pu etre téléchargé vers le serveur.";
-            //}
-            //else
-                //  $error = "Veuillez choisir un fichier pdf.";
+                $error = "Veuillez choisir un fichier pdf.";
         
         }
-        else{
-            $id = $_GET['id'];
-            $query = $pdo->prepare("SELECT * FROM Personnel_mairie WHERE id=?");
-            $query->bindVaLue(1, $id);
-            $query->execute();
+        else{ //Si une demande de modification est effectuée
+            $id = $_GET['id']; //On récupère l'identifiant passé dans la requete
+            $query = $pdo->prepare("SELECT * FROM Personnel_mairie WHERE id=?"); //On prépare la requete
+            $query->bindVaLue(1, $id); // Paramétrage de la requete
+            $query->execute(); // Execution
 
-            $row = $query->fetch(PDO::FETCH_ASSOC);
-            $nom = $row['nom'];
-            $parcours = $row['parcoursProfessionnel'];
+            $row = $query->fetch(PDO::FETCH_ASSOC); //Récupération du premier enregistrement (dans ce cas, l'unique vu que l'id est unique par enregistrement dans Personnel_mairie)
+            $nom = $row['nom']; // Récupération du nom de cet enregistrement
+            $parcours = $row['parcoursProfessionnel']; //Récupération de son parcours Professionnel
+            //Ces deux dernières varibles seront affichées dans les champs, pour que l'admin sache ce veux modifier
         }
         ?>
         

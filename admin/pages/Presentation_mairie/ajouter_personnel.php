@@ -39,42 +39,43 @@
         </div>
 
         <?php
-        //define('UPLOAD_DIR', '/home/Documents/cvs/');
         ini_set('display_errors', 1);
         error_reporting(E_ALL|E_STRICT);            
 
         if ($_POST){
             
-            require_once '../../../connexion/connexion.php';
+            require_once '../../../connexion/connexion.php'; // Incluion du fichier de connexion à la base de données (de façon obligatoire), ce fichier définit la variable $pdo
             extract($_POST);
-            if(empty($nom) or empty($parcours)/* or empty($_FILES["cv"]["name"])*/){
+            if(empty($nom) or empty($parcours) or empty($_FILES["cv"]["name"])){ //Si au moins un des champs est vide
                 $erreur = "Vous devez remplir tous les champs!";
             }
             else{
 
                 //Requirements for file storing
-                /*$targetDir = "../../../data/cvs/";
+                $targetDir = "../../../data/cvs/";
                 $fileName = basename($_FILES['cv']["name"]);
                 $storingPath = $targetDir . $fileName;
                 $fileType = pathinfo($storingPath, PATHINFO_EXTENSION);
-                */
+                
 
-                //if($fileType=='pdf'){ //if the file is a pdf file
-                    //if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
-                        $query = $pdo->prepare("INSERT INTO Personnel_mairie (nom, parcoursProfessionnel) VALUES (?, ?)");
+                if($fileType=='pdf'){ //if the file is a pdf file
+                    if(move_uploaded_file($_FILES['cv']['tmp_name'], $storingPath)){//if the file has been successfully uploaded
+                        $query = $pdo->prepare("INSERT INTO Personnel_mairie (nom, cv, parcoursProfessionnel) VALUES (?, ?, ?)"); // Préparatino de la requete d'ajout
+                        //Parametrage de la requete
                         $query->bindValue(1, $nom);
-                        $query->bindValue(2, $parcours);
+                        $query->bindValue(2, $fileName);
+                        $query->bindValue(3, $parcours);
 
-                        $result = $query->execute();
+                        $result = $query->execute();// Execution de la requete
                         if($result)
                             $success = "Enregistrement effectué avec succès!";
                         else
                             $error = "L'enregistrement n'a pas été effectué. Veuillez réessayer.<br>Si le problème persiste, veuillez contacter le service technique.";
-                    //}
-                  //  else $error = "Le CV n'a pas pu etre téléchargé vers le serveur.";
-                //}
-                //else
-                  //  $error = "Veuillez choisir un fichier pdf.";
+                    }
+                    else $error = "Le CV n'a pas pu etre téléchargé vers le serveur.";
+                }
+                else
+                    $error = "Veuillez choisir un fichier pdf.";
             }
         }
         ?>
