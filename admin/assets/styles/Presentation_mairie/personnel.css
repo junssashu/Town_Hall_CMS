@@ -214,6 +214,38 @@ ul{
     list-style:none;
 }
 
+.content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    text-align: center;
+    justify-content: center;
+
+    z-index: -10;
+    height: 60%;
+    width: 100%;
+    background-image: url("../../content/mountain.jpg");
+}
+
+.nom {
+    font-family: 'Pacifico';
+    font-style:bold;
+    font-size:300%;
+    color:red;
+}
+
+.second-titre {
+    font-family: 'Raleway', sans-serif;
+    font-size: 200%;
+    color:rgb(145, 192, 17);
+}
+
+.detail {
+    font-family: 'Joan', serif;
+    color: black;
+}
+
 .footer {
     background-color: rgb(31, 31, 31);
     box-sizing: border-box;
