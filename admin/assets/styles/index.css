@@ -231,3 +231,15 @@
     section.wrapper{
         margin-top: 0px;
     }
+
+
+.second-titre {
+    font-family: 'Gentium Plus', serif;
+    font-size: 200%;
+    color:rgb(145, 192, 17);
+}
+
+.detail {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}

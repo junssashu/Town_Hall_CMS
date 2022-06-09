@@ -3,9 +3,32 @@
 
     if($_SESSION['logged_in']){
         // show page ajouter personnel
+
+require_once '../connexion/connexion.php';
+
+$query = $pdo->prepare("SELECT * FROM Presentation_mairie");
+$query->execute();
+if($query->rowCount()==0){
+    $nom = 'Pas de nom défini';
+    $histoire = "Pas d'histoire définie";
+    $missions = "Pas de missions définies";
+    $query = $pdo->prepare("INSERT INTO Presentation_mairie (nom, histoire, missions) VALUES (?, ?, ?)");
+    $query->bindValue(1, $nom);
+    $query->bindValue(2, $histoire);
+    $query->bindValue(3, $missions);
+    $query->execute();
+    
+    $query = $pdo->prepare("SELECT * FROM Presentation_mairie");
+    $query->execute();
+}
+
+
+$row = $query->fetch(PDO::FETCH_ASSOC);
+$nom = $row['nom'];
+$histoire = $row['histoire'];
+$missions = $row['missions'];
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -91,20 +114,36 @@
 
 
     <div class="banner-container">
-        <h1>TOWN HALL GENERATOR</h1>
+        <?php
+            if(empty($nom))
+                echo "<h1>TOWN HALL GENERATOR</h1>";
+            else
+                echo "<h1>".$nom."</h1>";
+        ?>
     </div>
 
 
     <div class="content">
         <div class="wrapper">
             <h2>Description</h2>
-            <p>
-                Ceci est un cms<br>
-                Plus précisément, cette application web (cms) vous permettra de réaliser aisément votre site web présentant votre mairie.<br>
-                Aucune connaissance en programmation web n'est requise, vous n'avez qu'à utiliser ce qui vous est présenté.
-                <br><br>Vous etes actuellement connectés en mode admin.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem nemo, enim neque nobis mollitia pariatur sequi ullam, eius iusto incidunt unde eaque. Esse dolorum fugiat libero accusantium molestiae voluptatum quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odio totam ea nulla vitae nemo pariatur explicabo iusto inventore quaerat asperiores expedita rerum blanditiis officia, sunt nisi similique aliquam. Fugit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore adipisci consectetur, fuga porro pariatur commodi incidunt id quis soluta nam tempora odio ipsam voluptatem libero? Odio cum vero nulla mollitia. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quis neque, nesciunt necessitatibus quasi dicta blanditiis dolorem placeat vero, hic laboriosam maiores praesentium possimus sequi debitis provident consequuntur voluptate! Ipsum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa numquam, debitis asperiores quidem, consequatur sunt enim aut magni aliquam nostrum a facilis quae nihil delectus nulla quo error eius nesciunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptate iste corrupti fugit placeat eaque nisi provident, assumenda totam similique possimus eos incidunt quia iusto non sequi et! Fuga, laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque illo quis molestias maxime eligendi unde quas, hic excepturi magni et quaerat odit ab necessitatibus animi quae, reiciendis minima aspernatur nam.<br><br><br>
-            </p>
+            <?php
+                if(empty($nom))
+                    echo "
+                    <p>
+                        Ceci est un cms<br>
+                        Plus précisément, cette application web (cms) vous permettra de réaliser aisément votre site web présentant votre mairie.<br>
+                        Aucune connaissance en programmation web n'est requise, vous n'avez qu'à utiliser ce qui vous est présenté.
+                        <br><br>Vous etes actuellement connectés en mode admin.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem nemo, enim neque nobis mollitia pariatur sequi ullam, eius iusto incidunt unde eaque. Esse dolorum fugiat libero accusantium molestiae voluptatum quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odio totam ea nulla vitae nemo pariatur explicabo iusto inventore quaerat asperiores expedita rerum blanditiis officia, sunt nisi similique aliquam. Fugit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore adipisci consectetur, fuga porro pariatur commodi incidunt id quis soluta nam tempora odio ipsam voluptatem libero? Odio cum vero nulla mollitia. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quis neque, nesciunt necessitatibus quasi dicta blanditiis dolorem placeat vero, hic laboriosam maiores praesentium possimus sequi debitis provident consequuntur voluptate! Ipsum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa numquam, debitis asperiores quidem, consequatur sunt enim aut magni aliquam nostrum a facilis quae nihil delectus nulla quo error eius nesciunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptate iste corrupti fugit placeat eaque nisi provident, assumenda totam similique possimus eos incidunt quia iusto non sequi et! Fuga, laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque illo quis molestias maxime eligendi unde quas, hic excepturi magni et quaerat odit ab necessitatibus animi quae, reiciendis minima aspernatur nam.<br><br><br>
+                    </p>
+                    ";
+                else{
+                    echo "
+                        <h3 class='second-titre'>Histoire</h3><p class='detail'>".$histoire."</h3>
+                        <h3 class='second-titre'>Missions</h3><p class='detail'>".$missions."</h3>";
+                }
+            ?>
+            
         </div>
         <footer class="footer">
             <div>
