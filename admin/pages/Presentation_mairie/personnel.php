@@ -1,6 +1,7 @@
+
 <?php
     session_start();
-
+    
     if($_SESSION['logged_in']){
         // show page ajouter personnel
 ?>
@@ -12,6 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
     <title>Personnel</title>
     <link rel="stylesheet" href="../../assets/styles/Presentation_mairie/personnel.css" ></link>
@@ -58,6 +60,7 @@
                     <tr>
                         <th><b style="color:greenyellow;">Nom</b></th>
                         <th><b style="color:greenyellow;">Parcours Professionnel</b></th>
+                        <th><b style="color:greenyellow;">Curriculums vitae</b></th>
                         <th><b style="color:greenyellow;">Actions</b></th>
                     </tr>
             </thead>
@@ -65,15 +68,21 @@
         <?php
             require_once '../../connexion/connexion.php';
             
-            $query = 'SELECT * FROM Personnel_mairie ORDER BY nom ASC';
-            $result = mysqli_query($db, $query);
+            $query = 'SELECT * FROM Personnel_mairie ORDER BY nom ASC'; // Requete de recuperation des infos dans la base donnees, dans la table correspondantes à la page actuelle
+            $result = mysqli_query($db, $query); //Execution de la requete
 
+            // Affichage des informations sans un tableau
             $string="";
                 while($row=mysqli_fetch_assoc($result)) {
                     //ecriture des tags de retour
                     $string=$string."<tr>\n";
                     $string=$string."<td>".$row['nom']."</td>\n";
                     $string=$string."<td>".$row['parcoursProfessionnel']."</td>\n";
+                    if($row['cv']=='NULL')
+                        $string=$string."<td>Pas de cv disponible</td>\n";
+                    else
+                        $string=$string."<td><a href='../../../data/cvs/".$row['cv']."' style='text-decoration:none; color:blue;'>CV de ".$row['nom']."</a></td>\n";
+
                     $string=$string."\n<td>\n";
                     $string = $string."<a href='modifier_personnel.php?id=".$row['id']."' class='upd'>Modifier</a> / <a href='supprimer_personnel.php?id=".$row['id']."' class='del'>Supprimer</a>\n</td>";
                     $string=$string."\n</td>\n";
