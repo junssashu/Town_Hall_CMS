@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../assets/styles/index.css" >
+<link rel="stylesheet" href="../../assets/styles/Lieux_touristiques_mairie/sites_touristiques.php" >
 
 
 <div class="header">

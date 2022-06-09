@@ -109,7 +109,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laudantium nulla aperiam officiis maiores tempora voluptate, facere id velit expedita blanditiis ducimus adipisci tempore nisi, aliquam est cupiditate? Sit, necessitatibus?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias autem beatae placeat, praesentium culpa nostrum eveniet ipsum nesciunt. Reiciendis esse voluptas libero accusantium quos dolore, nostrum blanditiis sequi ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat ab, aspernatur alias exercitationem molestias, impedit saepe ducimus quaerat qui dicta facilis a itaque. Sed velit labore, dolorem numquam natus architecto!</p>
             </div>
             <span class="hidden-phone"><br><br>copyright @uy1</span><br><br>
-            <span class="thg"><strong><a href="../../Town_Hall_CMS/admin/index.php">Town Hall Generator</a>
+            <span class="thg"><strong><a href="../../admin/index.php">Town Hall Generator</a>
                 </strong></span>
         </footer>
     </div>
