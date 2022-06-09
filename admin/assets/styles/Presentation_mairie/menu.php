@@ -1,3 +1,8 @@
+<?php
+header('Content-type: text/css');
+$align = "center";
+
+?>
 @import url("http://fonts.googleapis.com/css?family=Poppins");
 @import url("http://fonts.googleapis.com/css?family=Pacifico&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital@1&family=Raleway&display=swap');
@@ -9,7 +14,7 @@
 
 body {
     font-family: 'Poppins';
-    text-align: center;
+    text-align: <?=$align?>;
 }
 
 .wrapper {
