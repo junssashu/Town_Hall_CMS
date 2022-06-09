@@ -151,7 +151,7 @@ CREATE TABLE `Missions_mairie` (
 CREATE TABLE `Personnel_mairie` (
   `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `cv` varchar(50) NOT NULL DEFAULT 'NULL',
+  `cv` varchar(200) NOT NULL DEFAULT 'NULL',
   `parcoursProfessionnel` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
