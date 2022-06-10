@@ -200,7 +200,7 @@ header{
     border-bottom: 0px solid white;
 }
 
-h1{ text-align : center; font-family: 'Pacifico'; color: white; margin-top: 20%; }
+h1{ text-align : center; font-family: 'Pacifico'; color: white; margin-top: 20%;}
 h2{ text-align : center; color: blue; margin-left:2%; }
 
 /* couleur et police d'ecriture du de la page en arriere plan */
@@ -243,7 +243,8 @@ a{
     background-color: black;
     box-sizing: border-box;
     color: #EEE;
-    font-family: 'Poppins';
+    font-family: 'Tangerine';
+    font-size: 300%;
     padding: 70px 0;
     bottom: 0;
 }
