@@ -151,7 +151,7 @@
     </div>
 
     <div class="content">
-    <div class="wrapper">
+    <div class="wrapper" style="height:20%; background-color:white;">
             <h2>Description</h2>
             <?php
                 if(empty($nom))
@@ -172,8 +172,8 @@
                 echo "";
 
             ?>
-            <div class="">
-                Veuilez sélectionner un style pour votre site
+            <div class="" style="height:30%;margin-top:5%;background-color:beige;">
+                <p style="color:green;font-size:140%;">Veuilez sélectionner un style pour votre site</p>
                 <form action="index.php" method="POST">
                     <select name="style" id="style">
                         <option value="1">Style 1</option>
