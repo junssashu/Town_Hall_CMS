@@ -60,7 +60,7 @@
                     $result1 = $result2 = $result3 = true;
                     if(!empty($nom)){ //Si l'utilisateur a changé le nom
                     $query = $pdo->prepare("UPDATE Personnel_mairie set nom=? WHERE id=?"); // Preparation de la requete
-                        $query->bindValue(1, $nom); // AAsignation des parametres à la requete en fonction de leurs positions
+                        $query->bindValue(1, $nom); // Assignation des parametres à la requete en fonction de leurs positions
                         $query->bindValue(2, $id);
                         $result1 = $query->execute(); // Execution de la requete
                     }

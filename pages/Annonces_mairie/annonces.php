@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,10 @@
             <div class="pub"><a href="../Espace_pub_mairie/pubs.php">Pub</a></div>
         </div>
     </div>
+=======
+
+<link rel="stylesheet" href="../../assets/styles/index.css" >
+>>>>>>> cdc064ebc743db631c23f460617d63848854fe72
 
     <div class="title"><h1>Annonces</h1></div>
 

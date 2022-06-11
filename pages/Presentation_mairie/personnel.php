@@ -1,7 +1,24 @@
-<link rel="stylesheet" href="../../assets/styles/presentation_mairie/personnel.css" type="text/css" >
 <?php
     // code php permettanrt de se recupperer les donnees 
-?>
+    require_once '../../connexion/connexion.php';
+    
+    $query = $pdo->prepare("SELECT * FROM Presentation_mairie");
+    $query->execute();
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+    $Nom_Mairie = $row['nom'];
+    ?>
+    <?php
+    require_once '../../connexion/connexion.php';
+    //Sélection du style
+    $query = $pdo->prepare("SELECT * FROM Style");
+    $query->execute();
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+    $style = $row['id'];
+    
+    echo
+        "<link rel='stylesheet' href='../../assets/styles/presentation_mairie/".$style."personnel.css' type='text/css' ></link>";
+    ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +33,7 @@
     <div class="header">
         <div class="header-container">
             <div class="logo">
-                <h2><?php if(isset($Nom_mairie)){echo "$Nom_mairie";}else{echo "Town Hall Generator";}?></h2>
+                <h2><?php if(isset($Nom_mairie)){echo $Nom_mairie;}else{echo "Town Hall Generator";}?></h2>
             </div>
             <ul class="menu_deroulant">
                 <li><a href="#">Activite</a>

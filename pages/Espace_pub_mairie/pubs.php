@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,19 @@
             <?php
                         
             ?>
+=======
+<?php
+    require_once '../../connexion/connexion.php';
+    //Sélection du style
+    $query = $pdo->prepare("SELECT * FROM Style");
+    $query->execute();
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+    $style = $row['id'];
+    
+    echo
+        "<link rel='stylesheet' href='../../assets/styles/".$style."index.css' type='text/css' ></link>\n";
+?>
+>>>>>>> cdc064ebc743db631c23f460617d63848854fe72
 
             <div class="card">
                 <div class="card-image"></div>

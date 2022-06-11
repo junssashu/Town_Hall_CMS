@@ -10,6 +10,18 @@
     }else{
 
 */?>
+<?php
+    require_once '../connexion/connexion.php';
+    //Sélection du style
+    $query = $pdo->prepare("SELECT * FROM Style");
+    $query->execute();
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+    $style = $row['id'];
+    
+    echo
+        "<link rel='stylesheet' href='../assets/styles/".$style."index.css' type='text/css' ></link>\n
+        <link rel='stylesheet' href='../assets/styles/".$style."account.css' type='text/css' ></link>";
+?>
 
     
 <!DOCTYPE html>
@@ -19,8 +31,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=Acceuil Marie, initial-scale=1.0">
     <title>Connexion</title>
-    <link rel="stylesheet" href="../assets/styles/index.css" ></link>
-    <link rel="stylesheet" href="../assets/styles/account.css" ></link>
 </head>
 <body>
 

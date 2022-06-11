@@ -28,6 +28,36 @@
         $histoire = $row['histoire'];
         $missions = $row['missions'];
 
+
+        //Gestion des styles
+        if($_POST){
+            extract($_POST);
+            if($style=='1')
+                $style = '';
+            
+            $query = $pdo->prepare('SELECT * FROM Style');
+            $query->execute();
+            
+            if($query->rowCount()==0){
+                $query = $pdo->prepare('INSERT INTO Style (id) VALUES (?)');
+                $query->bindValue(1, $style);
+                $result = $query->execute();
+            }
+            else{
+                $query = $pdo->prepare('UPDATE Style SET id=?');
+                $query->bindValue(1, $style);
+                $result = $query->execute();     
+            }
+            
+            if($result)
+                $success = "Enregistrement effectué avec succès!";
+            else
+                $error = "L'enregistrement n'a pas été effectué. Veuillez réessayer.<br>Si le problème persiste, veuillez contacter le service technique.";
+        
+            
+
+        }
+
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +68,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../admin/assets/styles/style.css">
-    <title>index_admin</title>
+    <title>Page d'administration</title>
 </head>
 
 <body>
@@ -121,7 +151,7 @@
     </div>
 
     <div class="content">
-    <div class="wrapper">
+    <div class="wrapper" style="height:20%; background-color:white;">
             <h2>Description</h2>
             <?php
                 if(empty($nom))
@@ -139,8 +169,36 @@
                         <h3 class='second-titre'>Histoire</h3><p class='detail'>".$histoire."</h3>
                         <h3 class='second-titre'>Missions</h3><p class='detail'>".$missions."</h3>";
                 }
+                echo "";
+
             ?>
-            
+            <div class="" style="height:30%;margin-top:5%;background-color:beige;">
+                <p style="color:green;font-size:140%;">Veuilez sélectionner un style pour votre site</p>
+                <form action="index.php" method="POST">
+                    <select name="style" id="style">
+                        <option value="1">Style 1</option>
+                        <option value="2">Style 2</option>
+                    </select>
+                    <input type="submit" value="Enregistrer">
+                    
+                </form>
+                <?php
+                if(isset($error)){   
+                echo "
+                    <br>
+                    <span style='color:rgb(230, 142, 11)'>" .$error. "</span>
+                    <br>";
+                }
+
+                if(isset($success)){   
+                echo "
+                        <br>
+                        <span style='color:greenyellow'>" .$success. "</span>
+                        <br>";
+                }
+            ?>
+            </div>
+
         </div>
         <footer class="footer">
             <div>

@@ -258,10 +258,26 @@ a{
     box-sizing: border-box;
     color: #EEE;
     font-family: 'Tangerine';
-    font-size: 300%;
+    font-size: 100%;
     padding: 70px 0;
     bottom: 0;
 }
 
+.nom {
+    font-family: 'Pacifico';
+    font-style:bold;
+    font-size:300%;
+    color:red;
+}
 
+.second-titre {
+    font-family: 'Gentium Plus', serif;
+    font-size: 200%;
+    color:rgb(145, 192, 17);
+}
 
+.detail {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+
+}
