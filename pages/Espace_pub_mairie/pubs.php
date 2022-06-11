@@ -1,4 +1,14 @@
-<link rel="stylesheet" href="../../assets/styles/index.css" >
+<?php
+    require_once '../../connexion/connexion.php';
+    //Sélection du style
+    $query = $pdo->prepare("SELECT * FROM Style");
+    $query->execute();
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+    $style = $row['id'];
+    
+    echo
+        "<link rel='stylesheet' href='../../assets/styles/".$style."index.css' type='text/css' ></link>\n";
+?>
 
 
 <div class="header">

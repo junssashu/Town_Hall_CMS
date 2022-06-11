@@ -60,6 +60,7 @@
                     <tr>
                         <th><b style="color:greenyellow;">Nom</b></th>
                         <th><b style="color:greenyellow;">Description</b></th>
+                        <th><b style="color:greenyellow;">Actions</b></th>
                     </tr>
             </thead>
 

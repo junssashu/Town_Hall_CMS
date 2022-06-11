@@ -171,6 +171,14 @@ CREATE TABLE `Presentation_mairie` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `Style`
+--
+
+CREATE TABLE `Style` (
+  `id` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
 -- Structure de la table `Projets_mairie`
 --
 
@@ -263,6 +271,12 @@ ALTER TABLE `Missions_mairie`
 -- Index pour la table `Personnel_mairie`
 --
 ALTER TABLE `Personnel_mairie`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `Personnel_mairie`
+--
+ALTER TABLE `Style`
   ADD PRIMARY KEY (`id`);
 
 --
