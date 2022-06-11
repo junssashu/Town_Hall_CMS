@@ -12,7 +12,7 @@
     src: url("../../content/font/Poppins/Poppins-Light.ttf");
     src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
 }
-
+ 
 @font-face {
     font-family: 'Pacifico';
     src: url("../../content/font/Pacifico/Pacifico-Regular.ttf");
@@ -73,7 +73,7 @@ body{width:100%;height:100%;}
 
     .header .nav a:link, .header .nav a:visited{
         text-decoration: none;
-        color: green;
+        color: greenyellow;
         font-family: 'Pacifico';
         font-weight: bolder;
         font-size: 20px;
@@ -82,13 +82,28 @@ body{width:100%;height:100%;}
 
     .header .nav a:hover{
         border-bottom: 1px dotted currentColor ;
-        color: blue;
+        color: skyblue;
     }
 
     /* ------------- */
 
 /* ----------------- */
 
+/* design title */
+
+.title h1{
+    clear: both;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    background: black;
+    font-family: 'Pacifico';
+    font-size: 4rem;
+}
+
+/* ----------- */
+
+/* design main-content */
 
 
 /* design main-content */
@@ -188,34 +203,14 @@ body{width:100%;height:100%;}
 /* ----------------- */
 
 
-
-/* design title */
-
-.title h1{
-    clear: both;
-    text-align: center;
-    justify-content: center;
-    color: white;
-    background: black;
-    font-family: 'Pacifico';
-    font-size: 4rem;
-}
-
-/* ----------- */
-
-/* design main-content */
-
-
-
 /* ------------------- */
-
 
 /* footer design */
 
 .footer{
     width: 100vw;
     height: 18%;
-    background: linear-gradient(160deg,black, rgb(43, 43, 43), black);
+    background: linear-gradient(160deg,black,brown, black);
 
     color: white;
     text-align: center;
@@ -235,7 +230,7 @@ body{width:100%;height:100%;}
 
         .footer .references .ref1 h2{
             font-family: 'Poppins';
-            color: red;
+            color: brown;
             text-decoration: dotted;
         }
 

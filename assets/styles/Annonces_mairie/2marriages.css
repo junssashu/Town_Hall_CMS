@@ -12,7 +12,7 @@
     src: url("../../content/font/Poppins/Poppins-Light.ttf");
     src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
 }
-
+ 
 @font-face {
     font-family: 'Pacifico';
     src: url("../../content/font/Pacifico/Pacifico-Regular.ttf");
@@ -48,7 +48,7 @@
 /* body design */
 
 body{
-    background:linear-gradient(120deg, rgb(66, 114, 114), rgb(158, 36, 36));
+    background:linear-gradient(120deg, rgb(197, 240, 240), rgb(158, 36, 36));
 }
 
     /* deign main-content */
@@ -145,7 +145,7 @@ body{
         /* ----------- */
 
         .cadre .card:hover{
-            transform:scale(1.1);
+            transform:scale(1.2);
             box-shadow: 5px 5px 15px black;
         }
 

@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url("../../content/font/Poppins/Poppins-Black.ttf");
+    src: url("../../content/font/Poppins/Poppins-BlackItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Bold.ttf");
+    src: url("../../content/font/Poppins/Poppins-BoldItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraBold.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraBoldItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraLight.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraLightItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Italic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Light.ttf");
+    src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url("../../content/font/Pacifico/Pacifico-Regular.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* -------------- */
+
+
+/* Header design */
+
+.header{
+    width: 100vw;
+    height:12%;
+    font-family: 'Pacifico';
+}
+
+    /* design nav  */
+
+    
+
+    /* ----------- */
+
+/* -------------- */
+
+
+/* body design */
+
+body{
+    background:linear-gradient(120deg, rgb(66, 114, 114), rgb(158, 36, 36));
+}
+
+    /* deign main-content */
+
+    .main-content .instruction{
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .main-content .instruction h1{
+        font-family: 'Pacifico';
+        font-size: 45px;
+        color: white;
+        font-weight: 800;
+    }
+
+    /* ------------------ */
+
+    /* design cardre */
+
+    .cadre{
+        width: 100vw;
+        height: 70%;
+        padding-top: 5%;
+        padding-bottom: 3%;
+        display:flex;
+
+        flex-wrap: wrap;
+        
+        align-items: center;
+        justify-content: center;
+        
+        row-gap : 70px;
+
+        overflow: hidden;
+    }
+
+        /* Card design */
+
+        .cadre .card{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 300px);
+            grid-template-rows: 210px auto;
+            grid-template-areas: "image" "text";
+
+            font-family: 'Poppins', sans-serif;
+            border-radius: 18px;
+            background:white;
+            box-shadow: 5px 5px 15px black;
+            text-align: center;
+
+            transition: 0.5s ease;
+            cursor: pointer; 
+
+            margin: auto;
+        }
+
+            /* section image design */
+
+            .cadre .card .card-image{
+                grid-area: image;
+                background: url("../../content/Mairie/Lieux_touristiques_mairie/ema-studios-sbyMQSWezhU-unsplash.jpg");
+                border-top-right-radius: 15px;
+                border-top-left-radius: 15px;
+                background-size: cover;
+            }
+
+            /* -------------------- */
+
+            /* section text design */
+
+            .cadre .card .card-text{
+                grid-area: text;
+                margin: 25px;
+            }
+
+            .cadre .card .card-text .name{
+                color: blue;
+                font-size: 15px;
+                font-family: 'Pacifico';
+                font-weight: 800;
+                margin-bottom: 15px;
+            }
+
+            .cadre .card .card-text .description{
+                color: grey;
+                font-size: 12px;
+                font-weight: 300;
+            }
+
+            /* -------------------- */
+
+        /* ----------- */
+
+        .cadre .card:hover{
+            transform:scale(1.2);
+            box-shadow: 5px 5px 15px black;
+        }
+
+/* ------------- */
+
+
+
+/* footer design */
+
+.footer{
+    width: 100vw;
+    height: 18%;
+    background: linear-gradient(160deg,black, rgb(43, 43, 43), black);
+
+    color: white;
+    text-align: center;
+    padding: 3%;
+}
+
+    /* mise en forme des references */
+
+    .footer .references{
+        justify-content: center;
+        column-gap: 35px;
+        display: flex;
+    }
+
+        /* MISE EN  forme des references en particulier */
+
+        .footer .references .ref1 h2{
+            font-family: 'Poppins';
+            color: red;
+            text-decoration: dotted;
+        }
+
+        .footer .references .ref1 .menus{
+            list-style-type: none;
+            line-height:30px;
+            margin-top: 5%;
+            letter-spacing:2px;
+            font-size: 14px;
+        }
+
+        .footer .references .ref1 .menus li span a:link, .footer .references .ref1 .menus li span a:visited{
+            text-decoration: none;
+            color: grey;
+            transition: 0.5s ease;
+        }
+
+        .footer .references .ref1 .menus li span a:hover{
+            color: white;
+            padding-left: 8px;
+        }
+
+        /* ----------------------------------- */
+
+    /* --------------------------- */
+
+/* ------------- */

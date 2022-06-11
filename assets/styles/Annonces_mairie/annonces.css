@@ -12,7 +12,7 @@
     src: url("../../content/font/Poppins/Poppins-Light.ttf");
     src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
 }
-
+ 
 @font-face {
     font-family: 'Pacifico';
     src: url("../../content/font/Pacifico/Pacifico-Regular.ttf");
@@ -39,7 +39,7 @@ body{width:100%;height:100%;}
 
     .header .logo a:link, .header .logo a:visited{
         text-decoration: none;
-        color: red;
+        color: rebeccapurple;
     }
 
     .header .logo a:link h2, .header .logo a:visited h2{
@@ -89,6 +89,19 @@ body{width:100%;height:100%;}
 
 /* ----------------- */
 
+/* design title */
+
+.title h1{
+    clear: both;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    background: black;
+    font-family: 'Pacifico';
+    font-size: 4rem;
+}
+
+/* ----------- */
 
 
 /* design main-content */
@@ -187,29 +200,6 @@ body{width:100%;height:100%;}
 
 /* ----------------- */
 
-
-
-/* design title */
-
-.title h1{
-    clear: both;
-    text-align: center;
-    justify-content: center;
-    color: white;
-    background: black;
-    font-family: 'Pacifico';
-    font-size: 4rem;
-}
-
-/* ----------- */
-
-/* design main-content */
-
-
-
-/* ------------------- */
-
-
 /* footer design */
 
 .footer{
@@ -228,14 +218,13 @@ body{width:100%;height:100%;}
         justify-content: center;
         column-gap: 35px;
         display: flex;
-        flex-wrap: wrap;
     }
 
         /* MISE EN  forme des references en particulier */
 
         .footer .references .ref1 h2{
             font-family: 'Poppins';
-            color: red;
+            color: rgb(218, 161, 161);
             text-decoration: dotted;
         }
 
@@ -254,7 +243,7 @@ body{width:100%;height:100%;}
         }
 
         .footer .references .ref1 .menus li span a:hover{
-            color: white;
+            color: black;
             padding-left: 8px;
         }
 
