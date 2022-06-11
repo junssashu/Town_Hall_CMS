@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url("../../content/font/Poppins/Poppins-Black.ttf");
+    src: url("../../content/font/Poppins/Poppins-BlackItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Bold.ttf");
+    src: url("../../content/font/Poppins/Poppins-BoldItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraBold.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraBoldItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraLight.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraLightItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Italic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Light.ttf");
+    src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url("../../content/font/Pacifico/Pacifico-Regular.ttf");
+}
+
+*{margin: 0;padding: 0;box-sizing: border-box;font-family: 'Poppins';}
+body{width:100%;height:100%;background-color: aqua;}
+
+/* design du header */
+
+.header{
+    width:95%;
+    background:linear-gradient(180deg, black, grey, black);
+}
+
+.header .logo{
+    float: left;
+}
+
+.header .nav{
+    float: right;
+}
+
+/* ----------------- */
