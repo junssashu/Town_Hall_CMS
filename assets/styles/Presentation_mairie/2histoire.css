@@ -11,7 +11,7 @@
     src: url("../../content/font/Poppins/Poppins-Italic.ttf");
     src: url("../../content/font/Poppins/Poppins-Light.ttf");
     src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
-}
+} 
 
 @font-face {
     font-family: 'Pacifico';
@@ -48,7 +48,7 @@ body{width:100%;height:100%;}
     }
 
     .header .loog a:active{
-        color: blue;
+        color: skyblue;
     }
 
     .header .loog a:active h2{        
@@ -174,7 +174,7 @@ body{width:100%;height:100%;}
 
 .main-content .div .content a:hover{
     background:rgb(255, 255, 255);
-    color: blue;
+    color: blueviolet;
     box-shadow: 5px 5px 15px rgb(199, 179, 245);
     border: 0px;
 }

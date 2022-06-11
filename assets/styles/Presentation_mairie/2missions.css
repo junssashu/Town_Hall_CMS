@@ -12,7 +12,7 @@
     src: url("../../content/font/Poppins/Poppins-Light.ttf");
     src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
 }
-
+ 
 @font-face {
     font-family: 'Pacifico';
     src: url("../../content/font/Pacifico/Pacifico-Regular.ttf");
@@ -39,7 +39,7 @@ body{width:100%;height:100%;}
 
     .header .logo a:link, .header .logo a:visited{
         text-decoration: none;
-        color: red;
+        color: orangered;
     }
 
     .header .logo a:link h2, .header .logo a:visited h2{
@@ -48,7 +48,7 @@ body{width:100%;height:100%;}
     }
 
     .header .loog a:active{
-        color: blue;
+        color: orangered;
     }
 
     .header .loog a:active h2{        
@@ -82,14 +82,26 @@ body{width:100%;height:100%;}
 
     .header .nav a:hover{
         border-bottom: 1px dotted currentColor ;
-        color: blue;
+        color: orangered;
     }
 
     /* ------------- */
 
 /* ----------------- */
 
+/* design title */
 
+.title h1{
+    clear: both;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    background: black;
+    font-family: 'Pacifico';
+    font-size: 4rem;
+}
+
+/* ----------- */
 
 /* design main-content */
 
@@ -186,28 +198,6 @@ body{width:100%;height:100%;}
 }
 
 /* ----------------- */
-
-
-
-/* design title */
-
-.title h1{
-    clear: both;
-    text-align: center;
-    justify-content: center;
-    color: white;
-    background: black;
-    font-family: 'Pacifico';
-    font-size: 4rem;
-}
-
-/* ----------- */
-
-/* design main-content */
-
-
-
-/* ------------------- */
 
 
 /* footer design */

@@ -106,6 +106,102 @@ body{width:100%;height:100%;}
 /* design main-content */
 
 
+/* design main-content */
+
+.main-content{
+    clear: both;
+    width: 100%;
+    height:auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(150deg, rgba(86, 201, 57, 0.933), rgb(33, 196, 207));
+}
+
+.main-content .div{
+    display: flex;
+    height:100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content .div .image1{
+    width: 50%;
+    background-size:auto;
+    margin-left: 4rem;
+    height: 300px;
+    background: url("../../content/Mairie/Presentation_mairie/img\ \(1\).jpg");
+    background-position:center;
+    border-radius:4rem;
+}
+
+.main-content .div .image2{
+    width: 50%;
+    background-size:auto;
+    margin-left: 4rem;
+    height: 300px;
+    background: url("../../content/Mairie/Presentation_mairie/img\ \(2\).jpg");
+    background-position:center;
+    border-radius:4rem;
+}
+
+
+.main-content .div .image3{
+    width: 50%;
+    background-size:auto;
+    margin-left: 4rem;
+    height: 300px;
+    background: url("../../content/Mairie/Presentation_mairie/img\ \(3\).jpg");
+    background-position:center;
+    border-radius:4rem;
+}
+
+
+.main-content .div .image4{
+    width: 50%;
+    background-size:contain;
+    margin-left: 4rem;
+    height: 300px;
+    background: url("../../content/Mairie/Presentation_mairie/staff.jpg");
+    background-position:center;
+    border-radius:4rem;
+}
+
+
+.main-content .div .content{
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.main-content .div .content a:link, .main-content .div .content a:visited{
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 1s ease;
+    border: 1px dotted currentColor;
+    padding: 10px;
+    border-radius: .5rem;
+}
+
+.main-content .div .content a:hover{
+    background:rgb(255, 255, 255);
+    color: blue;
+    box-shadow: 5px 5px 15px rgb(199, 179, 245);
+    border: 0px;
+}
+
+.main-content .div .content p{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+/* ----------------- */
+
 
 /* ------------------- */
 

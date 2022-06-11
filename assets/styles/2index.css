@@ -1,23 +1,22 @@
 @font-face {
     font-family: 'Poppins';
-    src: url("../content/font/Poppins/Poppins-Black.ttf");
-    src: url("../content/font/Poppins/Poppins-BlackItalic.ttf");
-    src: url("../content/font/Poppins/Poppins-Bold.ttf");
-    src: url("../content/font/Poppins/Poppins-BoldItalic.ttf");
-    src: url("../content/font/Poppins/Poppins-ExtraBold.ttf");
-    src: url("../content/font/Poppins/Poppins-ExtraBoldItalic.ttf");
-    src: url("../content/font/Poppins/Poppins-ExtraLight.ttf");
-    src: url("../content/font/Poppins/Poppins-ExtraLightItalic.ttf");
-    src: url("../content/font/Poppins/Poppins-Italic.ttf");
-    src: url("../content/font/Poppins/Poppins-Light.ttf");
-    src: url("../content/font/Poppins/Poppins-LightItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Black.ttf");
+    src: url("../../content/font/Poppins/Poppins-BlackItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Bold.ttf");
+    src: url("../../content/font/Poppins/Poppins-BoldItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraBold.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraBoldItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraLight.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraLightItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Italic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Light.ttf");
+    src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
 }
 
 @font-face {
     font-family: 'Pacifico';
-    src: url("../content/font/Pacifico/Pacifico-Regular.ttf");
+    src: url("../../content/font/Pacifico/Pacifico-Regular.ttf");
 }
-
 
 *{
     margin: 0;
@@ -39,7 +38,7 @@ body {
 header {
     width: 100%;
     height: 100px;
-    background: #c0393b;
+    background: #1a1c7a;
     position: fixed;
 }
 
@@ -83,7 +82,7 @@ nav .s_inscrire{
     letter-spacing: 4px;
     font-size: 15px;
     padding: 15px;
-    color: #c0393b;
+    color: #1a1c7a;
     border-radius: 10px;
     margin: 0 1px;
     background:#ffffff;
@@ -91,7 +90,7 @@ nav .s_inscrire{
 
 nav a:hover {
     background: rgb(255, 240, 240);
-    color: #c0393b;
+    color: #1a1c7a;
     /* border-bottom: 3px black solid; */
     border-radius: 10px;
 }
@@ -149,7 +148,7 @@ nav .s_inscrire:hover {
 
 .se_connecter a:hover{
     background: #ffffff;
-    color: #130f40;
+    color: #0f401b;
     font-weight: bolder;
 }
 
@@ -259,7 +258,7 @@ ul{
     left: 10;
     bottom: -10px;
     height:4px;
-    background-color:#c0393b;
+    background-color:#1a1c7a;
     box-sizing: border-box;
     width: 50px;
 }
@@ -370,5 +369,5 @@ ul{
 .under_elaborer a:hover{
     text-decoration: underline dotted ;
     line-height:5px;
-    color: #4f279b
+    color: #0f401b
 }

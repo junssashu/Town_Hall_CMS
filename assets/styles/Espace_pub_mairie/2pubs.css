@@ -11,7 +11,7 @@
     src: url("../../content/font/Poppins/Poppins-Italic.ttf");
     src: url("../../content/font/Poppins/Poppins-Light.ttf");
     src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
-}
+} 
 
 @font-face {
     font-family: 'Pacifico';
@@ -62,7 +62,7 @@ body{
     .main-content .instruction h1{
         font-family: 'Pacifico';
         font-size: 45px;
-        color: white;
+        color: blanchedalmond;
         font-weight: 800;
     }
 
@@ -97,7 +97,7 @@ body{
 
             font-family: 'Poppins', sans-serif;
             border-radius: 18px;
-            background:white;
+            background:bisque;
             box-shadow: 5px 5px 15px black;
             text-align: center;
 
