@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url("../../content/font/Poppins/Poppins-Black.ttf");
+    src: url("../../content/font/Poppins/Poppins-BlackItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Bold.ttf");
+    src: url("../../content/font/Poppins/Poppins-BoldItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraBold.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraBoldItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraLight.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraLightItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Italic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Light.ttf");
+    src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url("../../content/font/Pacifico/Pacifico-Regular.ttf");
+}
+
+*{margin: 0;padding: 0;box-sizing: border-box;font-family: 'Poppins';}
+body{width:100%;height:100%;}
+
+/* design du header */
+
+.header{
+    width:95%;
+    margin: auto;
+    background:white;
+}
+
+    /* design logo */
+    
+    .header .logo{
+        float: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header .logo a:link, .header .logo a:visited{
+        text-decoration: none;
+        color: red;
+    }
+
+    .header .logo a:link h2, .header .logo a:visited h2{
+        font-family: 'Pacifico';
+        font-size: 3rem;
+    }
+
+    .header .loog a:active{
+        color: blue;
+    }
+
+    .header .loog a:active h2{        
+        font-family: 'Pacifico';
+    }
+
+    /* ---------- */
+
+    /* design nav */
+    
+    .header .nav{
+        float: right;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:60px;
+        justify-content: center;
+        margin-top: 2%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header .nav a:link, .header .nav a:visited{
+        text-decoration: none;
+        color: green;
+        font-family: 'Pacifico';
+        font-weight: bolder;
+        font-size: 20px;
+        transition: all 0.5s ease;
+    }
+
+    .header .nav a:hover{
+        border-bottom: 1px dotted currentColor ;
+        color: blue;
+    }
+
+    /* ------------- */
+
+/* ----------------- */
+
+/* design title */
+
+.title h1{
+    clear: both;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    background: black;
+    font-family: 'Pacifico';
+    font-size: 4rem;
+}
+
+/* ----------- */
+
+/* design main-content */
+
+.main-content{
+    clear: both;
+    width: 100%;
+    height:auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(150deg, rgba(86, 201, 57, 0.933), rgb(33, 196, 207));
+}
+
+.main-content .div{
+    display: flex;
+    height:100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content .div .image1{
+    width: 50%;
+    background-size:auto;
+    margin-left: 4rem;
+    height: 300px;
+    background: url("../../content/Mairie/Presentation_mairie/img\ \(1\).jpg");
+    background-position:center;
+    border-radius:4rem;
+}
+
+.main-content .div .image2{
+    width: 50%;
+    background-size:auto;
+    margin-left: 4rem;
+    height: 300px;
+    background: url("../../content/Mairie/Presentation_mairie/img\ \(2\).jpg");
+    background-position:center;
+    border-radius:4rem;
+}
+
+
+.main-content .div .image3{
+    width: 50%;
+    background-size:auto;
+    margin-left: 4rem;
+    height: 300px;
+    background: url("../../content/Mairie/Presentation_mairie/img\ \(3\).jpg");
+    background-position:center;
+    border-radius:4rem;
+}
+
+
+.main-content .div .image4{
+    width: 50%;
+    background-size:contain;
+    margin-left: 4rem;
+    height: 300px;
+    background: url("../../content/Mairie/Presentation_mairie/staff.jpg");
+    background-position:center;
+    border-radius:4rem;
+}
+
+
+.main-content .div .content{
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.main-content .div .content a:link, .main-content .div .content a:visited{
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 1s ease;
+    border: 1px dotted currentColor;
+    padding: 10px;
+    border-radius: .5rem;
+}
+
+.main-content .div .content a:hover{
+    background:rgb(255, 255, 255);
+    color: blue;
+    box-shadow: 5px 5px 15px rgb(199, 179, 245);
+    border: 0px;
+}
+
+.main-content .div .content p{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+/* ----------------- */
+
+/* footer design */
+
+.footer{
+    width: 100vw;
+    height: 18%;
+    background: linear-gradient(160deg,black, rgb(43, 43, 43), black);
+
+    color: white;
+    text-align: center;
+    padding: 3%;
+}
+
+    /* mise en forme des references */
+
+    .footer .references{
+        justify-content: center;
+        column-gap: 35px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        /* MISE EN  forme des references en particulier */
+
+        .footer .references .ref1 h2{
+            font-family: 'Poppins';
+            color: red;
+            text-decoration: dotted;
+        }
+
+        .footer .references .ref1 .menus{
+            list-style-type: none;
+            line-height:30px;
+            margin-top: 5%;
+            letter-spacing:2px;
+            font-size: 14px;
+        }
+
+        .footer .references .ref1 .menus li span a:link, .footer .references .ref1 .menus li span a:visited{
+            text-decoration: none;
+            color: grey;
+            transition: 0.5s ease;
+        }
+
+        .footer .references .ref1 .menus li span a:hover{
+            color: white;
+            padding-left: 8px;
+        }
+
+        /* ----------------------------------- */
+
+    /* --------------------------- */
+
+/* ------------- */
