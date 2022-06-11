@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url("../../content/font/Poppins/Poppins-Black.ttf");
+    src: url("../../content/font/Poppins/Poppins-BlackItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Bold.ttf");
+    src: url("../../content/font/Poppins/Poppins-BoldItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraBold.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraBoldItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraLight.ttf");
+    src: url("../../content/font/Poppins/Poppins-ExtraLightItalic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Italic.ttf");
+    src: url("../../content/font/Poppins/Poppins-Light.ttf");
+    src: url("../../content/font/Poppins/Poppins-LightItalic.ttf");
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url("../../content/font/Pacifico/Pacifico-Regular.ttf");
+}
+
+*{margin: 0;padding: 0;box-sizing: border-box;font-family: 'Poppins';}
+body{width:100%;height:100%;}
+
+/* design du header */
+
+.header{
+    width:95%;
+    margin: auto;
+    background:white;
+}
+
+    /* design logo */
+    
+    .header .logo{
+        float: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header .logo a:link, .header .logo a:visited{
+        text-decoration: none;
+        color: red;
+    }
+
+    .header .logo a:link h2, .header .logo a:visited h2{
+        font-family: 'Pacifico';
+        font-size: 3rem;
+    }
+
+    .header .loog a:active{
+        color: blue;
+    }
+
+    .header .loog a:active h2{        
+        font-family: 'Pacifico';
+    }
+
+    /* ---------- */
+
+    /* design nav */
+    
+    .header .nav{
+        float: right;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:60px;
+        justify-content: center;
+        margin-top: 2%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header .nav a:link, .header .nav a:visited{
+        text-decoration: none;
+        color: green;
+        font-family: 'Pacifico';
+        font-weight: bolder;
+        font-size: 20px;
+        transition: all 0.5s ease;
+    }
+
+    .header .nav a:hover{
+        border-bottom: 1px dotted currentColor ;
+        color: blue;
+    }
+
+    /* ------------- */
+
+/* ----------------- */
+
+/* design title */
+
+.title h1{
+    clear: both;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    background: black;
+    font-family: 'Pacifico';
+    font-size: 4rem;
+}
+
+/* ----------- */
+
+/* design main-content */
+
+
+
+/* ------------------- */
+
+/* footer design */
+
+.footer{
+    width: 100vw;
+    height: 18%;
+    background: linear-gradient(160deg,black, rgb(43, 43, 43), black);
+
+    color: white;
+    text-align: center;
+    padding: 3%;
+}
+
+    /* mise en forme des references */
+
+    .footer .references{
+        justify-content: center;
+        column-gap: 35px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        /* MISE EN  forme des references en particulier */
+
+        .footer .references .ref1 h2{
+            font-family: 'Poppins';
+            color: red;
+            text-decoration: dotted;
+        }
+
+        .footer .references .ref1 .menus{
+            list-style-type: none;
+            line-height:30px;
+            margin-top: 5%;
+            letter-spacing:2px;
+            font-size: 14px;
+        }
+
+        .footer .references .ref1 .menus li span a:link, .footer .references .ref1 .menus li span a:visited{
+            text-decoration: none;
+            color: grey;
+            transition: 0.5s ease;
+        }
+
+        .footer .references .ref1 .menus li span a:hover{
+            color: white;
+            padding-left: 8px;
+        }
+
+        /* ----------------------------------- */
+
+    /* --------------------------- */
+
+/* ------------- */

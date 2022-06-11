@@ -99,7 +99,6 @@ body{width:100%;height:100%;}
     background: black;
     font-family: 'Pacifico';
     font-size: 4rem;
-    margin-bottom: 3rem;
 }
 
 /* ----------- */
@@ -110,6 +109,9 @@ body{width:100%;height:100%;}
     clear: both;
     width: 100%;
     height:auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(150deg, rgba(86, 201, 57, 0.933), rgb(33, 196, 207));
 }
 
 .main-content .div{
@@ -173,7 +175,7 @@ body{width:100%;height:100%;}
 }
 
 .main-content .div .content a:link, .main-content .div .content a:visited{
-    color: blue;
+    color: rgb(255, 255, 255);
     font-size: 1rem;
     text-decoration: none;
     transition: all 1s ease;
@@ -183,13 +185,14 @@ body{width:100%;height:100%;}
 }
 
 .main-content .div .content a:hover{
-    background:blue;
-    color: white;
+    background:rgb(255, 255, 255);
+    color: blue;
     box-shadow: 5px 5px 15px rgb(199, 179, 245);
     border: 0px;
 }
 
 .main-content .div .content p{
+    color: #ffffff;
     font-size: 18px;
     font-weight: bolder;
 }
@@ -199,7 +202,6 @@ body{width:100%;height:100%;}
 /* footer design */
 
 .footer{
-    margin-top: 2rem;
     width: 100vw;
     height: 18%;
     background: linear-gradient(160deg,black, rgb(43, 43, 43), black);
