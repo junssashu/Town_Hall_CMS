@@ -6,8 +6,8 @@
     $query->execute();
     $row = $query->fetch(PDO::FETCH_ASSOC);
     $Nom_Mairie = $row['nom'];
-    ?>
-    <?php
+?>
+<?php
     require_once '../../connexion/connexion.php';
     //Sélection du style
     $query = $pdo->prepare("SELECT * FROM Style");
@@ -16,7 +16,7 @@
     $style = $row['id'];
     
     echo
-        "<link rel='stylesheet' href='../../assets/styles/presentation_mairie/".$style."personnel.css' type='text/css' ></link>";
+        "<link rel='stylesheet' href='../../assets/styles/Presentation_mairie/".$style."personnel.css' type='text/css' ></link>";
     ?>
 
 
@@ -33,7 +33,7 @@
     <div class="header">
         <div class="header-container">
             <div class="logo">
-                <h2><?php if(isset($Nom_mairie)){echo $Nom_mairie;}else{echo "Town Hall Generator";}?></h2>
+                <h2><?php if(!empty($Nom_mairie)){echo $Nom_mairie;}else{echo "Town Hall Generator";}?></h2>
             </div>
             <ul class="menu_deroulant">
                 <li><a href="#">Activite</a>
@@ -96,6 +96,7 @@
                     </div>
                 </div>
             </div>
+           
         </div>
     </section>
     <footer class="footer">
@@ -148,5 +149,42 @@
         <span class="hidden-phone"><br><br>copyright @uy1</span>
         </div>
     </footer>
+    <div style='margin-top:auto; width:100%; height:20%'>
+    Plus sur le personnel
+        <table rules='all'>
+            <thead>
+                    <tr>
+                        <th><b style="color:greenyellow;">Nom</b></th>
+                        <th><b style="color:greenyellow;">Parcours Professionnel</b></th>
+                        <th><b style="color:greenyellow;">Curriculums vitae</b></th>
+                    </tr>
+            </thead>
+            <?php
+
+                require_once '../../admin/connexion/connexion.php';
+                
+                $query = 'SELECT * FROM Personnel_mairie ORDER BY nom ASC'; // Requete de recuperation des infos dans la base donnees, dans la table correspondantes à la page actuelle
+                $result = mysqli_query($db, $query); //Execution de la requete
+
+                // Affichage des informations sans un tableau
+                $string="";
+                    while($row=mysqli_fetch_assoc($result)) {
+                        //ecriture des tags de retour
+                        $string=$string."<tr>\n";
+                        $string=$string."<td>".$row['nom']."</td>\n";
+                        $string=$string."<td>".$row['parcoursProfessionnel']."</td>\n";
+                        if($row['cv']=='NULL')
+                            $string=$string."<td>Pas de cv disponible</td>\n";
+                        else
+                            $string=$string."<td><a href='../../data/cvs/".$row['cv']."' style='text-decoration:none; color:blue;'>CV de ".$row['nom']."</a></td>\n";
+                        $string=$string."\n</tr>\n";
+                        
+                }
+                if($string=='')
+                    $string="<tr><td>Aucun personnel enregistrée.</td></tr>";
+                echo $string;
+
+            ?>
+    </div>
 </body>
 </html>

@@ -324,3 +324,18 @@ ul{
 }
 
 /* ----------------------------------------------------- */
+
+table {
+    align-self: center;
+    width: 80%;
+    border-color: rgb(216, 14, 14);
+    border-width: 0.3em;
+    border-style:solid;
+    text-align: center;
+    column-rule-style: solid;
+    column-rule-width: 0.3em;
+    column-rule-color: rgb(216, 14, 14);
+    color:white;
+    background-color:#c0393b;
+    margin: auto;
+}

@@ -77,7 +77,7 @@
         <nav class="wrapper">
             <ul>
                 <li class="menu">
-                    <a href="pages/Presentation_mairie/menu.php">Personnalisation</a>
+                    <a href="pages/Presentation_mairie/menu.php">A propos</a>
                     <ul class="submenu">
                         <li><a href="../admin/pages/Presentation_mairie/ajouter_infos.php">Ajouter les informations</a></li>
                         <li><a href="../admin/pages/Presentation_mairie/ajouter_personnel.php">Ajouter du personnel</a></li>
@@ -135,6 +135,8 @@
                         <li><a href="../admin/pages/Projet_marie/projets_courants.php">Projets courants</a></li>
                     </ul>
                 </li>
+                <a href="../pages/Presentation_mairie/menu.php" class='projet'>Visualiser le site</a>
+
             </ul>
         </nav>
 
@@ -193,7 +195,7 @@
                 if(isset($success)){   
                 echo "
                         <br>
-                        <span style='color:greenyellow'>" .$success. "</span>
+                        <span style='color:green'>" .$success. "</span>
                         <br>";
                 }
             ?>
