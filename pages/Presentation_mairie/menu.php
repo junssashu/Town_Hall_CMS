@@ -24,28 +24,28 @@
 
     <div class="main-content">
         <div class="div">
-            <div class="image"><img src="../../content/Mairie/Presentation_mairie/remy-hellequin-CHkY2hMGvs8-unsplash.jpg" alt=""></div>
+            <div class="image1"></div>
             <div class="content">
                 <p>Presente le conseil municipale de la mairie</p><br>
                 <a href="conseil_municipal.php">voir &rarr;</a>
             </div>
         </div><br>
         <div class="div">
-            <div class="image"><img src="../../content/Mairie/Presentation_mairie/remy-hellequin-CHkY2hMGvs8-unsplash.jpg" alt=""></div>
+            <div class="image2"></div>
             <div class="content">
                 <p>Presente l'historique de la mairie</p><br>
                 <a href="histoire.php">voir &rarr;</a>
             </div>
         </div><br>
         <div class="div">
-            <div class="image"><img src="../../content/Mairie/Presentation_mairie/remy-hellequin-CHkY2hMGvs8-unsplash.jpg" alt=""></div>
+            <div class="image3"></div>
             <div class="content">
                 <p>Presente les missions de la mairie</p><br>
                 <a href="missions.php">voir &rarr;</a>
             </div>
         </div><br>
         <div class="div">
-            <div class="image"><img src="../../content/Mairie/Presentation_mairie/remy-hellequin-CHkY2hMGvs8-unsplash.jpg" alt=""></div>
+            <div class="image4"></div>
             <div class="content">
                 <p>Presente le personnel de la mairie</p><br>
                 <a href="personnel.php">voir &rarr;</a>
