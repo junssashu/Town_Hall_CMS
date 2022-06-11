@@ -48,7 +48,7 @@
 /* body design */
 
 body{
-    background:linear-gradient(120deg, rgb(66, 114, 114), rgb(158, 36, 36));
+    background:linear-gradient(120deg, rgb(66, 114, 114), rgb(231, 143, 143));
 }
 
     /* deign main-content */
@@ -177,7 +177,7 @@ body{
 
         .footer .references .ref1 h2{
             font-family: 'Poppins';
-            color: red;
+            color: brown;
             text-decoration: dotted;
         }
 

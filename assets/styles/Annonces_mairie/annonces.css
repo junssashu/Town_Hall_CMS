@@ -39,7 +39,7 @@ body{width:100%;height:100%;}
 
     .header .logo a:link, .header .logo a:visited{
         text-decoration: none;
-        color: red;
+        color: rebeccapurple;
     }
 
     .header .logo a:link h2, .header .logo a:visited h2{
@@ -224,7 +224,7 @@ body{width:100%;height:100%;}
 
         .footer .references .ref1 h2{
             font-family: 'Poppins';
-            color: red;
+            color: rgb(218, 161, 161);
             text-decoration: dotted;
         }
 
@@ -243,7 +243,7 @@ body{width:100%;height:100%;}
         }
 
         .footer .references .ref1 .menus li span a:hover{
-            color: white;
+            color: black;
             padding-left: 8px;
         }
 
